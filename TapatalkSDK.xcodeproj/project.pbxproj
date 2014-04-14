@@ -18,7 +18,7 @@
 		481AE42818F7E11F0008EC87 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42218F7E11F0008EC87 /* FMResultSet.m */; };
 		481AE42A18F7E12F0008EC87 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 481AE42918F7E12F0008EC87 /* libsqlite3.dylib */; };
 		481AE42D18F7E29B0008EC87 /* LNCacheForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42C18F7E29B0008EC87 /* LNCacheForum.m */; };
-		481AE43018F7E2BF0008EC87 /* PHCacheTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42F18F7E2BF0008EC87 /* PHCacheTopic.m */; };
+		481AE43018F7E2BF0008EC87 /* LNCacheTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42F18F7E2BF0008EC87 /* LNCacheTopic.m */; };
 		48200D7A188A5870007F11DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A96899188A43C2003A0C2F /* Foundation.framework */; };
 		48200D9B188A5958007F11DD /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96932188A4617003A0C2F /* CXMLDocument_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48200D9C188A5958007F11DD /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96934188A4617003A0C2F /* CXMLNode_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -75,8 +75,8 @@
 		4852E905188A616300C87592 /* LNPagingSubscribe.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96906188A45A4003A0C2F /* LNPagingSubscribe.h */; };
 		4852E906188A616300C87592 /* LNPagingTopic.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96908188A45A4003A0C2F /* LNPagingTopic.h */; };
 		4852E907188A616300C87592 /* LNPagingUnreadTopic.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9690A188A45A4003A0C2F /* LNPagingUnreadTopic.h */; };
-		4852E908188A616300C87592 /* PHTapatalkSDK.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9699D188A4F06003A0C2F /* PHTapatalkSDK.h */; };
-		4875575518FBC0BD00CCA438 /* PHTapatalkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875575418FBC0BD00CCA438 /* PHTapatalkSDK.m */; };
+		4852E908188A616300C87592 /* LNTapatalkSDK.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9699D188A4F06003A0C2F /* LNTapatalkSDK.h */; };
+		4875575518FBC0BD00CCA438 /* LNTapatalkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875575418FBC0BD00CCA438 /* LNTapatalkSDK.m */; };
 		4890576A18F7E7C10015B871 /* LNCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4890576918F7E7C10015B871 /* LNCacheManager.m */; };
 		48A9689A188A43C2003A0C2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A96899188A43C2003A0C2F /* Foundation.framework */; };
 		48A9689C188A43C2003A0C2F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9689B188A43C2003A0C2F /* CoreGraphics.framework */; };
@@ -145,8 +145,8 @@
 		48EA726418FBC5CE007C32EC /* LNPagingTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96909188A45A4003A0C2F /* LNPagingTopic.m */; };
 		48EA726518FBC5CE007C32EC /* LNPagingUnreadTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9690B188A45A4003A0C2F /* LNPagingUnreadTopic.m */; };
 		48EA726618FBC5CE007C32EC /* LNCacheForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42C18F7E29B0008EC87 /* LNCacheForum.m */; };
-		48EA726718FBC5CE007C32EC /* PHCacheTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42F18F7E2BF0008EC87 /* PHCacheTopic.m */; };
-		48EA726818FBC5CE007C32EC /* PHTapatalkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875575418FBC0BD00CCA438 /* PHTapatalkSDK.m */; };
+		48EA726718FBC5CE007C32EC /* LNCacheTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42F18F7E2BF0008EC87 /* LNCacheTopic.m */; };
+		48EA726818FBC5CE007C32EC /* LNTapatalkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875575418FBC0BD00CCA438 /* LNTapatalkSDK.m */; };
 		48EA726918FBC650007C32EC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9697E188A4684003A0C2F /* CFNetwork.framework */; };
 		48EA726A18FBC657007C32EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 481AE42918F7E12F0008EC87 /* libsqlite3.dylib */; };
 		48EA726B18FBC65F007C32EC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9697C188A467B003A0C2F /* libxml2.dylib */; };
@@ -184,7 +184,7 @@
 				4852E905188A616300C87592 /* LNPagingSubscribe.h in Copy Files (16 items) */,
 				4852E906188A616300C87592 /* LNPagingTopic.h in Copy Files (16 items) */,
 				4852E907188A616300C87592 /* LNPagingUnreadTopic.h in Copy Files (16 items) */,
-				4852E908188A616300C87592 /* PHTapatalkSDK.h in Copy Files (16 items) */,
+				4852E908188A616300C87592 /* LNTapatalkSDK.h in Copy Files (16 items) */,
 			);
 			name = "Copy Files (16 items)";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,12 +208,12 @@
 		481AE42918F7E12F0008EC87 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		481AE42B18F7E29B0008EC87 /* LNCacheForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNCacheForum.h; sourceTree = "<group>"; };
 		481AE42C18F7E29B0008EC87 /* LNCacheForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNCacheForum.m; sourceTree = "<group>"; };
-		481AE42E18F7E2BF0008EC87 /* PHCacheTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCacheTopic.h; sourceTree = "<group>"; };
-		481AE42F18F7E2BF0008EC87 /* PHCacheTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCacheTopic.m; sourceTree = "<group>"; };
+		481AE42E18F7E2BF0008EC87 /* LNCacheTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNCacheTopic.h; sourceTree = "<group>"; };
+		481AE42F18F7E2BF0008EC87 /* LNCacheTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNCacheTopic.m; sourceTree = "<group>"; };
 		48200D79188A5870007F11DD /* libTapatalkSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTapatalkSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		48200D7D188A5870007F11DD /* libTapatalkSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libTapatalkSDK-Prefix.pch"; sourceTree = "<group>"; };
 		48200D7E188A5870007F11DD /* libTapatalkSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libTapatalkSDK.h; sourceTree = "<group>"; };
-		4875575418FBC0BD00CCA438 /* PHTapatalkSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHTapatalkSDK.m; sourceTree = "<group>"; };
+		4875575418FBC0BD00CCA438 /* LNTapatalkSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNTapatalkSDK.m; sourceTree = "<group>"; };
 		4875576318FBC4DD00CCA438 /* TapatalkDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapatalkDemo-Info.plist"; sourceTree = "<group>"; };
 		4875576518FBC4DD00CCA438 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4875576718FBC4DD00CCA438 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 		48A96996188A49C1003A0C2F /* LNAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNAccountManager.m; sourceTree = "<group>"; };
 		48A9699A188A4B8A003A0C2F /* NSString+LNTapatalkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LNTapatalkHelper.h"; sourceTree = "<group>"; };
 		48A9699B188A4B8A003A0C2F /* NSString+LNTapatalkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LNTapatalkHelper.m"; sourceTree = "<group>"; };
-		48A9699D188A4F06003A0C2F /* PHTapatalkSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHTapatalkSDK.h; sourceTree = "<group>"; };
+		48A9699D188A4F06003A0C2F /* LNTapatalkSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LNTapatalkSDK.h; sourceTree = "<group>"; };
 		48EA720518FBC593007C32EC /* TapatalkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapatalkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA720B18FBC594007C32EC /* TapatalkTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapatalkTest-Info.plist"; sourceTree = "<group>"; };
 		48EA720D18FBC594007C32EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -386,8 +386,8 @@
 			children = (
 				481AE42B18F7E29B0008EC87 /* LNCacheForum.h */,
 				481AE42C18F7E29B0008EC87 /* LNCacheForum.m */,
-				481AE42E18F7E2BF0008EC87 /* PHCacheTopic.h */,
-				481AE42F18F7E2BF0008EC87 /* PHCacheTopic.m */,
+				481AE42E18F7E2BF0008EC87 /* LNCacheTopic.h */,
+				481AE42F18F7E2BF0008EC87 /* LNCacheTopic.m */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -541,8 +541,8 @@
 				48A96988188A49A8003A0C2F /* Request */,
 				48A968F4188A45A4003A0C2F /* Model */,
 				481AE41318F7E0E90008EC87 /* DataManager */,
-				48A9699D188A4F06003A0C2F /* PHTapatalkSDK.h */,
-				4875575418FBC0BD00CCA438 /* PHTapatalkSDK.m */,
+				48A9699D188A4F06003A0C2F /* LNTapatalkSDK.h */,
+				4875575418FBC0BD00CCA438 /* LNTapatalkSDK.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -904,7 +904,7 @@
 				481AE42D18F7E29B0008EC87 /* LNCacheForum.m in Sources */,
 				48200DBF188A5958007F11DD /* LNPagingSubscribe.m in Sources */,
 				48200DC0188A5958007F11DD /* LNPagingTopic.m in Sources */,
-				4875575518FBC0BD00CCA438 /* PHTapatalkSDK.m in Sources */,
+				4875575518FBC0BD00CCA438 /* LNTapatalkSDK.m in Sources */,
 				481AE42718F7E11F0008EC87 /* FMDatabaseQueue.m in Sources */,
 				481AE42418F7E11F0008EC87 /* FMDatabase.m in Sources */,
 				48200DC1188A5958007F11DD /* LNPagingUnreadTopic.m in Sources */,
@@ -917,7 +917,7 @@
 			files = (
 				48A968AA188A43C2003A0C2F /* PHAppDelegate.m in Sources */,
 				48A968A6188A43C2003A0C2F /* main.m in Sources */,
-				481AE43018F7E2BF0008EC87 /* PHCacheTopic.m in Sources */,
+				481AE43018F7E2BF0008EC87 /* LNCacheTopic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,8 +972,8 @@
 				48EA726418FBC5CE007C32EC /* LNPagingTopic.m in Sources */,
 				48EA726518FBC5CE007C32EC /* LNPagingUnreadTopic.m in Sources */,
 				48EA726618FBC5CE007C32EC /* LNCacheForum.m in Sources */,
-				48EA726718FBC5CE007C32EC /* PHCacheTopic.m in Sources */,
-				48EA726818FBC5CE007C32EC /* PHTapatalkSDK.m in Sources */,
+				48EA726718FBC5CE007C32EC /* LNCacheTopic.m in Sources */,
+				48EA726818FBC5CE007C32EC /* LNTapatalkSDK.m in Sources */,
 				48EA721418FBC594007C32EC /* PHAppDelegate.m in Sources */,
 				48EA721D18FBC594007C32EC /* PHViewController.m in Sources */,
 				48EA721018FBC594007C32EC /* main.m in Sources */,

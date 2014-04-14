@@ -78,7 +78,7 @@ static LNCacheManager * _cacheManager;
     }
     
     //
-    NSString * sql = @"SELECT"
+    NSString * sql = @"SELECT";
 }
 
 @end

@@ -8,17 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LNBasePaging : NSObject {}
+@interface LNBasePaging : NSObject {
+    int _maxIndexPageLoaded;
+    int _currentPage;
+    int _totalCountData;
+    int _totalPage;
+    int _startNum;
+    int _lastNum;
+    NSMutableArray * _data;
+    int _countPaging;
+}
 
-@property (nonatomic) int               maxIndexPageLoaded; // Số trang lớn nhất đã đc load
-@property (nonatomic) int               currentPage;        // Trang hiện tại
+@property (nonatomic, readonly) int     maxIndexPageLoaded; // Số trang lớn nhất đã đc load
+@property (nonatomic, readonly) int     currentPage;        // Trang hiện tại
 @property (nonatomic, readonly) int     totalCountData;     // Số lượng data
 @property (nonatomic, readonly) int     totalPage;          // Số trang
 @property (nonatomic, readonly) int     startNum;           // Trong trang hiện tại, vị trí data bắt đầu được lấy
 @property (nonatomic, readonly) int     lastNum;            // Trong trang hiện tại, vị trí data cuối cùng được lấy
-@property (nonatomic, strong) NSMutableArray * data;        // Dữ liệu
+@property (nonatomic, readonly) NSMutableArray * data;        // Dữ liệu
 
-@property (nonatomic)           int     countPaging;        // Số lượng dữ liệu trong 1 trang
+@property (nonatomic, readonly)           int     countPaging;        // Số lượng dữ liệu trong 1 trang
 
 - (id)init;
 - (id)initWithPaging:(int)paging;

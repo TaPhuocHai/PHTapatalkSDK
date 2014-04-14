@@ -21,7 +21,7 @@
     [TapatalkAPI searchTopic:self.searchString startNumber:0 lastNumber:(self.countPaging - 1) searchId:self.searchId completionHandler:^(NSString *searchId, NSArray *arrTopic, int totalTopicNum, NSError *error) {
         if (!error) {
             
-            self.data = [[NSMutableArray alloc] init];
+            _data = [[NSMutableArray alloc] init];
             for (ModelTopic *topic in arrTopic) {
                 [self.data addObject:topic];
             }

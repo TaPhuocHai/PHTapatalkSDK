@@ -7,7 +7,7 @@
 //
 
 #import "LNPagingTopic.h"
-#import "PHTapatalkSDK.h"
+#import "LNTapatalkSDK.h"
 #import "TapatalkAPI.h"
 
 #define kPagingTopicNumber  10
@@ -39,14 +39,6 @@
         self.pageLoaded = [[NSMutableArray alloc] init];
     }
     return self;
-}
-
-- (id)copyWithZone:(NSZone *)zone
-{
-    LNPagingTopic *another = [super copyWithZone:zone];
-    another.pageLoaded = (NSMutableArray*)[self.pageLoaded copy];
-    another.topic = [self.topic copy];
-    return another;
 }
 
 #pragma mark - Kế thừa từ LNBasePaging

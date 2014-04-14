@@ -8,6 +8,6 @@
 
 #import "LNPagingTopic.h"
 
-@interface PHCacheTopic : LNPagingTopic
+@interface LNCacheTopic : LNPagingTopic
 
 @end

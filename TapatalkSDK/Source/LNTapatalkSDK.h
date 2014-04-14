@@ -22,7 +22,7 @@
 
 #import "TapatalkAPI.h"
 
-@interface PHTapatalkSDK : NSObject
+@interface LNTapatalkSDK : NSObject
 
 + (ModelForum*)rootForum;
 + (void)didBecomeActive;

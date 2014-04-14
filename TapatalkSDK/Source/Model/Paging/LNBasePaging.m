@@ -10,6 +10,15 @@
 
 @implementation LNBasePaging
 
+@synthesize maxIndexPageLoaded = _maxIndexPageLoaded,
+currentPage = _currentPage,
+totalPage = _totalPage,
+totalCountData = _totalCountData,
+startNum = _startNum,
+lastNum = _lastNum,
+data = _data,
+countPaging = _countPaging;
+
 #define kPagingTopicNumber  10
 
 - (id)init {

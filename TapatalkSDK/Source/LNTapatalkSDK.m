@@ -5,9 +5,9 @@
 //  Created by Ta Phuoc Hai on 1/18/14.
 //  Copyright (c) 2014 Phuoc Hai. All rights reserved.
 //
-#import "PHTapatalkSDK.h"
+#import "LNTapatalkSDK.h"
 
-@implementation PHTapatalkSDK
+@implementation LNTapatalkSDK
 
 static ModelForum * _form;
 + (ModelForum*)rootForum

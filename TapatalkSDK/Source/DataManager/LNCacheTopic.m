@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Phuoc Hai. All rights reserved.
 //
 
-#import "PHCacheTopic.h"
+#import "LNCacheTopic.h"
 
-@implementation PHCacheTopic
+@implementation LNCacheTopic
 
 @end

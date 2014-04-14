@@ -10,7 +10,7 @@
 #import "LNRequest.h"
 #import "LNRequestHelper.h"
 
-#import "PHTapatalkSDK.h"
+#import "LNTapatalkSDK.h"
 #import "TapatalkAPI.h"
 
 #import "NSData+Base64.h"

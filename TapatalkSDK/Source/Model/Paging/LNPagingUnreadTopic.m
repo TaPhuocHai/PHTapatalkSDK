@@ -18,7 +18,7 @@
     [TapatalkAPI getUnreadTopicWithStartNum:0 lastNum:(self.countPaging - 1) completionHandler:^(NSArray *arrTopic_, int totalTopicNum , NSError *error) {
         if (!error) {
             
-            self.data = [[NSMutableArray alloc] initWithArray:arrTopic_];
+            _data = [[NSMutableArray alloc] initWithArray:arrTopic_];
             _totalCountData = totalTopicNum;
             _startNum = 0;
             _lastNum = self.countPaging - 1;

@@ -84,7 +84,7 @@
     NSLog(@"load from %d to %d",self.currentPage*self.countPaging, ((self.currentPage+1)*self.countPaging)-1);
     [TapatalkAPI getTopicWithForum:self.forum.forum_id mode:@"ANY" startNum:(self.currentPage*self.countPaging) lastNum:(((self.currentPage+1)*self.countPaging)-1) completionHandler:^(ModelForum *result, NSError *error) {
         if (error) {
-            self.currentPage --;
+            _currentPage --;
             if (_onFaild) _onFaild(error);
         } else{
             _startNum = (self.currentPage*self.countPaging);
@@ -99,7 +99,7 @@
                 [self.forum.topics addObject:topic];
             }
             //NSLog(@"loaded count object = %d", result.topics.count);
-            self.currentPage ++;
+            _currentPage ++;
             
             if (_onSuccess) _onSuccess(result.topics);
         }

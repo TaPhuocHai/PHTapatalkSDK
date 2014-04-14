@@ -10,7 +10,7 @@
 #import "LNRequest.h"
 #import "LNRequestHelper.h"
 #import "TapatalkHelper.h"
-#import "PHTapatalkSDK.h"
+#import "LNTapatalkSDK.h"
 
 #import "NSData+Base64.h"
 #import <CommonCrypto/CommonDigest.h>
@@ -89,8 +89,8 @@ static NSURL    * _kNSURLServerTapatalkUpload;
             ModelForum * requestForum;
             if (_forum_id) {
                 // Get sub-forum from _form (big forum)
-                if ([PHTapatalkSDK rootForum]) {
-                    requestForum = [[PHTapatalkSDK rootForum] findSubForumWithId:_forum_id];
+                if ([LNTapatalkSDK rootForum]) {
+                    requestForum = [[LNTapatalkSDK rootForum] findSubForumWithId:_forum_id];
                 }
                 
                 if (!requestForum) {

@@ -17,7 +17,6 @@
 
 - (id)initTopic:(ModelTopic*)_topic;
 - (id)initTopic:(ModelTopic*)_topic paging:(int)count;
-- (id)copyWithZone:(NSZone *)zone;
 
 - (BOOL)isPreviousPage;
 - (BOOL)isLoad:(int)page;

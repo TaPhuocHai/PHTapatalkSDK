@@ -7,7 +7,7 @@
 //
 
 #import "LNPagingSubscribe.h"
-#import "PHTapatalkSDK.h"
+#import "LNTapatalkSDK.h"
 #import "TapatalkAPI.h"
 
 @implementation LNPagingSubscribe
@@ -20,7 +20,7 @@
     
     [TapatalkAPI getSubscribeTopic:startLoad lastNum:endLoad completionHandler:^(NSArray *arrTopic, int totalTopicNum, NSError *error) {
         if (!error) {
-            self.data = [[NSMutableArray alloc] initWithArray:arrTopic];
+            _data = [[NSMutableArray alloc] initWithArray:arrTopic];
             _totalCountData = totalTopicNum;
             _startNum = startLoad;
             _lastNum = endLoad;
@@ -33,7 +33,7 @@
                 } else {
                     [TapatalkAPI getSubscribeTopic:startLoad lastNum:endLoad completionHandler:^(NSArray *arrTopic2, int totalTopicNum2, NSError *error3) {
                         if (!error2) {
-                            self.data = [[NSMutableArray alloc] initWithArray:arrTopic2];
+                            _data = [[NSMutableArray alloc] initWithArray:arrTopic2];
                             _totalCountData = totalTopicNum2;
                             _startNum = startLoad;
                             _lastNum = endLoad;
