@@ -30,6 +30,7 @@ static ModelForum * _form;
     [TapatalkAPI getForum:nil returnDescription:YES completionHandler:^(ModelForum *result) {
         _form = nil;
         _form = result;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNSTapatalkDidLoadRootForum object:_form];
     } failureHandler:^(NSError *error) {
     }];
 }

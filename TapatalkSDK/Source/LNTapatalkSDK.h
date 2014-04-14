@@ -22,6 +22,8 @@
 
 #import "TapatalkAPI.h"
 
+#define kNSTapatalkDidLoadRootForum @"kNSTapatalkDidLoadRootForum"
+
 @interface LNTapatalkSDK : NSObject
 
 + (ModelForum*)rootForum;

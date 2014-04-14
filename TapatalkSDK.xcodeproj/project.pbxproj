@@ -95,7 +95,6 @@
 		48EA721018FBC594007C32EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA720F18FBC594007C32EC /* main.m */; };
 		48EA721418FBC594007C32EC /* PHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA721318FBC594007C32EC /* PHAppDelegate.m */; };
 		48EA721718FBC594007C32EC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA721518FBC594007C32EC /* Main_iPhone.storyboard */; };
-		48EA721A18FBC594007C32EC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA721818FBC594007C32EC /* Main_iPad.storyboard */; };
 		48EA721D18FBC594007C32EC /* PHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA721C18FBC594007C32EC /* PHViewController.m */; };
 		48EA721F18FBC594007C32EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EA721E18FBC594007C32EC /* Images.xcassets */; };
 		48EA723818FBC5CE007C32EC /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41718F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m */; };
@@ -332,7 +331,6 @@
 		48EA721218FBC594007C32EC /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
 		48EA721318FBC594007C32EC /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHAppDelegate.m; sourceTree = "<group>"; };
 		48EA721618FBC594007C32EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		48EA721918FBC594007C32EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		48EA721B18FBC594007C32EC /* PHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHViewController.h; sourceTree = "<group>"; };
 		48EA721C18FBC594007C32EC /* PHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHViewController.m; sourceTree = "<group>"; };
 		48EA721E18FBC594007C32EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -727,7 +725,6 @@
 				48EA721218FBC594007C32EC /* PHAppDelegate.h */,
 				48EA721318FBC594007C32EC /* PHAppDelegate.m */,
 				48EA721518FBC594007C32EC /* Main_iPhone.storyboard */,
-				48EA721818FBC594007C32EC /* Main_iPad.storyboard */,
 				48EA721B18FBC594007C32EC /* PHViewController.h */,
 				48EA721C18FBC594007C32EC /* PHViewController.m */,
 				48EA721E18FBC594007C32EC /* Images.xcassets */,
@@ -846,7 +843,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48EA721A18FBC594007C32EC /* Main_iPad.storyboard in Resources */,
 				48EA721F18FBC594007C32EC /* Images.xcassets in Resources */,
 				48EA721718FBC594007C32EC /* Main_iPhone.storyboard in Resources */,
 				48EA720E18FBC594007C32EC /* InfoPlist.strings in Resources */,
@@ -1039,14 +1035,6 @@
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		48EA721818FBC594007C32EC /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48EA721918FBC594007C32EC /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1230,10 +1218,10 @@
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "TapatalkTest/TapatalkTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1250,10 +1238,10 @@
 				GCC_PREFIX_HEADER = "TapatalkTest/TapatalkTest-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "TapatalkTest/TapatalkTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
 				WRAPPER_EXTENSION = app;
 			};
