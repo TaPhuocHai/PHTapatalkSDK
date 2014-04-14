@@ -1,0 +1,1304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4807122D188B77640039E219 /* LNRequest.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96989188A49A8003A0C2F /* LNRequest.h */; };
+		4807122E188B77640039E219 /* LNRequestHelper.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9698B188A49A8003A0C2F /* LNRequestHelper.h */; };
+		4807122F188B77640039E219 /* TapatalkHelper.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9698F188A49A8003A0C2F /* TapatalkHelper.h */; };
+		481AE42318F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41718F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m */; };
+		481AE42418F7E11F0008EC87 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41918F7E11F0008EC87 /* FMDatabase.m */; };
+		481AE42518F7E11F0008EC87 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41B18F7E11F0008EC87 /* FMDatabaseAdditions.m */; };
+		481AE42618F7E11F0008EC87 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41D18F7E11F0008EC87 /* FMDatabasePool.m */; };
+		481AE42718F7E11F0008EC87 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41F18F7E11F0008EC87 /* FMDatabaseQueue.m */; };
+		481AE42818F7E11F0008EC87 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42218F7E11F0008EC87 /* FMResultSet.m */; };
+		481AE42A18F7E12F0008EC87 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 481AE42918F7E12F0008EC87 /* libsqlite3.dylib */; };
+		481AE42D18F7E29B0008EC87 /* LNCacheForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42C18F7E29B0008EC87 /* LNCacheForum.m */; };
+		481AE43018F7E2BF0008EC87 /* PHCacheTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42F18F7E2BF0008EC87 /* PHCacheTopic.m */; };
+		48200D7A188A5870007F11DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A96899188A43C2003A0C2F /* Foundation.framework */; };
+		48200D9B188A5958007F11DD /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96932188A4617003A0C2F /* CXMLDocument_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200D9C188A5958007F11DD /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96934188A4617003A0C2F /* CXMLNode_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200D9D188A5958007F11DD /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96936188A4617003A0C2F /* CXHTMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200D9E188A5958007F11DD /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96938188A4617003A0C2F /* CXMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200D9F188A5958007F11DD /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9693A188A4617003A0C2F /* CXMLDocument_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200DA0188A5958007F11DD /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9693C188A4617003A0C2F /* CXMLElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200DA1188A5958007F11DD /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9693E188A4617003A0C2F /* CXMLElement_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200DA2188A5958007F11DD /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96940188A4617003A0C2F /* CXMLElement_ElementTreeExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200DA3188A5958007F11DD /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96942188A4617003A0C2F /* CXMLNamespaceNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200DA4188A5958007F11DD /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96944188A4617003A0C2F /* CXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200DA5188A5958007F11DD /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96946188A4617003A0C2F /* CXMLNode_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200DA6188A5958007F11DD /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96948188A4617003A0C2F /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48200DA7188A5958007F11DD /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9694B188A4617003A0C2F /* CTidy.m */; };
+		48200DA8188A5958007F11DD /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96950188A4617003A0C2F /* NSData+Base64.m */; };
+		48200DA9188A5958007F11DD /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96952188A4617003A0C2F /* NSStringAdditions.m */; };
+		48200DAA188A5958007F11DD /* XMLRPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96959188A4617003A0C2F /* XMLRPCConnection.m */; };
+		48200DAB188A5958007F11DD /* XMLRPCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9695B188A4617003A0C2F /* XMLRPCConnectionManager.m */; };
+		48200DAC188A5958007F11DD /* XMLRPCDefaultEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9695D188A4617003A0C2F /* XMLRPCDefaultEncoder.m */; };
+		48200DAD188A5958007F11DD /* XMLRPCEventBasedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9695F188A4617003A0C2F /* XMLRPCEventBasedParser.m */; };
+		48200DAE188A5958007F11DD /* XMLRPCEventBasedParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96961188A4617003A0C2F /* XMLRPCEventBasedParserDelegate.m */; };
+		48200DAF188A5958007F11DD /* XMLRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96963188A4617003A0C2F /* XMLRPCRequest.m */; };
+		48200DB0188A5958007F11DD /* XMLRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96965188A4617003A0C2F /* XMLRPCResponse.m */; };
+		48200DB1188A5958007F11DD /* NSString+LNTapatalkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9699B188A4B8A003A0C2F /* NSString+LNTapatalkHelper.m */; };
+		48200DB2188A5958007F11DD /* LNAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96996188A49C1003A0C2F /* LNAccountManager.m */; };
+		48200DB3188A5958007F11DD /* LNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9698A188A49A8003A0C2F /* LNRequest.m */; };
+		48200DB4188A5958007F11DD /* LNRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9698C188A49A8003A0C2F /* LNRequestHelper.m */; };
+		48200DB5188A5958007F11DD /* TapatalkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9698E188A49A8003A0C2F /* TapatalkAPI.m */; };
+		48200DB6188A5958007F11DD /* TapatalkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96990188A49A8003A0C2F /* TapatalkHelper.m */; };
+		48200DB7188A5958007F11DD /* ModelForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968F6188A45A4003A0C2F /* ModelForum.m */; };
+		48200DB8188A5958007F11DD /* ModelPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968F8188A45A4003A0C2F /* ModelPost.m */; };
+		48200DB9188A5958007F11DD /* ModelPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FA188A45A4003A0C2F /* ModelPrefix.m */; };
+		48200DBA188A5958007F11DD /* ModelTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FC188A45A4003A0C2F /* ModelTopic.m */; };
+		48200DBB188A5958007F11DD /* ModelUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FE188A45A4003A0C2F /* ModelUser.m */; };
+		48200DBC188A5958007F11DD /* LNBasePaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96901188A45A4003A0C2F /* LNBasePaging.m */; };
+		48200DBD188A5958007F11DD /* LNPagingForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96903188A45A4003A0C2F /* LNPagingForum.m */; };
+		48200DBE188A5958007F11DD /* LNPagingSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96905188A45A4003A0C2F /* LNPagingSearch.m */; };
+		48200DBF188A5958007F11DD /* LNPagingSubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96907188A45A4003A0C2F /* LNPagingSubscribe.m */; };
+		48200DC0188A5958007F11DD /* LNPagingTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96909188A45A4003A0C2F /* LNPagingTopic.m */; };
+		48200DC1188A5958007F11DD /* LNPagingUnreadTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9690B188A45A4003A0C2F /* LNPagingUnreadTopic.m */; };
+		48224FB2188A623700E3E32F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9697C188A467B003A0C2F /* libxml2.dylib */; };
+		48224FB3188A624800E3E32F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9697E188A4684003A0C2F /* CFNetwork.framework */; };
+		48224FB4188A62FE00E3E32F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9689D188A43C2003A0C2F /* UIKit.framework */; };
+		48224FB5188A630D00E3E32F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9689B188A43C2003A0C2F /* CoreGraphics.framework */; };
+		4852E8FC188A616300C87592 /* TapatalkAPI.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9698D188A49A8003A0C2F /* TapatalkAPI.h */; };
+		4852E8FD188A616300C87592 /* ModelForum.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A968F5188A45A4003A0C2F /* ModelForum.h */; };
+		4852E8FE188A616300C87592 /* ModelPost.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A968F7188A45A4003A0C2F /* ModelPost.h */; };
+		4852E8FF188A616300C87592 /* ModelPrefix.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A968F9188A45A4003A0C2F /* ModelPrefix.h */; };
+		4852E900188A616300C87592 /* ModelTopic.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A968FB188A45A4003A0C2F /* ModelTopic.h */; };
+		4852E901188A616300C87592 /* ModelUser.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A968FD188A45A4003A0C2F /* ModelUser.h */; };
+		4852E902188A616300C87592 /* LNBasePaging.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96900188A45A4003A0C2F /* LNBasePaging.h */; };
+		4852E903188A616300C87592 /* LNPagingForum.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96902188A45A4003A0C2F /* LNPagingForum.h */; };
+		4852E904188A616300C87592 /* LNPagingSearch.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96904188A45A4003A0C2F /* LNPagingSearch.h */; };
+		4852E905188A616300C87592 /* LNPagingSubscribe.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96906188A45A4003A0C2F /* LNPagingSubscribe.h */; };
+		4852E906188A616300C87592 /* LNPagingTopic.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96908188A45A4003A0C2F /* LNPagingTopic.h */; };
+		4852E907188A616300C87592 /* LNPagingUnreadTopic.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9690A188A45A4003A0C2F /* LNPagingUnreadTopic.h */; };
+		4852E908188A616300C87592 /* PHTapatalkSDK.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9699D188A4F06003A0C2F /* PHTapatalkSDK.h */; };
+		4875575518FBC0BD00CCA438 /* PHTapatalkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875575418FBC0BD00CCA438 /* PHTapatalkSDK.m */; };
+		4890576A18F7E7C10015B871 /* LNCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4890576918F7E7C10015B871 /* LNCacheManager.m */; };
+		48A9689A188A43C2003A0C2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A96899188A43C2003A0C2F /* Foundation.framework */; };
+		48A9689C188A43C2003A0C2F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9689B188A43C2003A0C2F /* CoreGraphics.framework */; };
+		48A9689E188A43C2003A0C2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9689D188A43C2003A0C2F /* UIKit.framework */; };
+		48A968A4188A43C2003A0C2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48A968A2188A43C2003A0C2F /* InfoPlist.strings */; };
+		48A968A6188A43C2003A0C2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968A5188A43C2003A0C2F /* main.m */; };
+		48A968AA188A43C2003A0C2F /* PHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968A9188A43C2003A0C2F /* PHAppDelegate.m */; };
+		48A968AC188A43C2003A0C2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A968AB188A43C2003A0C2F /* Images.xcassets */; };
+		48A9697D188A467B003A0C2F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9697C188A467B003A0C2F /* libxml2.dylib */; };
+		48A9697F188A4684003A0C2F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9697E188A4684003A0C2F /* CFNetwork.framework */; };
+		48E0CB42188A66AA005D97B3 /* libTapatalkSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48200D79188A5870007F11DD /* libTapatalkSDK.a */; };
+		48EA720618FBC594007C32EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A96899188A43C2003A0C2F /* Foundation.framework */; };
+		48EA720718FBC594007C32EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9689B188A43C2003A0C2F /* CoreGraphics.framework */; };
+		48EA720818FBC594007C32EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9689D188A43C2003A0C2F /* UIKit.framework */; };
+		48EA720E18FBC594007C32EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48EA720C18FBC594007C32EC /* InfoPlist.strings */; };
+		48EA721018FBC594007C32EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA720F18FBC594007C32EC /* main.m */; };
+		48EA721418FBC594007C32EC /* PHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA721318FBC594007C32EC /* PHAppDelegate.m */; };
+		48EA721718FBC594007C32EC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA721518FBC594007C32EC /* Main_iPhone.storyboard */; };
+		48EA721A18FBC594007C32EC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA721818FBC594007C32EC /* Main_iPad.storyboard */; };
+		48EA721D18FBC594007C32EC /* PHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA721C18FBC594007C32EC /* PHViewController.m */; };
+		48EA721F18FBC594007C32EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EA721E18FBC594007C32EC /* Images.xcassets */; };
+		48EA723818FBC5CE007C32EC /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41718F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m */; };
+		48EA723918FBC5CE007C32EC /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41918F7E11F0008EC87 /* FMDatabase.m */; };
+		48EA723A18FBC5CE007C32EC /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41B18F7E11F0008EC87 /* FMDatabaseAdditions.m */; };
+		48EA723B18FBC5CE007C32EC /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41D18F7E11F0008EC87 /* FMDatabasePool.m */; };
+		48EA723C18FBC5CE007C32EC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41F18F7E11F0008EC87 /* FMDatabaseQueue.m */; };
+		48EA723D18FBC5CE007C32EC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42218F7E11F0008EC87 /* FMResultSet.m */; };
+		48EA723E18FBC5CE007C32EC /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96932188A4617003A0C2F /* CXMLDocument_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA723F18FBC5CE007C32EC /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96934188A4617003A0C2F /* CXMLNode_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724018FBC5CE007C32EC /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96936188A4617003A0C2F /* CXHTMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724118FBC5CE007C32EC /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96938188A4617003A0C2F /* CXMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724218FBC5CE007C32EC /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9693A188A4617003A0C2F /* CXMLDocument_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724318FBC5CE007C32EC /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9693C188A4617003A0C2F /* CXMLElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724418FBC5CE007C32EC /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9693E188A4617003A0C2F /* CXMLElement_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724518FBC5CE007C32EC /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96940188A4617003A0C2F /* CXMLElement_ElementTreeExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724618FBC5CE007C32EC /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96942188A4617003A0C2F /* CXMLNamespaceNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724718FBC5CE007C32EC /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96944188A4617003A0C2F /* CXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724818FBC5CE007C32EC /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96946188A4617003A0C2F /* CXMLNode_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724918FBC5CE007C32EC /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96948188A4617003A0C2F /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EA724A18FBC5CE007C32EC /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9694B188A4617003A0C2F /* CTidy.m */; };
+		48EA724B18FBC5CE007C32EC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96950188A4617003A0C2F /* NSData+Base64.m */; };
+		48EA724C18FBC5CE007C32EC /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96952188A4617003A0C2F /* NSStringAdditions.m */; };
+		48EA724D18FBC5CE007C32EC /* XMLRPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96959188A4617003A0C2F /* XMLRPCConnection.m */; };
+		48EA724E18FBC5CE007C32EC /* XMLRPCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9695B188A4617003A0C2F /* XMLRPCConnectionManager.m */; };
+		48EA724F18FBC5CE007C32EC /* XMLRPCDefaultEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9695D188A4617003A0C2F /* XMLRPCDefaultEncoder.m */; };
+		48EA725018FBC5CE007C32EC /* XMLRPCEventBasedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9695F188A4617003A0C2F /* XMLRPCEventBasedParser.m */; };
+		48EA725118FBC5CE007C32EC /* XMLRPCEventBasedParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96961188A4617003A0C2F /* XMLRPCEventBasedParserDelegate.m */; };
+		48EA725218FBC5CE007C32EC /* XMLRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96963188A4617003A0C2F /* XMLRPCRequest.m */; };
+		48EA725318FBC5CE007C32EC /* XMLRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96965188A4617003A0C2F /* XMLRPCResponse.m */; };
+		48EA725418FBC5CE007C32EC /* NSString+LNTapatalkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9699B188A4B8A003A0C2F /* NSString+LNTapatalkHelper.m */; };
+		48EA725518FBC5CE007C32EC /* LNAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96996188A49C1003A0C2F /* LNAccountManager.m */; };
+		48EA725618FBC5CE007C32EC /* LNCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4890576918F7E7C10015B871 /* LNCacheManager.m */; };
+		48EA725718FBC5CE007C32EC /* LNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9698A188A49A8003A0C2F /* LNRequest.m */; };
+		48EA725818FBC5CE007C32EC /* LNRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9698C188A49A8003A0C2F /* LNRequestHelper.m */; };
+		48EA725918FBC5CE007C32EC /* TapatalkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9698E188A49A8003A0C2F /* TapatalkAPI.m */; };
+		48EA725A18FBC5CE007C32EC /* TapatalkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96990188A49A8003A0C2F /* TapatalkHelper.m */; };
+		48EA725B18FBC5CE007C32EC /* ModelForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968F6188A45A4003A0C2F /* ModelForum.m */; };
+		48EA725C18FBC5CE007C32EC /* ModelPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968F8188A45A4003A0C2F /* ModelPost.m */; };
+		48EA725D18FBC5CE007C32EC /* ModelPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FA188A45A4003A0C2F /* ModelPrefix.m */; };
+		48EA725E18FBC5CE007C32EC /* ModelTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FC188A45A4003A0C2F /* ModelTopic.m */; };
+		48EA725F18FBC5CE007C32EC /* ModelUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FE188A45A4003A0C2F /* ModelUser.m */; };
+		48EA726018FBC5CE007C32EC /* LNBasePaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96901188A45A4003A0C2F /* LNBasePaging.m */; };
+		48EA726118FBC5CE007C32EC /* LNPagingForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96903188A45A4003A0C2F /* LNPagingForum.m */; };
+		48EA726218FBC5CE007C32EC /* LNPagingSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96905188A45A4003A0C2F /* LNPagingSearch.m */; };
+		48EA726318FBC5CE007C32EC /* LNPagingSubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96907188A45A4003A0C2F /* LNPagingSubscribe.m */; };
+		48EA726418FBC5CE007C32EC /* LNPagingTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96909188A45A4003A0C2F /* LNPagingTopic.m */; };
+		48EA726518FBC5CE007C32EC /* LNPagingUnreadTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9690B188A45A4003A0C2F /* LNPagingUnreadTopic.m */; };
+		48EA726618FBC5CE007C32EC /* LNCacheForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42C18F7E29B0008EC87 /* LNCacheForum.m */; };
+		48EA726718FBC5CE007C32EC /* PHCacheTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE42F18F7E2BF0008EC87 /* PHCacheTopic.m */; };
+		48EA726818FBC5CE007C32EC /* PHTapatalkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875575418FBC0BD00CCA438 /* PHTapatalkSDK.m */; };
+		48EA726918FBC650007C32EC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9697E188A4684003A0C2F /* CFNetwork.framework */; };
+		48EA726A18FBC657007C32EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 481AE42918F7E12F0008EC87 /* libsqlite3.dylib */; };
+		48EA726B18FBC65F007C32EC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9697C188A467B003A0C2F /* libxml2.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48E0CB40188A6686005D97B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48A9688E188A43C2003A0C2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48200D78188A5870007F11DD;
+			remoteInfo = libTapatalkSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		48200D77188A5870007F11DD /* Copy Files (16 items) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "../$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				4807122D188B77640039E219 /* LNRequest.h in Copy Files (16 items) */,
+				4807122E188B77640039E219 /* LNRequestHelper.h in Copy Files (16 items) */,
+				4807122F188B77640039E219 /* TapatalkHelper.h in Copy Files (16 items) */,
+				4852E8FC188A616300C87592 /* TapatalkAPI.h in Copy Files (16 items) */,
+				4852E8FD188A616300C87592 /* ModelForum.h in Copy Files (16 items) */,
+				4852E8FE188A616300C87592 /* ModelPost.h in Copy Files (16 items) */,
+				4852E8FF188A616300C87592 /* ModelPrefix.h in Copy Files (16 items) */,
+				4852E900188A616300C87592 /* ModelTopic.h in Copy Files (16 items) */,
+				4852E901188A616300C87592 /* ModelUser.h in Copy Files (16 items) */,
+				4852E902188A616300C87592 /* LNBasePaging.h in Copy Files (16 items) */,
+				4852E903188A616300C87592 /* LNPagingForum.h in Copy Files (16 items) */,
+				4852E904188A616300C87592 /* LNPagingSearch.h in Copy Files (16 items) */,
+				4852E905188A616300C87592 /* LNPagingSubscribe.h in Copy Files (16 items) */,
+				4852E906188A616300C87592 /* LNPagingTopic.h in Copy Files (16 items) */,
+				4852E907188A616300C87592 /* LNPagingUnreadTopic.h in Copy Files (16 items) */,
+				4852E908188A616300C87592 /* PHTapatalkSDK.h in Copy Files (16 items) */,
+			);
+			name = "Copy Files (16 items)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		481AE41618F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
+		481AE41718F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
+		481AE41818F7E11F0008EC87 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		481AE41918F7E11F0008EC87 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		481AE41A18F7E11F0008EC87 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		481AE41B18F7E11F0008EC87 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		481AE41C18F7E11F0008EC87 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		481AE41D18F7E11F0008EC87 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		481AE41E18F7E11F0008EC87 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		481AE41F18F7E11F0008EC87 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		481AE42018F7E11F0008EC87 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		481AE42118F7E11F0008EC87 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		481AE42218F7E11F0008EC87 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		481AE42918F7E12F0008EC87 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		481AE42B18F7E29B0008EC87 /* LNCacheForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNCacheForum.h; sourceTree = "<group>"; };
+		481AE42C18F7E29B0008EC87 /* LNCacheForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNCacheForum.m; sourceTree = "<group>"; };
+		481AE42E18F7E2BF0008EC87 /* PHCacheTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCacheTopic.h; sourceTree = "<group>"; };
+		481AE42F18F7E2BF0008EC87 /* PHCacheTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHCacheTopic.m; sourceTree = "<group>"; };
+		48200D79188A5870007F11DD /* libTapatalkSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTapatalkSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		48200D7D188A5870007F11DD /* libTapatalkSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libTapatalkSDK-Prefix.pch"; sourceTree = "<group>"; };
+		48200D7E188A5870007F11DD /* libTapatalkSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libTapatalkSDK.h; sourceTree = "<group>"; };
+		4875575418FBC0BD00CCA438 /* PHTapatalkSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHTapatalkSDK.m; sourceTree = "<group>"; };
+		4875576318FBC4DD00CCA438 /* TapatalkDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapatalkDemo-Info.plist"; sourceTree = "<group>"; };
+		4875576518FBC4DD00CCA438 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4875576718FBC4DD00CCA438 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4875576918FBC4DD00CCA438 /* TapatalkDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TapatalkDemo-Prefix.pch"; sourceTree = "<group>"; };
+		4875576A18FBC4DD00CCA438 /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
+		4875576B18FBC4DD00CCA438 /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHAppDelegate.m; sourceTree = "<group>"; };
+		4875576E18FBC4DD00CCA438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		4875577118FBC4DD00CCA438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		4875577318FBC4DD00CCA438 /* PHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHViewController.h; sourceTree = "<group>"; };
+		4875577418FBC4DD00CCA438 /* PHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHViewController.m; sourceTree = "<group>"; };
+		4875577618FBC4DD00CCA438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4890576818F7E7C10015B871 /* LNCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNCacheManager.h; sourceTree = "<group>"; };
+		4890576918F7E7C10015B871 /* LNCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNCacheManager.m; sourceTree = "<group>"; };
+		48A96896188A43C2003A0C2F /* TapatalkSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapatalkSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A96899188A43C2003A0C2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		48A9689B188A43C2003A0C2F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		48A9689D188A43C2003A0C2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		48A968A1188A43C2003A0C2F /* TapatalkSDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapatalkSDK-Info.plist"; sourceTree = "<group>"; };
+		48A968A3188A43C2003A0C2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48A968A5188A43C2003A0C2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48A968A7188A43C2003A0C2F /* TapatalkSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TapatalkSDK-Prefix.pch"; sourceTree = "<group>"; };
+		48A968A8188A43C2003A0C2F /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
+		48A968A9188A43C2003A0C2F /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHAppDelegate.m; sourceTree = "<group>"; };
+		48A968AB188A43C2003A0C2F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		48A968B2188A43C2003A0C2F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		48A968F5188A45A4003A0C2F /* ModelForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForum.h; sourceTree = "<group>"; };
+		48A968F6188A45A4003A0C2F /* ModelForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForum.m; sourceTree = "<group>"; };
+		48A968F7188A45A4003A0C2F /* ModelPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelPost.h; sourceTree = "<group>"; };
+		48A968F8188A45A4003A0C2F /* ModelPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelPost.m; sourceTree = "<group>"; };
+		48A968F9188A45A4003A0C2F /* ModelPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelPrefix.h; sourceTree = "<group>"; };
+		48A968FA188A45A4003A0C2F /* ModelPrefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelPrefix.m; sourceTree = "<group>"; };
+		48A968FB188A45A4003A0C2F /* ModelTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTopic.h; sourceTree = "<group>"; };
+		48A968FC188A45A4003A0C2F /* ModelTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTopic.m; sourceTree = "<group>"; };
+		48A968FD188A45A4003A0C2F /* ModelUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelUser.h; sourceTree = "<group>"; };
+		48A968FE188A45A4003A0C2F /* ModelUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelUser.m; sourceTree = "<group>"; };
+		48A96900188A45A4003A0C2F /* LNBasePaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNBasePaging.h; sourceTree = "<group>"; };
+		48A96901188A45A4003A0C2F /* LNBasePaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNBasePaging.m; sourceTree = "<group>"; };
+		48A96902188A45A4003A0C2F /* LNPagingForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPagingForum.h; sourceTree = "<group>"; };
+		48A96903188A45A4003A0C2F /* LNPagingForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPagingForum.m; sourceTree = "<group>"; };
+		48A96904188A45A4003A0C2F /* LNPagingSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPagingSearch.h; sourceTree = "<group>"; };
+		48A96905188A45A4003A0C2F /* LNPagingSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPagingSearch.m; sourceTree = "<group>"; };
+		48A96906188A45A4003A0C2F /* LNPagingSubscribe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPagingSubscribe.h; sourceTree = "<group>"; };
+		48A96907188A45A4003A0C2F /* LNPagingSubscribe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPagingSubscribe.m; sourceTree = "<group>"; };
+		48A96908188A45A4003A0C2F /* LNPagingTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPagingTopic.h; sourceTree = "<group>"; };
+		48A96909188A45A4003A0C2F /* LNPagingTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPagingTopic.m; sourceTree = "<group>"; };
+		48A9690A188A45A4003A0C2F /* LNPagingUnreadTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPagingUnreadTopic.h; sourceTree = "<group>"; };
+		48A9690B188A45A4003A0C2F /* LNPagingUnreadTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPagingUnreadTopic.m; sourceTree = "<group>"; };
+		48A96931188A4617003A0C2F /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
+		48A96932188A4617003A0C2F /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
+		48A96933188A4617003A0C2F /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
+		48A96934188A4617003A0C2F /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
+		48A96935188A4617003A0C2F /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHTMLDocument.h; sourceTree = "<group>"; };
+		48A96936188A4617003A0C2F /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHTMLDocument.m; sourceTree = "<group>"; };
+		48A96937188A4617003A0C2F /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		48A96938188A4617003A0C2F /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		48A96939188A4617003A0C2F /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		48A9693A188A4617003A0C2F /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		48A9693B188A4617003A0C2F /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		48A9693C188A4617003A0C2F /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		48A9693D188A4617003A0C2F /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		48A9693E188A4617003A0C2F /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		48A9693F188A4617003A0C2F /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
+		48A96940188A4617003A0C2F /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
+		48A96941188A4617003A0C2F /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
+		48A96942188A4617003A0C2F /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
+		48A96943188A4617003A0C2F /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		48A96944188A4617003A0C2F /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		48A96945188A4617003A0C2F /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		48A96946188A4617003A0C2F /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		48A96947188A4617003A0C2F /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		48A96948188A4617003A0C2F /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		48A9694A188A4617003A0C2F /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
+		48A9694B188A4617003A0C2F /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
+		48A9694C188A4617003A0C2F /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		48A9694F188A4617003A0C2F /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		48A96950188A4617003A0C2F /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		48A96951188A4617003A0C2F /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		48A96952188A4617003A0C2F /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		48A96954188A4617003A0C2F /* XMLRPCConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCConnectionDelegate.h; sourceTree = "<group>"; };
+		48A96956188A4617003A0C2F /* XMLRPCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCEncoder.h; sourceTree = "<group>"; };
+		48A96957188A4617003A0C2F /* XMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPC.h; sourceTree = "<group>"; };
+		48A96958188A4617003A0C2F /* XMLRPCConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCConnection.h; sourceTree = "<group>"; };
+		48A96959188A4617003A0C2F /* XMLRPCConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCConnection.m; sourceTree = "<group>"; };
+		48A9695A188A4617003A0C2F /* XMLRPCConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCConnectionManager.h; sourceTree = "<group>"; };
+		48A9695B188A4617003A0C2F /* XMLRPCConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCConnectionManager.m; sourceTree = "<group>"; };
+		48A9695C188A4617003A0C2F /* XMLRPCDefaultEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCDefaultEncoder.h; sourceTree = "<group>"; };
+		48A9695D188A4617003A0C2F /* XMLRPCDefaultEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCDefaultEncoder.m; sourceTree = "<group>"; };
+		48A9695E188A4617003A0C2F /* XMLRPCEventBasedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCEventBasedParser.h; sourceTree = "<group>"; };
+		48A9695F188A4617003A0C2F /* XMLRPCEventBasedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCEventBasedParser.m; sourceTree = "<group>"; };
+		48A96960188A4617003A0C2F /* XMLRPCEventBasedParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCEventBasedParserDelegate.h; sourceTree = "<group>"; };
+		48A96961188A4617003A0C2F /* XMLRPCEventBasedParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCEventBasedParserDelegate.m; sourceTree = "<group>"; };
+		48A96962188A4617003A0C2F /* XMLRPCRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCRequest.h; sourceTree = "<group>"; };
+		48A96963188A4617003A0C2F /* XMLRPCRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCRequest.m; sourceTree = "<group>"; };
+		48A96964188A4617003A0C2F /* XMLRPCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCResponse.h; sourceTree = "<group>"; };
+		48A96965188A4617003A0C2F /* XMLRPCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCResponse.m; sourceTree = "<group>"; };
+		48A9697C188A467B003A0C2F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		48A9697E188A4684003A0C2F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		48A96989188A49A8003A0C2F /* LNRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNRequest.h; sourceTree = "<group>"; };
+		48A9698A188A49A8003A0C2F /* LNRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNRequest.m; sourceTree = "<group>"; };
+		48A9698B188A49A8003A0C2F /* LNRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNRequestHelper.h; sourceTree = "<group>"; };
+		48A9698C188A49A8003A0C2F /* LNRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNRequestHelper.m; sourceTree = "<group>"; };
+		48A9698D188A49A8003A0C2F /* TapatalkAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapatalkAPI.h; sourceTree = "<group>"; };
+		48A9698E188A49A8003A0C2F /* TapatalkAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapatalkAPI.m; sourceTree = "<group>"; };
+		48A9698F188A49A8003A0C2F /* TapatalkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapatalkHelper.h; sourceTree = "<group>"; };
+		48A96990188A49A8003A0C2F /* TapatalkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapatalkHelper.m; sourceTree = "<group>"; };
+		48A96995188A49C1003A0C2F /* LNAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNAccountManager.h; sourceTree = "<group>"; };
+		48A96996188A49C1003A0C2F /* LNAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNAccountManager.m; sourceTree = "<group>"; };
+		48A9699A188A4B8A003A0C2F /* NSString+LNTapatalkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LNTapatalkHelper.h"; sourceTree = "<group>"; };
+		48A9699B188A4B8A003A0C2F /* NSString+LNTapatalkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LNTapatalkHelper.m"; sourceTree = "<group>"; };
+		48A9699D188A4F06003A0C2F /* PHTapatalkSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHTapatalkSDK.h; sourceTree = "<group>"; };
+		48EA720518FBC593007C32EC /* TapatalkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapatalkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EA720B18FBC594007C32EC /* TapatalkTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapatalkTest-Info.plist"; sourceTree = "<group>"; };
+		48EA720D18FBC594007C32EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48EA720F18FBC594007C32EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48EA721118FBC594007C32EC /* TapatalkTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TapatalkTest-Prefix.pch"; sourceTree = "<group>"; };
+		48EA721218FBC594007C32EC /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
+		48EA721318FBC594007C32EC /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHAppDelegate.m; sourceTree = "<group>"; };
+		48EA721618FBC594007C32EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		48EA721918FBC594007C32EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		48EA721B18FBC594007C32EC /* PHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHViewController.h; sourceTree = "<group>"; };
+		48EA721C18FBC594007C32EC /* PHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHViewController.m; sourceTree = "<group>"; };
+		48EA721E18FBC594007C32EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48200D76188A5870007F11DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481AE42A18F7E12F0008EC87 /* libsqlite3.dylib in Frameworks */,
+				48224FB5188A630D00E3E32F /* CoreGraphics.framework in Frameworks */,
+				48224FB4188A62FE00E3E32F /* UIKit.framework in Frameworks */,
+				48224FB3188A624800E3E32F /* CFNetwork.framework in Frameworks */,
+				48224FB2188A623700E3E32F /* libxml2.dylib in Frameworks */,
+				48200D7A188A5870007F11DD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48A96893188A43C2003A0C2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48E0CB42188A66AA005D97B3 /* libTapatalkSDK.a in Frameworks */,
+				48A9697F188A4684003A0C2F /* CFNetwork.framework in Frameworks */,
+				48A9697D188A467B003A0C2F /* libxml2.dylib in Frameworks */,
+				48A9689C188A43C2003A0C2F /* CoreGraphics.framework in Frameworks */,
+				48A9689E188A43C2003A0C2F /* UIKit.framework in Frameworks */,
+				48A9689A188A43C2003A0C2F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EA720218FBC593007C32EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EA726B18FBC65F007C32EC /* libxml2.dylib in Frameworks */,
+				48EA726A18FBC657007C32EC /* libsqlite3.dylib in Frameworks */,
+				48EA726918FBC650007C32EC /* CFNetwork.framework in Frameworks */,
+				48EA720718FBC594007C32EC /* CoreGraphics.framework in Frameworks */,
+				48EA720818FBC594007C32EC /* UIKit.framework in Frameworks */,
+				48EA720618FBC594007C32EC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		481AE41318F7E0E90008EC87 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				481AE42B18F7E29B0008EC87 /* LNCacheForum.h */,
+				481AE42C18F7E29B0008EC87 /* LNCacheForum.m */,
+				481AE42E18F7E2BF0008EC87 /* PHCacheTopic.h */,
+				481AE42F18F7E2BF0008EC87 /* PHCacheTopic.m */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		481AE41418F7E11F0008EC87 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				481AE41518F7E11F0008EC87 /* extra */,
+				481AE41818F7E11F0008EC87 /* FMDatabase.h */,
+				481AE41918F7E11F0008EC87 /* FMDatabase.m */,
+				481AE41A18F7E11F0008EC87 /* FMDatabaseAdditions.h */,
+				481AE41B18F7E11F0008EC87 /* FMDatabaseAdditions.m */,
+				481AE41C18F7E11F0008EC87 /* FMDatabasePool.h */,
+				481AE41D18F7E11F0008EC87 /* FMDatabasePool.m */,
+				481AE41E18F7E11F0008EC87 /* FMDatabaseQueue.h */,
+				481AE41F18F7E11F0008EC87 /* FMDatabaseQueue.m */,
+				481AE42018F7E11F0008EC87 /* FMDB.h */,
+				481AE42118F7E11F0008EC87 /* FMResultSet.h */,
+				481AE42218F7E11F0008EC87 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		481AE41518F7E11F0008EC87 /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				481AE41618F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.h */,
+				481AE41718F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		48200D7B188A5870007F11DD /* libTapatalkSDK */ = {
+			isa = PBXGroup;
+			children = (
+				48200D7E188A5870007F11DD /* libTapatalkSDK.h */,
+				48200D7C188A5870007F11DD /* Supporting Files */,
+			);
+			path = libTapatalkSDK;
+			sourceTree = "<group>";
+		};
+		48200D7C188A5870007F11DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48200D7D188A5870007F11DD /* libTapatalkSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4875576118FBC4DD00CCA438 /* TapatalkDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4875576A18FBC4DD00CCA438 /* PHAppDelegate.h */,
+				4875576B18FBC4DD00CCA438 /* PHAppDelegate.m */,
+				4875576D18FBC4DD00CCA438 /* Main_iPhone.storyboard */,
+				4875577018FBC4DD00CCA438 /* Main_iPad.storyboard */,
+				4875577318FBC4DD00CCA438 /* PHViewController.h */,
+				4875577418FBC4DD00CCA438 /* PHViewController.m */,
+				4875577618FBC4DD00CCA438 /* Images.xcassets */,
+				4875576218FBC4DD00CCA438 /* Supporting Files */,
+			);
+			path = TapatalkDemo;
+			sourceTree = "<group>";
+		};
+		4875576218FBC4DD00CCA438 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4875576318FBC4DD00CCA438 /* TapatalkDemo-Info.plist */,
+				4875576418FBC4DD00CCA438 /* InfoPlist.strings */,
+				4875576718FBC4DD00CCA438 /* main.m */,
+				4875576918FBC4DD00CCA438 /* TapatalkDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48A9688D188A43C2003A0C2F = {
+			isa = PBXGroup;
+			children = (
+				48A9689F188A43C2003A0C2F /* TapatalkSDK */,
+				48200D7B188A5870007F11DD /* libTapatalkSDK */,
+				4875576118FBC4DD00CCA438 /* TapatalkDemo */,
+				48EA720918FBC594007C32EC /* TapatalkTest */,
+				48A96898188A43C2003A0C2F /* Frameworks */,
+				48A96897188A43C2003A0C2F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48A96897188A43C2003A0C2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48A96896188A43C2003A0C2F /* TapatalkSDK.app */,
+				48200D79188A5870007F11DD /* libTapatalkSDK.a */,
+				48EA720518FBC593007C32EC /* TapatalkTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48A96898188A43C2003A0C2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				481AE42918F7E12F0008EC87 /* libsqlite3.dylib */,
+				48A9697E188A4684003A0C2F /* CFNetwork.framework */,
+				48A9697C188A467B003A0C2F /* libxml2.dylib */,
+				48A96899188A43C2003A0C2F /* Foundation.framework */,
+				48A9689B188A43C2003A0C2F /* CoreGraphics.framework */,
+				48A9689D188A43C2003A0C2F /* UIKit.framework */,
+				48A968B2188A43C2003A0C2F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48A9689F188A43C2003A0C2F /* TapatalkSDK */ = {
+			isa = PBXGroup;
+			children = (
+				48A968CA188A45A4003A0C2F /* External */,
+				48A968EF188A45A4003A0C2F /* Source */,
+				48A968A8188A43C2003A0C2F /* PHAppDelegate.h */,
+				48A968A9188A43C2003A0C2F /* PHAppDelegate.m */,
+				48A968AB188A43C2003A0C2F /* Images.xcassets */,
+				48A968A0188A43C2003A0C2F /* Supporting Files */,
+			);
+			path = TapatalkSDK;
+			sourceTree = "<group>";
+		};
+		48A968A0188A43C2003A0C2F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48A968A1188A43C2003A0C2F /* TapatalkSDK-Info.plist */,
+				48A968A2188A43C2003A0C2F /* InfoPlist.strings */,
+				48A968A5188A43C2003A0C2F /* main.m */,
+				48A968A7188A43C2003A0C2F /* TapatalkSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48A968CA188A45A4003A0C2F /* External */ = {
+			isa = PBXGroup;
+			children = (
+				481AE41418F7E11F0008EC87 /* FMDB */,
+				48A9692F188A4617003A0C2F /* TouchXML */,
+				48A9694D188A4617003A0C2F /* XMLRPC */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		48A968EF188A45A4003A0C2F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				48A96999188A4B8A003A0C2F /* CategoryClass */,
+				48A96987188A49A8003A0C2F /* Helper */,
+				48A96988188A49A8003A0C2F /* Request */,
+				48A968F4188A45A4003A0C2F /* Model */,
+				481AE41318F7E0E90008EC87 /* DataManager */,
+				48A9699D188A4F06003A0C2F /* PHTapatalkSDK.h */,
+				4875575418FBC0BD00CCA438 /* PHTapatalkSDK.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		48A968F4188A45A4003A0C2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48A968F5188A45A4003A0C2F /* ModelForum.h */,
+				48A968F6188A45A4003A0C2F /* ModelForum.m */,
+				48A968F7188A45A4003A0C2F /* ModelPost.h */,
+				48A968F8188A45A4003A0C2F /* ModelPost.m */,
+				48A968F9188A45A4003A0C2F /* ModelPrefix.h */,
+				48A968FA188A45A4003A0C2F /* ModelPrefix.m */,
+				48A968FB188A45A4003A0C2F /* ModelTopic.h */,
+				48A968FC188A45A4003A0C2F /* ModelTopic.m */,
+				48A968FD188A45A4003A0C2F /* ModelUser.h */,
+				48A968FE188A45A4003A0C2F /* ModelUser.m */,
+				48A968FF188A45A4003A0C2F /* Paging */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48A968FF188A45A4003A0C2F /* Paging */ = {
+			isa = PBXGroup;
+			children = (
+				48A96900188A45A4003A0C2F /* LNBasePaging.h */,
+				48A96901188A45A4003A0C2F /* LNBasePaging.m */,
+				48A96902188A45A4003A0C2F /* LNPagingForum.h */,
+				48A96903188A45A4003A0C2F /* LNPagingForum.m */,
+				48A96904188A45A4003A0C2F /* LNPagingSearch.h */,
+				48A96905188A45A4003A0C2F /* LNPagingSearch.m */,
+				48A96906188A45A4003A0C2F /* LNPagingSubscribe.h */,
+				48A96907188A45A4003A0C2F /* LNPagingSubscribe.m */,
+				48A96908188A45A4003A0C2F /* LNPagingTopic.h */,
+				48A96909188A45A4003A0C2F /* LNPagingTopic.m */,
+				48A9690A188A45A4003A0C2F /* LNPagingUnreadTopic.h */,
+				48A9690B188A45A4003A0C2F /* LNPagingUnreadTopic.m */,
+			);
+			path = Paging;
+			sourceTree = "<group>";
+		};
+		48A9692F188A4617003A0C2F /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				48A96930188A4617003A0C2F /* Creation */,
+				48A96935188A4617003A0C2F /* CXHTMLDocument.h */,
+				48A96936188A4617003A0C2F /* CXHTMLDocument.m */,
+				48A96937188A4617003A0C2F /* CXMLDocument.h */,
+				48A96938188A4617003A0C2F /* CXMLDocument.m */,
+				48A96939188A4617003A0C2F /* CXMLDocument_PrivateExtensions.h */,
+				48A9693A188A4617003A0C2F /* CXMLDocument_PrivateExtensions.m */,
+				48A9693B188A4617003A0C2F /* CXMLElement.h */,
+				48A9693C188A4617003A0C2F /* CXMLElement.m */,
+				48A9693D188A4617003A0C2F /* CXMLElement_CreationExtensions.h */,
+				48A9693E188A4617003A0C2F /* CXMLElement_CreationExtensions.m */,
+				48A9693F188A4617003A0C2F /* CXMLElement_ElementTreeExtensions.h */,
+				48A96940188A4617003A0C2F /* CXMLElement_ElementTreeExtensions.m */,
+				48A96941188A4617003A0C2F /* CXMLNamespaceNode.h */,
+				48A96942188A4617003A0C2F /* CXMLNamespaceNode.m */,
+				48A96943188A4617003A0C2F /* CXMLNode.h */,
+				48A96944188A4617003A0C2F /* CXMLNode.m */,
+				48A96945188A4617003A0C2F /* CXMLNode_PrivateExtensions.h */,
+				48A96946188A4617003A0C2F /* CXMLNode_PrivateExtensions.m */,
+				48A96947188A4617003A0C2F /* CXMLNode_XPathExtensions.h */,
+				48A96948188A4617003A0C2F /* CXMLNode_XPathExtensions.m */,
+				48A96949188A4617003A0C2F /* Tidy */,
+				48A9694C188A4617003A0C2F /* TouchXML.h */,
+			);
+			path = TouchXML;
+			sourceTree = "<group>";
+		};
+		48A96930188A4617003A0C2F /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				48A96931188A4617003A0C2F /* CXMLDocument_CreationExtensions.h */,
+				48A96932188A4617003A0C2F /* CXMLDocument_CreationExtensions.m */,
+				48A96933188A4617003A0C2F /* CXMLNode_CreationExtensions.h */,
+				48A96934188A4617003A0C2F /* CXMLNode_CreationExtensions.m */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		48A96949188A4617003A0C2F /* Tidy */ = {
+			isa = PBXGroup;
+			children = (
+				48A9694A188A4617003A0C2F /* CTidy.h */,
+				48A9694B188A4617003A0C2F /* CTidy.m */,
+			);
+			path = Tidy;
+			sourceTree = "<group>";
+		};
+		48A9694D188A4617003A0C2F /* XMLRPC */ = {
+			isa = PBXGroup;
+			children = (
+				48A9694E188A4617003A0C2F /* Additions */,
+				48A96953188A4617003A0C2F /* Delegate */,
+				48A96955188A4617003A0C2F /* Protocols */,
+				48A96957188A4617003A0C2F /* XMLRPC.h */,
+				48A96958188A4617003A0C2F /* XMLRPCConnection.h */,
+				48A96959188A4617003A0C2F /* XMLRPCConnection.m */,
+				48A9695A188A4617003A0C2F /* XMLRPCConnectionManager.h */,
+				48A9695B188A4617003A0C2F /* XMLRPCConnectionManager.m */,
+				48A9695C188A4617003A0C2F /* XMLRPCDefaultEncoder.h */,
+				48A9695D188A4617003A0C2F /* XMLRPCDefaultEncoder.m */,
+				48A9695E188A4617003A0C2F /* XMLRPCEventBasedParser.h */,
+				48A9695F188A4617003A0C2F /* XMLRPCEventBasedParser.m */,
+				48A96960188A4617003A0C2F /* XMLRPCEventBasedParserDelegate.h */,
+				48A96961188A4617003A0C2F /* XMLRPCEventBasedParserDelegate.m */,
+				48A96962188A4617003A0C2F /* XMLRPCRequest.h */,
+				48A96963188A4617003A0C2F /* XMLRPCRequest.m */,
+				48A96964188A4617003A0C2F /* XMLRPCResponse.h */,
+				48A96965188A4617003A0C2F /* XMLRPCResponse.m */,
+			);
+			path = XMLRPC;
+			sourceTree = "<group>";
+		};
+		48A9694E188A4617003A0C2F /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				48A9694F188A4617003A0C2F /* NSData+Base64.h */,
+				48A96950188A4617003A0C2F /* NSData+Base64.m */,
+				48A96951188A4617003A0C2F /* NSStringAdditions.h */,
+				48A96952188A4617003A0C2F /* NSStringAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		48A96953188A4617003A0C2F /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				48A96954188A4617003A0C2F /* XMLRPCConnectionDelegate.h */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		48A96955188A4617003A0C2F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				48A96956188A4617003A0C2F /* XMLRPCEncoder.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		48A96987188A49A8003A0C2F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				48A96995188A49C1003A0C2F /* LNAccountManager.h */,
+				48A96996188A49C1003A0C2F /* LNAccountManager.m */,
+				4890576818F7E7C10015B871 /* LNCacheManager.h */,
+				4890576918F7E7C10015B871 /* LNCacheManager.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		48A96988188A49A8003A0C2F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				48A96989188A49A8003A0C2F /* LNRequest.h */,
+				48A9698A188A49A8003A0C2F /* LNRequest.m */,
+				48A9698B188A49A8003A0C2F /* LNRequestHelper.h */,
+				48A9698C188A49A8003A0C2F /* LNRequestHelper.m */,
+				48A9698D188A49A8003A0C2F /* TapatalkAPI.h */,
+				48A9698E188A49A8003A0C2F /* TapatalkAPI.m */,
+				48A9698F188A49A8003A0C2F /* TapatalkHelper.h */,
+				48A96990188A49A8003A0C2F /* TapatalkHelper.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		48A96999188A4B8A003A0C2F /* CategoryClass */ = {
+			isa = PBXGroup;
+			children = (
+				48A9699A188A4B8A003A0C2F /* NSString+LNTapatalkHelper.h */,
+				48A9699B188A4B8A003A0C2F /* NSString+LNTapatalkHelper.m */,
+			);
+			path = CategoryClass;
+			sourceTree = "<group>";
+		};
+		48EA720918FBC594007C32EC /* TapatalkTest */ = {
+			isa = PBXGroup;
+			children = (
+				48EA721218FBC594007C32EC /* PHAppDelegate.h */,
+				48EA721318FBC594007C32EC /* PHAppDelegate.m */,
+				48EA721518FBC594007C32EC /* Main_iPhone.storyboard */,
+				48EA721818FBC594007C32EC /* Main_iPad.storyboard */,
+				48EA721B18FBC594007C32EC /* PHViewController.h */,
+				48EA721C18FBC594007C32EC /* PHViewController.m */,
+				48EA721E18FBC594007C32EC /* Images.xcassets */,
+				48EA720A18FBC594007C32EC /* Supporting Files */,
+			);
+			path = TapatalkTest;
+			sourceTree = "<group>";
+		};
+		48EA720A18FBC594007C32EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48EA720B18FBC594007C32EC /* TapatalkTest-Info.plist */,
+				48EA720C18FBC594007C32EC /* InfoPlist.strings */,
+				48EA720F18FBC594007C32EC /* main.m */,
+				48EA721118FBC594007C32EC /* TapatalkTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48200D78188A5870007F11DD /* libTapatalkSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48200D99188A5870007F11DD /* Build configuration list for PBXNativeTarget "libTapatalkSDK" */;
+			buildPhases = (
+				48200D75188A5870007F11DD /* Sources */,
+				48200D76188A5870007F11DD /* Frameworks */,
+				48200D77188A5870007F11DD /* Copy Files (16 items) */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libTapatalkSDK;
+			productName = libTapatalkSDK;
+			productReference = 48200D79188A5870007F11DD /* libTapatalkSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		48A96895188A43C2003A0C2F /* TapatalkSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48A968C2188A43C2003A0C2F /* Build configuration list for PBXNativeTarget "TapatalkSDK" */;
+			buildPhases = (
+				48A96892188A43C2003A0C2F /* Sources */,
+				48A96893188A43C2003A0C2F /* Frameworks */,
+				48A96894188A43C2003A0C2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48E0CB41188A6686005D97B3 /* PBXTargetDependency */,
+			);
+			name = TapatalkSDK;
+			productName = TapatalkSDK;
+			productReference = 48A96896188A43C2003A0C2F /* TapatalkSDK.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48EA720418FBC593007C32EC /* TapatalkTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48EA723218FBC594007C32EC /* Build configuration list for PBXNativeTarget "TapatalkTest" */;
+			buildPhases = (
+				48EA720218FBC593007C32EC /* Frameworks */,
+				48EA720118FBC593007C32EC /* Sources */,
+				48EA720318FBC593007C32EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TapatalkTest;
+			productName = TapatalkTest;
+			productReference = 48EA720518FBC593007C32EC /* TapatalkTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48A9688E188A43C2003A0C2F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PH;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Phuoc Hai";
+			};
+			buildConfigurationList = 48A96891188A43C2003A0C2F /* Build configuration list for PBXProject "TapatalkSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48A9688D188A43C2003A0C2F;
+			productRefGroup = 48A96897188A43C2003A0C2F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48A96895188A43C2003A0C2F /* TapatalkSDK */,
+				48200D78188A5870007F11DD /* libTapatalkSDK */,
+				48EA720418FBC593007C32EC /* TapatalkTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48A96894188A43C2003A0C2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48A968A4188A43C2003A0C2F /* InfoPlist.strings in Resources */,
+				48A968AC188A43C2003A0C2F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EA720318FBC593007C32EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EA721A18FBC594007C32EC /* Main_iPad.storyboard in Resources */,
+				48EA721F18FBC594007C32EC /* Images.xcassets in Resources */,
+				48EA721718FBC594007C32EC /* Main_iPhone.storyboard in Resources */,
+				48EA720E18FBC594007C32EC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48200D75188A5870007F11DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48200D9B188A5958007F11DD /* CXMLDocument_CreationExtensions.m in Sources */,
+				48200D9C188A5958007F11DD /* CXMLNode_CreationExtensions.m in Sources */,
+				48200D9D188A5958007F11DD /* CXHTMLDocument.m in Sources */,
+				48200D9E188A5958007F11DD /* CXMLDocument.m in Sources */,
+				48200D9F188A5958007F11DD /* CXMLDocument_PrivateExtensions.m in Sources */,
+				481AE42518F7E11F0008EC87 /* FMDatabaseAdditions.m in Sources */,
+				48200DA0188A5958007F11DD /* CXMLElement.m in Sources */,
+				48200DA1188A5958007F11DD /* CXMLElement_CreationExtensions.m in Sources */,
+				481AE42618F7E11F0008EC87 /* FMDatabasePool.m in Sources */,
+				48200DA2188A5958007F11DD /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				48200DA3188A5958007F11DD /* CXMLNamespaceNode.m in Sources */,
+				48200DA4188A5958007F11DD /* CXMLNode.m in Sources */,
+				48200DA5188A5958007F11DD /* CXMLNode_PrivateExtensions.m in Sources */,
+				48200DA6188A5958007F11DD /* CXMLNode_XPathExtensions.m in Sources */,
+				48200DA7188A5958007F11DD /* CTidy.m in Sources */,
+				48200DA8188A5958007F11DD /* NSData+Base64.m in Sources */,
+				48200DA9188A5958007F11DD /* NSStringAdditions.m in Sources */,
+				4890576A18F7E7C10015B871 /* LNCacheManager.m in Sources */,
+				48200DAA188A5958007F11DD /* XMLRPCConnection.m in Sources */,
+				48200DAB188A5958007F11DD /* XMLRPCConnectionManager.m in Sources */,
+				48200DAC188A5958007F11DD /* XMLRPCDefaultEncoder.m in Sources */,
+				48200DAD188A5958007F11DD /* XMLRPCEventBasedParser.m in Sources */,
+				48200DAE188A5958007F11DD /* XMLRPCEventBasedParserDelegate.m in Sources */,
+				48200DAF188A5958007F11DD /* XMLRPCRequest.m in Sources */,
+				48200DB0188A5958007F11DD /* XMLRPCResponse.m in Sources */,
+				481AE42818F7E11F0008EC87 /* FMResultSet.m in Sources */,
+				48200DB1188A5958007F11DD /* NSString+LNTapatalkHelper.m in Sources */,
+				48200DB2188A5958007F11DD /* LNAccountManager.m in Sources */,
+				48200DB3188A5958007F11DD /* LNRequest.m in Sources */,
+				48200DB4188A5958007F11DD /* LNRequestHelper.m in Sources */,
+				48200DB5188A5958007F11DD /* TapatalkAPI.m in Sources */,
+				48200DB6188A5958007F11DD /* TapatalkHelper.m in Sources */,
+				48200DB7188A5958007F11DD /* ModelForum.m in Sources */,
+				48200DB8188A5958007F11DD /* ModelPost.m in Sources */,
+				48200DB9188A5958007F11DD /* ModelPrefix.m in Sources */,
+				48200DBA188A5958007F11DD /* ModelTopic.m in Sources */,
+				48200DBB188A5958007F11DD /* ModelUser.m in Sources */,
+				48200DBC188A5958007F11DD /* LNBasePaging.m in Sources */,
+				48200DBD188A5958007F11DD /* LNPagingForum.m in Sources */,
+				481AE42318F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
+				48200DBE188A5958007F11DD /* LNPagingSearch.m in Sources */,
+				481AE42D18F7E29B0008EC87 /* LNCacheForum.m in Sources */,
+				48200DBF188A5958007F11DD /* LNPagingSubscribe.m in Sources */,
+				48200DC0188A5958007F11DD /* LNPagingTopic.m in Sources */,
+				4875575518FBC0BD00CCA438 /* PHTapatalkSDK.m in Sources */,
+				481AE42718F7E11F0008EC87 /* FMDatabaseQueue.m in Sources */,
+				481AE42418F7E11F0008EC87 /* FMDatabase.m in Sources */,
+				48200DC1188A5958007F11DD /* LNPagingUnreadTopic.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48A96892188A43C2003A0C2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48A968AA188A43C2003A0C2F /* PHAppDelegate.m in Sources */,
+				48A968A6188A43C2003A0C2F /* main.m in Sources */,
+				481AE43018F7E2BF0008EC87 /* PHCacheTopic.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48EA720118FBC593007C32EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EA723818FBC5CE007C32EC /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
+				48EA723918FBC5CE007C32EC /* FMDatabase.m in Sources */,
+				48EA723A18FBC5CE007C32EC /* FMDatabaseAdditions.m in Sources */,
+				48EA723B18FBC5CE007C32EC /* FMDatabasePool.m in Sources */,
+				48EA723C18FBC5CE007C32EC /* FMDatabaseQueue.m in Sources */,
+				48EA723D18FBC5CE007C32EC /* FMResultSet.m in Sources */,
+				48EA723E18FBC5CE007C32EC /* CXMLDocument_CreationExtensions.m in Sources */,
+				48EA723F18FBC5CE007C32EC /* CXMLNode_CreationExtensions.m in Sources */,
+				48EA724018FBC5CE007C32EC /* CXHTMLDocument.m in Sources */,
+				48EA724118FBC5CE007C32EC /* CXMLDocument.m in Sources */,
+				48EA724218FBC5CE007C32EC /* CXMLDocument_PrivateExtensions.m in Sources */,
+				48EA724318FBC5CE007C32EC /* CXMLElement.m in Sources */,
+				48EA724418FBC5CE007C32EC /* CXMLElement_CreationExtensions.m in Sources */,
+				48EA724518FBC5CE007C32EC /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				48EA724618FBC5CE007C32EC /* CXMLNamespaceNode.m in Sources */,
+				48EA724718FBC5CE007C32EC /* CXMLNode.m in Sources */,
+				48EA724818FBC5CE007C32EC /* CXMLNode_PrivateExtensions.m in Sources */,
+				48EA724918FBC5CE007C32EC /* CXMLNode_XPathExtensions.m in Sources */,
+				48EA724A18FBC5CE007C32EC /* CTidy.m in Sources */,
+				48EA724B18FBC5CE007C32EC /* NSData+Base64.m in Sources */,
+				48EA724C18FBC5CE007C32EC /* NSStringAdditions.m in Sources */,
+				48EA724D18FBC5CE007C32EC /* XMLRPCConnection.m in Sources */,
+				48EA724E18FBC5CE007C32EC /* XMLRPCConnectionManager.m in Sources */,
+				48EA724F18FBC5CE007C32EC /* XMLRPCDefaultEncoder.m in Sources */,
+				48EA725018FBC5CE007C32EC /* XMLRPCEventBasedParser.m in Sources */,
+				48EA725118FBC5CE007C32EC /* XMLRPCEventBasedParserDelegate.m in Sources */,
+				48EA725218FBC5CE007C32EC /* XMLRPCRequest.m in Sources */,
+				48EA725318FBC5CE007C32EC /* XMLRPCResponse.m in Sources */,
+				48EA725418FBC5CE007C32EC /* NSString+LNTapatalkHelper.m in Sources */,
+				48EA725518FBC5CE007C32EC /* LNAccountManager.m in Sources */,
+				48EA725618FBC5CE007C32EC /* LNCacheManager.m in Sources */,
+				48EA725718FBC5CE007C32EC /* LNRequest.m in Sources */,
+				48EA725818FBC5CE007C32EC /* LNRequestHelper.m in Sources */,
+				48EA725918FBC5CE007C32EC /* TapatalkAPI.m in Sources */,
+				48EA725A18FBC5CE007C32EC /* TapatalkHelper.m in Sources */,
+				48EA725B18FBC5CE007C32EC /* ModelForum.m in Sources */,
+				48EA725C18FBC5CE007C32EC /* ModelPost.m in Sources */,
+				48EA725D18FBC5CE007C32EC /* ModelPrefix.m in Sources */,
+				48EA725E18FBC5CE007C32EC /* ModelTopic.m in Sources */,
+				48EA725F18FBC5CE007C32EC /* ModelUser.m in Sources */,
+				48EA726018FBC5CE007C32EC /* LNBasePaging.m in Sources */,
+				48EA726118FBC5CE007C32EC /* LNPagingForum.m in Sources */,
+				48EA726218FBC5CE007C32EC /* LNPagingSearch.m in Sources */,
+				48EA726318FBC5CE007C32EC /* LNPagingSubscribe.m in Sources */,
+				48EA726418FBC5CE007C32EC /* LNPagingTopic.m in Sources */,
+				48EA726518FBC5CE007C32EC /* LNPagingUnreadTopic.m in Sources */,
+				48EA726618FBC5CE007C32EC /* LNCacheForum.m in Sources */,
+				48EA726718FBC5CE007C32EC /* PHCacheTopic.m in Sources */,
+				48EA726818FBC5CE007C32EC /* PHTapatalkSDK.m in Sources */,
+				48EA721418FBC594007C32EC /* PHAppDelegate.m in Sources */,
+				48EA721D18FBC594007C32EC /* PHViewController.m in Sources */,
+				48EA721018FBC594007C32EC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48E0CB41188A6686005D97B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48200D78188A5870007F11DD /* libTapatalkSDK */;
+			targetProxy = 48E0CB40188A6686005D97B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4875576418FBC4DD00CCA438 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4875576518FBC4DD00CCA438 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4875576D18FBC4DD00CCA438 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4875576E18FBC4DD00CCA438 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		4875577018FBC4DD00CCA438 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4875577118FBC4DD00CCA438 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		48A968A2188A43C2003A0C2F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48A968A3188A43C2003A0C2F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		48EA720C18FBC594007C32EC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48EA720D18FBC594007C32EC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		48EA721518FBC594007C32EC /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48EA721618FBC594007C32EC /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		48EA721818FBC594007C32EC /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48EA721918FBC594007C32EC /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48200D95188A5870007F11DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
+				DSTROOT = /tmp/libTapatalkSDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libTapatalkSDK/libTapatalkSDK-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = TapatalkSDK;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Debug;
+		};
+		48200D96188A5870007F11DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
+				DSTROOT = /tmp/libTapatalkSDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libTapatalkSDK/libTapatalkSDK-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = TapatalkSDK;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Release;
+		};
+		48A968C0188A43C2003A0C2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		48A968C1188A43C2003A0C2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48A968C3188A43C2003A0C2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TapatalkSDK/TapatalkSDK-Prefix.pch";
+				INFOPLIST_FILE = "TapatalkSDK/TapatalkSDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		48A968C4188A43C2003A0C2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TapatalkSDK/TapatalkSDK-Prefix.pch";
+				INFOPLIST_FILE = "TapatalkSDK/TapatalkSDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		48EA723318FBC594007C32EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TapatalkTest/TapatalkTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "TapatalkTest/TapatalkTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		48EA723418FBC594007C32EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TapatalkTest/TapatalkTest-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "TapatalkTest/TapatalkTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48200D99188A5870007F11DD /* Build configuration list for PBXNativeTarget "libTapatalkSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48200D95188A5870007F11DD /* Debug */,
+				48200D96188A5870007F11DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48A96891188A43C2003A0C2F /* Build configuration list for PBXProject "TapatalkSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48A968C0188A43C2003A0C2F /* Debug */,
+				48A968C1188A43C2003A0C2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48A968C2188A43C2003A0C2F /* Build configuration list for PBXNativeTarget "TapatalkSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48A968C3188A43C2003A0C2F /* Debug */,
+				48A968C4188A43C2003A0C2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48EA723218FBC594007C32EC /* Build configuration list for PBXNativeTarget "TapatalkTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EA723318FBC594007C32EC /* Debug */,
+				48EA723418FBC594007C32EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48A9688E188A43C2003A0C2F /* Project object */;
+}
