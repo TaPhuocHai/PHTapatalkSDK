@@ -31,15 +31,15 @@
 
 // Lấy thông tin topic của 1 forum
 + (void)getTopicWithForum:(NSString*)forumId mode:(NSString*)mode
-                 startNum:(int)startNum
-                  lastNum:(int)lastNum
+                 startNum:(NSInteger)startNum
+                  lastNum:(NSInteger)lastNum
         completionHandler:(void (^)(ModelForum *result, NSError *error))_completionHander
                 onPercent:(void (^)(float percent))_percent;
 
 // Lấy thông tin topic chưa đọc
-+ (void)getUnreadTopicWithStartNum:(int)start_num
-                           lastNum:(int)last_num
-                 completionHandler:(void (^)(NSArray *arrTopic, int totalTopicNum ,NSError *error))_completionHander
++ (void)getUnreadTopicWithStartNum:(NSInteger)start_num
+                           lastNum:(NSInteger)last_num
+                 completionHandler:(void (^)(NSArray *arrTopic, NSInteger totalTopicNum ,NSError *error))_completionHander
                          onPercent:(void (^)(float percent))_percent;
 
 // Tạo mới totpic
@@ -52,12 +52,12 @@
 
 #pragma mark - Topic
 
-+ (void)getThreadWithTopic:(NSString*)topic_id returnHTML:(BOOL)return_html startNum:(int)_startNum lastNum:(int)_lastNum completionHandler:(void (^)(ModelTopic *result, NSError *error))_completionHander onPercent:(void (^)(float percent))_percent;
++ (void)getThreadWithTopic:(NSString*)topic_id returnHTML:(BOOL)return_html startNum:(NSInteger)_startNum lastNum:(NSInteger)_lastNum completionHandler:(void (^)(ModelTopic *result, NSError *error))_completionHander onPercent:(void (^)(float percent))_percent;
 
 + (void)getThreadUnread:(NSString*)topic_id
              returnHTML:(BOOL)return_html
-        postsPerRequest:(int)posts_per_request
-      completionHandler:(void (^)(ModelTopic *result,int position, NSError *error))_completionHander;
+        postsPerRequest:(NSInteger)posts_per_request
+      completionHandler:(void (^)(ModelTopic *result,NSInteger position, NSError *error))_completionHander;
 
 + (void)replyTopic:(ModelTopic*)topic
        withSubject:(NSString*)subject
@@ -69,17 +69,17 @@
 #pragma mark - Search
 
 + (void)searchTopic:(NSString*)searchString
-        startNumber:(int)startNumber
-         lastNumber:(int)lastNumber
+        startNumber:(NSInteger)startNumber
+         lastNumber:(NSInteger)lastNumber
            searchId:(NSString*)searchId
-  completionHandler:(void (^)(NSString *searchId, NSArray *arrTopic, int totalTopicNum , NSError *error))_completionHander
+  completionHandler:(void (^)(NSString *searchId, NSArray *arrTopic, NSInteger totalTopicNum , NSError *error))_completionHander
           onPercent:(void (^)(float percent))_percent;
 
 #pragma mark - Subscribe
 
 + (void)getSubscribeTopic:(int)_startNum
                   lastNum:(int)_lastNum
-        completionHandler:(void (^)(NSArray *arrTopic, int totalTopicNum, NSError *error))_completionHander;
+        completionHandler:(void (^)(NSArray *arrTopic, NSInteger totalTopicNum, NSError *error))_completionHander;
 
 + (void)subscribeTopic:(NSString*)topicId
                success:(void (^)(void))_onSuccess

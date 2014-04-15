@@ -27,6 +27,8 @@
 @interface LNTapatalkSDK : NSObject
 
 + (ModelForum*)rootForum;
+
++ (void)startWithFormUrl:(NSString*)forumUrl;
 + (void)didBecomeActive;
 
 @end

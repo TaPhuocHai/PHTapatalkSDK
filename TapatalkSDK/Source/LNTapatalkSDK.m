@@ -15,6 +15,12 @@ static ModelForum * _form;
     return _form;
 }
 
++ (void)startWithFormUrl:(NSString*)forumUrl
+{
+    // Init api engine
+    [TapatalkAPI shareInstanceWithUrl:forumUrl];
+}
+
 + (void)didBecomeActive
 {
     // Auto login to expire cookie

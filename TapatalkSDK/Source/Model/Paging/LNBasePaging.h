@@ -8,33 +8,34 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol LNBasePagingDelegate <NSObject>
+@required
+- (void)loadDataFrom:(NSInteger)from
+                  to:(NSInteger)to
+          completion:(void (^)(NSArray * data, NSInteger totalDataNumber))completeBlock
+             failure:(void (^)(NSError * error))failureBlock;
+@end
+
 @interface LNBasePaging : NSObject {
-    int _maxIndexPageLoaded;
-    int _currentPage;
-    int _totalCountData;
-    int _totalPage;
-    int _startNum;
-    int _lastNum;
-    NSMutableArray * _data;
-    int _countPaging;
 }
 
-@property (nonatomic, readonly) int     maxIndexPageLoaded; // Số trang lớn nhất đã đc load
-@property (nonatomic, readonly) int     currentPage;        // Trang hiện tại
-@property (nonatomic, readonly) int     totalCountData;     // Số lượng data
-@property (nonatomic, readonly) int     totalPage;          // Số trang
-@property (nonatomic, readonly) int     startNum;           // Trong trang hiện tại, vị trí data bắt đầu được lấy
-@property (nonatomic, readonly) int     lastNum;            // Trong trang hiện tại, vị trí data cuối cùng được lấy
-@property (nonatomic, readonly) NSMutableArray * data;        // Dữ liệu
+@property (nonatomic, readonly) NSInteger     perPage;            // Số lượng dữ liệu trong 1 trang
+@property (nonatomic, readonly) NSInteger     lastRequestPage;    // Trang cuối cùng gọi request
+@property (nonatomic, readonly) NSInteger     totalDataNumber;     // Số lượng data
+@property (nonatomic, readonly) NSInteger     totalPage;          // Số trang
 
-@property (nonatomic, readonly)           int     countPaging;        // Số lượng dữ liệu trong 1 trang
+@property (nonatomic, readonly) NSMutableDictionary  * dataOfPage;
+
+@property (nonatomic, assign) id<LNBasePagingDelegate> delegate;
 
 - (id)init;
-- (id)initWithPaging:(int)paging;
+- (id)initWithPerPage:(NSInteger)numberOfPerPage;
 
 - (BOOL)isNextPage;
-- (void)startPagingOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild;
-- (void)loadNextPageOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild;
-- (void)reloadPagingOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild;
+
+- (void)startRequestOnComplete:(void (^)(NSArray *arrData))completeBlock
+                     onFailure:(void (^)(NSError *error))failureBlock;
+- (void)loadNextPageOnComplete:(void (^)(NSArray *arrData))completeBlock
+                     onFailure:(void (^)(NSError *error))failureBlock;
 
 @end

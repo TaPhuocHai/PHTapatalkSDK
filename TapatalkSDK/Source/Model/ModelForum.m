@@ -25,14 +25,14 @@
 
 - (id)initWithId:(NSString*)forumId
             name:(NSString*)forumName
-            logo:(UIImage*)logo
+         logoUrl:(NSString*)logoUrl
      description:(NSString*)description
 {
     if (self = [super init]) {
         self.forum_id       = forumId;
         self.forum_name     = forumName;
         self.description    = description;
-        self.logoImage      = logo;
+        self.logo_url       = logoUrl;
         self.child          = [[NSMutableArray alloc] init];
     }
     return self;

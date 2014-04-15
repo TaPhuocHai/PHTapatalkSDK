@@ -12,6 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [LNTapatalkSDK startWithFormUrl:@"http://www.webtretho.com/forum"];
     return YES;
 }
 

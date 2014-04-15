@@ -10,67 +10,74 @@
 
 @implementation LNBasePaging
 
-@synthesize maxIndexPageLoaded = _maxIndexPageLoaded,
-currentPage = _currentPage,
-totalPage = _totalPage,
-totalCountData = _totalCountData,
-startNum = _startNum,
-lastNum = _lastNum,
-data = _data,
-countPaging = _countPaging;
+#define kPerPageDefault  10
 
-#define kPagingTopicNumber  10
-
-- (id)init {
+- (id)init
+{
     if (self = [super init]) {
-        _countPaging = kPagingTopicNumber;
+        _perPage = kPerPageDefault;
+        _dataOfPage = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
-- (id)initWithPaging:(int)paging {
+- (id)initWithPerPage:(NSInteger)numberOfPerPage
+{
     if (self = [self init]) {
-        _countPaging = paging;
+        _perPage = numberOfPerPage;
     }
     return self;
 }
 
 #pragma mark 
 
-- (int)totalPage {
-    float tempTotal = _totalCountData/(float)_countPaging;
-    _totalPage = (tempTotal > (int)tempTotal) ? tempTotal + 1 : (int)tempTotal;
-    return _totalPage;
-}
-
-- (int)maxIndexPageLoaded {
-    return _maxIndexPageLoaded;
+- (NSInteger)totalPage
+{
+    float tempTotal = _totalDataNumber/(float)_perPage;
+    tempTotal = (tempTotal > (int)tempTotal) ? tempTotal + 1 : (int)tempTotal;
+    return tempTotal;
 }
 
 #pragma mark - 
 
-- (BOOL)isNextPage {
-    if (self.maxIndexPageLoaded < self.totalPage) {
+- (BOOL)isNextPage
+{
+    if (self.lastRequestPage < self.totalPage) {
         return YES;
     }
     return NO;
 }
 
-// abstract method
-- (void)startPagingOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild {
-}
-
-// arrData là dữ liệu được load thêm
-- (void)loadNextPageOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild {
-}
-
-
-- (void)reloadPagingOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild
+- (void)startRequestOnComplete:(void (^)(NSArray *arrData))completeBlock
+                     onFailure:(void (^)(NSError *error))failureBlock
 {
-    [self startPagingOnSuccess:^(NSArray *arrData) {
-        _onSuccess(arrData);
-    } onFaild:^(NSError *error) {
-        _onFaild(error);
+    if (!self.delegate) {
+        if (failureBlock) failureBlock([NSError errorWithDomain:@"local" code:1 userInfo:@{@"error" : @"delegate is nil"}]);
+    }
+    
+    _lastRequestPage = 1;
+    [self.delegate loadDataFrom:0 to:self.perPage - 1 completion:^(NSArray *data,NSInteger totalDataNumber) {
+        _dataOfPage[@(_lastRequestPage)] = data;
+        _totalDataNumber = totalDataNumber;
+        if (completeBlock) completeBlock(data);
+    } failure:^(NSError *error) {
+        if (failureBlock) failureBlock(error);
+    }];
+}
+
+- (void)loadNextPageOnComplete:(void (^)(NSArray *arrData))completeBlock
+                     onFailure:(void (^)(NSError *error))failureBlock
+{
+    NSInteger nextPageToLoad = _lastRequestPage + 1;
+    [self.delegate loadDataFrom:nextPageToLoad * self.perPage
+                             to:((nextPageToLoad + 1) * self.perPage) - 1
+                     completion:^(NSArray *data, NSInteger totalDataNumber)
+    {
+        _lastRequestPage = nextPageToLoad;
+        _dataOfPage[@(_lastRequestPage)] = data;
+        if (completeBlock) completeBlock(data);
+    } failure:^(NSError *error) {
+        if (failureBlock) failureBlock(error);
     }];
 }
 

@@ -54,7 +54,7 @@
 		48200DBA188A5958007F11DD /* ModelTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FC188A45A4003A0C2F /* ModelTopic.m */; };
 		48200DBB188A5958007F11DD /* ModelUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FE188A45A4003A0C2F /* ModelUser.m */; };
 		48200DBC188A5958007F11DD /* LNBasePaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96901188A45A4003A0C2F /* LNBasePaging.m */; };
-		48200DBD188A5958007F11DD /* LNPagingForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96903188A45A4003A0C2F /* LNPagingForum.m */; };
+		48200DBD188A5958007F11DD /* LNForumPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96903188A45A4003A0C2F /* LNForumPaging.m */; };
 		48200DBE188A5958007F11DD /* LNPagingSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96905188A45A4003A0C2F /* LNPagingSearch.m */; };
 		48200DBF188A5958007F11DD /* LNPagingSubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96907188A45A4003A0C2F /* LNPagingSubscribe.m */; };
 		48200DC0188A5958007F11DD /* LNPagingTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96909188A45A4003A0C2F /* LNPagingTopic.m */; };
@@ -70,7 +70,7 @@
 		4852E900188A616300C87592 /* ModelTopic.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A968FB188A45A4003A0C2F /* ModelTopic.h */; };
 		4852E901188A616300C87592 /* ModelUser.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A968FD188A45A4003A0C2F /* ModelUser.h */; };
 		4852E902188A616300C87592 /* LNBasePaging.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96900188A45A4003A0C2F /* LNBasePaging.h */; };
-		4852E903188A616300C87592 /* LNPagingForum.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96902188A45A4003A0C2F /* LNPagingForum.h */; };
+		4852E903188A616300C87592 /* LNForumPaging.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96902188A45A4003A0C2F /* LNForumPaging.h */; };
 		4852E904188A616300C87592 /* LNPagingSearch.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96904188A45A4003A0C2F /* LNPagingSearch.h */; };
 		4852E905188A616300C87592 /* LNPagingSubscribe.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96906188A45A4003A0C2F /* LNPagingSubscribe.h */; };
 		4852E906188A616300C87592 /* LNPagingTopic.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96908188A45A4003A0C2F /* LNPagingTopic.h */; };
@@ -138,7 +138,7 @@
 		48EA725E18FBC5CE007C32EC /* ModelTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FC188A45A4003A0C2F /* ModelTopic.m */; };
 		48EA725F18FBC5CE007C32EC /* ModelUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A968FE188A45A4003A0C2F /* ModelUser.m */; };
 		48EA726018FBC5CE007C32EC /* LNBasePaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96901188A45A4003A0C2F /* LNBasePaging.m */; };
-		48EA726118FBC5CE007C32EC /* LNPagingForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96903188A45A4003A0C2F /* LNPagingForum.m */; };
+		48EA726118FBC5CE007C32EC /* LNForumPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96903188A45A4003A0C2F /* LNForumPaging.m */; };
 		48EA726218FBC5CE007C32EC /* LNPagingSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96905188A45A4003A0C2F /* LNPagingSearch.m */; };
 		48EA726318FBC5CE007C32EC /* LNPagingSubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96907188A45A4003A0C2F /* LNPagingSubscribe.m */; };
 		48EA726418FBC5CE007C32EC /* LNPagingTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96909188A45A4003A0C2F /* LNPagingTopic.m */; };
@@ -178,7 +178,7 @@
 				4852E900188A616300C87592 /* ModelTopic.h in Copy Files (16 items) */,
 				4852E901188A616300C87592 /* ModelUser.h in Copy Files (16 items) */,
 				4852E902188A616300C87592 /* LNBasePaging.h in Copy Files (16 items) */,
-				4852E903188A616300C87592 /* LNPagingForum.h in Copy Files (16 items) */,
+				4852E903188A616300C87592 /* LNForumPaging.h in Copy Files (16 items) */,
 				4852E904188A616300C87592 /* LNPagingSearch.h in Copy Files (16 items) */,
 				4852E905188A616300C87592 /* LNPagingSubscribe.h in Copy Files (16 items) */,
 				4852E906188A616300C87592 /* LNPagingTopic.h in Copy Files (16 items) */,
@@ -239,8 +239,8 @@
 		48A968FE188A45A4003A0C2F /* ModelUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelUser.m; sourceTree = "<group>"; };
 		48A96900188A45A4003A0C2F /* LNBasePaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNBasePaging.h; sourceTree = "<group>"; };
 		48A96901188A45A4003A0C2F /* LNBasePaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNBasePaging.m; sourceTree = "<group>"; };
-		48A96902188A45A4003A0C2F /* LNPagingForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPagingForum.h; sourceTree = "<group>"; };
-		48A96903188A45A4003A0C2F /* LNPagingForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPagingForum.m; sourceTree = "<group>"; };
+		48A96902188A45A4003A0C2F /* LNForumPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNForumPaging.h; sourceTree = "<group>"; };
+		48A96903188A45A4003A0C2F /* LNForumPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNForumPaging.m; sourceTree = "<group>"; };
 		48A96904188A45A4003A0C2F /* LNPagingSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPagingSearch.h; sourceTree = "<group>"; };
 		48A96905188A45A4003A0C2F /* LNPagingSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNPagingSearch.m; sourceTree = "<group>"; };
 		48A96906188A45A4003A0C2F /* LNPagingSubscribe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNPagingSubscribe.h; sourceTree = "<group>"; };
@@ -530,8 +530,8 @@
 			children = (
 				48A96900188A45A4003A0C2F /* LNBasePaging.h */,
 				48A96901188A45A4003A0C2F /* LNBasePaging.m */,
-				48A96902188A45A4003A0C2F /* LNPagingForum.h */,
-				48A96903188A45A4003A0C2F /* LNPagingForum.m */,
+				48A96902188A45A4003A0C2F /* LNForumPaging.h */,
+				48A96903188A45A4003A0C2F /* LNForumPaging.m */,
 				48A96904188A45A4003A0C2F /* LNPagingSearch.h */,
 				48A96905188A45A4003A0C2F /* LNPagingSearch.m */,
 				48A96906188A45A4003A0C2F /* LNPagingSubscribe.h */,
@@ -856,7 +856,7 @@
 				48200DBA188A5958007F11DD /* ModelTopic.m in Sources */,
 				48200DBB188A5958007F11DD /* ModelUser.m in Sources */,
 				48200DBC188A5958007F11DD /* LNBasePaging.m in Sources */,
-				48200DBD188A5958007F11DD /* LNPagingForum.m in Sources */,
+				48200DBD188A5958007F11DD /* LNForumPaging.m in Sources */,
 				481AE42318F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				48200DBE188A5958007F11DD /* LNPagingSearch.m in Sources */,
 				481AE42D18F7E29B0008EC87 /* LNCacheForum.m in Sources */,
@@ -924,7 +924,7 @@
 				48EA725E18FBC5CE007C32EC /* ModelTopic.m in Sources */,
 				48EA725F18FBC5CE007C32EC /* ModelUser.m in Sources */,
 				48EA726018FBC5CE007C32EC /* LNBasePaging.m in Sources */,
-				48EA726118FBC5CE007C32EC /* LNPagingForum.m in Sources */,
+				48EA726118FBC5CE007C32EC /* LNForumPaging.m in Sources */,
 				48EA726218FBC5CE007C32EC /* LNPagingSearch.m in Sources */,
 				48EA726318FBC5CE007C32EC /* LNPagingSubscribe.m in Sources */,
 				48EA726418FBC5CE007C32EC /* LNPagingTopic.m in Sources */,

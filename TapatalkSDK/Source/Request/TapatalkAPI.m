@@ -94,13 +94,13 @@ static NSURL    * _kNSURLServerTapatalkUpload;
                 }
                 
                 if (!requestForum) {
-                    requestForum = [[ModelForum alloc] initWithId:_forum_id name:nil logo:nil description:nil];
+                    requestForum = [[ModelForum alloc] initWithId:_forum_id name:nil logoUrl:nil description:nil];
                 }
                 
                 // Return complete
                 if(_completionHandler) _completionHandler(requestForum);
             } else {
-                requestForum = [[ModelForum alloc] initWithId:nil name:@"FORUM" logo:nil description:nil];
+                requestForum = [[ModelForum alloc] initWithId:_forum_id name:@"FORUM" logoUrl:nil description:nil];
                 requestForum.child = result;
                 if(_completionHandler) _completionHandler(requestForum);
             }
@@ -114,8 +114,8 @@ static NSURL    * _kNSURLServerTapatalkUpload;
 
 + (void)getTopicWithForum:(NSString*)forumId
                      mode:(NSString*)mode
-                 startNum:(int)startNum
-                  lastNum:(int)lastNum
+                 startNum:(NSInteger)startNum
+                  lastNum:(NSInteger)lastNum
         completionHandler:(void (^)(ModelForum *result, NSError *error))_completionHander
                 onPercent:(void (^)(float percent))_percent
 {
@@ -129,8 +129,8 @@ static NSURL    * _kNSURLServerTapatalkUpload;
     
     NSMutableArray *params = [[NSMutableArray alloc] init];
     [params addObject:forumId];
-    [params addObject:[NSNumber numberWithInt:startNum]];
-    [params addObject:[NSNumber numberWithInt:lastNum]];
+    [params addObject:@(startNum)];
+    [params addObject:@(lastNum)];
     if (mode == nil) {
         mode = @"";
     }
@@ -162,8 +162,7 @@ static NSURL    * _kNSURLServerTapatalkUpload;
         if ([dic objectForKey:@"prefixes"]) {
             forum.prefixes            = [dic objectForKey:@"prefixes"];
         }
-        
-        
+                
         if(_completionHander) _completionHander(forum, nil);
         
     }onPercent:^(float percent) {

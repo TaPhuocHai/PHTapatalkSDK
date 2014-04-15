@@ -24,7 +24,7 @@
 - (IBAction)loadButtonTouch:(id)sender
 {
     NSString * forumId = self.textField.text;
-    
+    [
 }
 
 @end
