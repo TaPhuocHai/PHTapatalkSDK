@@ -213,17 +213,6 @@
 		48200D7D188A5870007F11DD /* libTapatalkSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libTapatalkSDK-Prefix.pch"; sourceTree = "<group>"; };
 		48200D7E188A5870007F11DD /* libTapatalkSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libTapatalkSDK.h; sourceTree = "<group>"; };
 		4875575418FBC0BD00CCA438 /* LNTapatalkSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNTapatalkSDK.m; sourceTree = "<group>"; };
-		4875576318FBC4DD00CCA438 /* TapatalkDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapatalkDemo-Info.plist"; sourceTree = "<group>"; };
-		4875576518FBC4DD00CCA438 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4875576718FBC4DD00CCA438 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4875576918FBC4DD00CCA438 /* TapatalkDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TapatalkDemo-Prefix.pch"; sourceTree = "<group>"; };
-		4875576A18FBC4DD00CCA438 /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
-		4875576B18FBC4DD00CCA438 /* PHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHAppDelegate.m; sourceTree = "<group>"; };
-		4875576E18FBC4DD00CCA438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		4875577118FBC4DD00CCA438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		4875577318FBC4DD00CCA438 /* PHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHViewController.h; sourceTree = "<group>"; };
-		4875577418FBC4DD00CCA438 /* PHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHViewController.m; sourceTree = "<group>"; };
-		4875577618FBC4DD00CCA438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4890576818F7E7C10015B871 /* LNCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNCacheManager.h; sourceTree = "<group>"; };
 		4890576918F7E7C10015B871 /* LNCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNCacheManager.m; sourceTree = "<group>"; };
 		48A96896188A43C2003A0C2F /* TapatalkSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapatalkSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -435,38 +424,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4875576118FBC4DD00CCA438 /* TapatalkDemo */ = {
-			isa = PBXGroup;
-			children = (
-				4875576A18FBC4DD00CCA438 /* PHAppDelegate.h */,
-				4875576B18FBC4DD00CCA438 /* PHAppDelegate.m */,
-				4875576D18FBC4DD00CCA438 /* Main_iPhone.storyboard */,
-				4875577018FBC4DD00CCA438 /* Main_iPad.storyboard */,
-				4875577318FBC4DD00CCA438 /* PHViewController.h */,
-				4875577418FBC4DD00CCA438 /* PHViewController.m */,
-				4875577618FBC4DD00CCA438 /* Images.xcassets */,
-				4875576218FBC4DD00CCA438 /* Supporting Files */,
-			);
-			path = TapatalkDemo;
-			sourceTree = "<group>";
-		};
-		4875576218FBC4DD00CCA438 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4875576318FBC4DD00CCA438 /* TapatalkDemo-Info.plist */,
-				4875576418FBC4DD00CCA438 /* InfoPlist.strings */,
-				4875576718FBC4DD00CCA438 /* main.m */,
-				4875576918FBC4DD00CCA438 /* TapatalkDemo-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		48A9688D188A43C2003A0C2F = {
 			isa = PBXGroup;
 			children = (
 				48A9689F188A43C2003A0C2F /* TapatalkSDK */,
 				48200D7B188A5870007F11DD /* libTapatalkSDK */,
-				4875576118FBC4DD00CCA438 /* TapatalkDemo */,
 				48EA720918FBC594007C32EC /* TapatalkTest */,
 				48A96898188A43C2003A0C2F /* Frameworks */,
 				48A96897188A43C2003A0C2F /* Products */,
@@ -987,30 +949,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4875576418FBC4DD00CCA438 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4875576518FBC4DD00CCA438 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4875576D18FBC4DD00CCA438 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4875576E18FBC4DD00CCA438 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		4875577018FBC4DD00CCA438 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4875577118FBC4DD00CCA438 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		48A968A2188A43C2003A0C2F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
