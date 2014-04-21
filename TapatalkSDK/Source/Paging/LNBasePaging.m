@@ -29,7 +29,7 @@
     return self;
 }
 
-#pragma mark 
+#pragma mark - Properties
 
 - (NSInteger)totalPage
 {
@@ -38,15 +38,7 @@
     return tempTotal;
 }
 
-#pragma mark - 
-
-- (BOOL)isNextPage
-{
-    if (self.lastRequestPage < self.totalPage) {
-        return YES;
-    }
-    return NO;
-}
+#pragma mark -
 
 - (void)startRequestOnComplete:(void (^)(NSArray *arrData))completeBlock
                      onFailure:(void (^)(NSError *error))failureBlock
@@ -56,7 +48,10 @@
     }
     
     _lastRequestPage = 1;
-    [self.delegate loadDataFrom:0 to:self.perPage - 1 completion:^(NSArray *data,NSInteger totalDataNumber) {
+    [self.delegate loadDataFrom:0
+                             to:self.perPage - 1
+                     completion:^(NSArray *data,NSInteger totalDataNumber)
+    {
         _dataOfPage[@(_lastRequestPage)] = data;
         _totalDataNumber = totalDataNumber;
         if (completeBlock) completeBlock(data);
@@ -79,6 +74,14 @@
     } failure:^(NSError *error) {
         if (failureBlock) failureBlock(error);
     }];
+}
+
+#pragma mark - Clean up 
+
+- (void)dealloc
+{
+    _dataOfPage = nil;
+    _delegate = nil;
 }
 
 @end

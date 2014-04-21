@@ -8,6 +8,6 @@
 
 #import "LNBasePaging.h"
 
-@interface LNPagingUnreadTopic : LNBasePaging
+@interface LNUnreadTopicPaging : LNBasePaging <LNBasePagingDelegate>
 
 @end

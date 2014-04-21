@@ -139,13 +139,12 @@ static NSURL    * _kNSURLServerTapatalkUpload;
     LNRequest *request = [[LNRequest alloc] initWithURL:_kNSURLServerTapatalk];
     [request requestWithMethod:@"get_topic" prarameters:params onReceiveResponse:^(XMLRPCResponse *response)
     {
-        ModelForum *forum = [[ModelForum alloc] init];
-        forum.forum_id = forumId;
-        
         CXMLDocument *doc = [[CXMLDocument alloc] initWithData:[[response body] dataUsingEncoding:NSUTF8StringEncoding] encoding:NSUTF8StringEncoding options:0 error:nil];
         
         NSArray      * nodes    = [doc nodesForXPath:@"//methodResponse/params/param/value/struct/*" error:nil];
         NSDictionary * dic      = [TapatalkHelper parseStructRespondToDictionary:nodes];
+        
+        ModelForum *forum = [[ModelForum alloc] initWithDictionary:dic];
         // fill dữ liệu
         forum.can_post              = [[dic objectForKey:@"can_post"] boolValue];
         forum.total_topic_num       = [[dic objectForKey:@"total_topic_num"] intValue];
@@ -172,14 +171,14 @@ static NSURL    * _kNSURLServerTapatalkUpload;
     }];
 }
 
-+ (void)getUnreadTopicWithStartNum:(int)start_num
-                           lastNum:(int)last_num
-                 completionHandler:(void (^)(NSArray *arrTopic, int totalTopicNum , NSError *error))_completionHander
++ (void)getUnreadTopicWithStartNum:(NSInteger)start_num
+                           lastNum:(NSInteger)last_num
+                 completionHandler:(void (^)(NSArray *arrTopic, NSInteger totalTopicNum , NSError *error))_completionHander
                          onPercent:(void (^)(float percent))_percent
 {
     NSMutableArray *params = [[NSMutableArray alloc] init];
-    [params addObject:[NSNumber numberWithInt:start_num]];
-    [params addObject:[NSNumber numberWithInt:last_num]];
+    [params addObject:@(start_num)];
+    [params addObject:@(last_num)];
     
     LNRequest *request = [[LNRequest alloc] initWithURL:_kNSURLServerTapatalk];
     [request requestWithMethod:@"get_unread_topic" prarameters:params onReceiveResponse:^(XMLRPCResponse *response) {
@@ -248,7 +247,13 @@ static NSURL    * _kNSURLServerTapatalkUpload;
 
 #pragma mark - Topic
 
-+ (void)getThreadWithTopic:(NSString*)topic_id returnHTML:(BOOL)return_html startNum:(int)_startNum lastNum:(int)_lastNum completionHandler:(void (^)(ModelTopic *result, NSError *error))_completionHander onPercent:(void (^)(float percent))_percent {
++ (void)getThreadWithTopic:(NSString*)topic_id
+                returnHTML:(BOOL)return_html
+                  startNum:(NSInteger)_startNum
+                   lastNum:(NSInteger)_lastNum
+         completionHandler:(void (^)(ModelTopic *result, NSError *error))_completionHander
+                 onPercent:(void (^)(float percent))_percent
+{
     if (topic_id == nil || [topic_id isEqualToString:@""]) {
         if(_completionHander) _completionHander(nil,[NSError errorWithDomain:_kForumUrl code:1 userInfo:@{@"error" : @"Topic Id không được rỗng"}]);
         return;
@@ -256,9 +261,9 @@ static NSURL    * _kNSURLServerTapatalkUpload;
     
     NSMutableArray *params = [[NSMutableArray alloc] init];
     [params addObject:topic_id];
-    [params addObject:[NSNumber numberWithInt:_startNum]];
-    [params addObject:[NSNumber numberWithInt:_lastNum]];
-    [params addObject:[NSNumber numberWithBool:return_html]];
+    [params addObject:@(_startNum)];
+    [params addObject:@(_lastNum)];
+    [params addObject:@(return_html)];
     
     LNRequest *request = [[LNRequest alloc] initWithURL:_kNSURLServerTapatalk];
     [request requestWithMethod:@"get_thread" prarameters:params onReceiveResponse:^(XMLRPCResponse *response) {
@@ -285,7 +290,11 @@ static NSURL    * _kNSURLServerTapatalkUpload;
     }];
 }
 
-+ (void)getThreadUnread:(NSString*)topic_id returnHTML:(BOOL)return_html postsPerRequest:(int)posts_per_request completionHandler:(void (^)(ModelTopic *result,int position, NSError *error))_completionHander{
++ (void)getThreadUnread:(NSString*)topic_id
+             returnHTML:(BOOL)return_html
+        postsPerRequest:(NSInteger)posts_per_request
+      completionHandler:(void (^)(ModelTopic *result,NSInteger position, NSError *error))_completionHander
+{
     if (topic_id == nil || [topic_id isEqualToString:@""]) {
         if(_completionHander) _completionHander(nil,-1,[NSError errorWithDomain:_kForumUrl code:1 userInfo:@{@"error" : @"Topic Id không được rỗng"}]);
         return;
@@ -293,8 +302,8 @@ static NSURL    * _kNSURLServerTapatalkUpload;
     
     NSMutableArray *params = [[NSMutableArray alloc] init];
     [params addObject:topic_id];
-    [params addObject:[NSNumber numberWithInt:posts_per_request]];
-    [params addObject:[NSNumber numberWithBool:return_html]];
+    [params addObject:@(posts_per_request)];
+    [params addObject:@(return_html)];
     
     LNRequest *request = [[LNRequest alloc] initWithURL:_kNSURLServerTapatalk];
     [request requestWithMethod:@"get_thread_by_unread" prarameters:params onReceiveResponse:^(XMLRPCResponse *response) {
@@ -359,12 +368,18 @@ static NSURL    * _kNSURLServerTapatalkUpload;
 
 #pragma mark - Search
 
-+ (void)searchTopic:(NSString*)searchString startNumber:(int)startNumber lastNumber:(int)lastNumber searchId:(NSString*)searchId completionHandler:(void (^)(NSString *searchId, NSArray *arrTopic, int totalTopicNum , NSError *error))_completionHander onPercent:(void (^)(float percent))_percent {
++ (void)searchTopic:(NSString*)searchString
+        startNumber:(NSInteger)startNumber
+         lastNumber:(NSInteger)lastNumber
+           searchId:(NSString*)searchId
+  completionHandler:(void (^)(NSString *searchId, NSArray *arrTopic, NSInteger totalTopicNum , NSError *error))_completionHander
+          onPercent:(void (^)(float percent))_percent
+{
     
     NSMutableArray *params = [[NSMutableArray alloc] init];
     [params addObject:[searchString  dataUsingEncoding:NSUTF8StringEncoding]];
-    [params addObject:[NSNumber numberWithInt:startNumber]];
-    [params addObject:[NSNumber numberWithInt:lastNumber]];
+    [params addObject:@(startNumber)];
+    [params addObject:@(lastNumber)];
     if (searchId == nil) {
         searchId = @"";
     }
@@ -395,12 +410,15 @@ static NSURL    * _kNSURLServerTapatalkUpload;
 
 #pragma mark - Subscribe
 
-+ (void)getSubscribeTopic:(int)_startNum lastNum:(int)_lastNum completionHandler:(void (^)(NSArray *arrTopic, int totalTopicNum, NSError *error))_completionHander{
++ (void)getSubscribeTopic:(NSInteger)_startNum
+                  lastNum:(NSInteger)_lastNum
+        completionHandler:(void (^)(NSArray *arrTopic, NSInteger totalTopicNum, NSError *error))_completionHander
+{
     
     // build params
     NSMutableArray *params = [[NSMutableArray alloc] init];
-    [params addObject:[NSNumber numberWithInt:_startNum]];
-    [params addObject:[NSNumber numberWithInt:_lastNum]];
+    [params addObject:@(_startNum)];
+    [params addObject:@(_lastNum)];
     
     // request
     LNRequest *request = [[LNRequest alloc] initWithURL:_kNSURLServerTapatalk];

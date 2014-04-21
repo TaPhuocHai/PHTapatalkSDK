@@ -6,46 +6,77 @@
 //  Copyright (c) 2012 Project Lana. All rights reserved.
 //
 
-#import "LNPagingTopic.h"
+#import "LNTopicPaging.h"
 #import "LNTapatalkSDK.h"
 #import "TapatalkAPI.h"
 
 #define kPagingTopicNumber  10
 
-@interface LNPagingTopic ()
+@interface LNTopicPaging ()
 
 - (void)loadTopicForm:(int)from to:(int)to onSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild;
 
 @end
 
-@implementation LNPagingTopic
+@implementation LNTopicPaging
 
-@synthesize pageLoaded;
-@synthesize topic;
-
-- (id)initTopic:(ModelTopic*)_topic
+- (id)initTopic:(ModelTopic*)topic
 {
     if(self = [super init]) {
-        self.topic = _topic;
-        self.pageLoaded = [[NSMutableArray alloc] init];
+        _topic = topic;
+        _pageLoaded = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (id)initTopic:(ModelTopic*)_topic paging:(int)count
+- (id)initTopic:(ModelTopic*)topic perPage:(NSInteger)perPage
 {
-    if (self = [super initWithPaging:count]) {
-        self.topic = _topic;
-        self.pageLoaded = [[NSMutableArray alloc] init];
+    if (self = [super initWithPerPage:perPage]) {
+        _topic = topic;
+        _pageLoaded = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-#pragma mark - Kế thừa từ LNBasePaging
+#pragma mark - LNBasePagingDelegate
 
-- (BOOL)isNextPage
+- (void)loadDataFrom:(NSInteger)from
+                  to:(NSInteger)to
+          completion:(void (^)(NSArray * data, NSInteger totalDataNumber))completeBlock
+             failure:(void (^)(NSError * error))failureBlock
 {
-    return [super isNextPage];
+    [TapatalkAPI getThreadWithTopic:self.topic.topic_id
+                         returnHTML:YES
+                           startNum:from
+                            lastNum:to
+                  completionHandler:^(ModelTopic *result, NSError *error)
+     {
+         if (!error) {
+             self.perPage = 1;
+             _startNum = from;
+             _lastNum = to;
+             _currentPage = self.startNum / _countPaging + 1;
+             
+             [self.pageLoaded addObject:[NSNumber numberWithInt:self.currentPage]];
+             
+             self.topic.can_reply        = result2.can_reply;
+             self.topic.can_subscribe    = result2.can_subscribe;
+             self.topic.can_upload       = result2.can_upload;
+             self.topic.total_post_num   = result2.total_post_num;
+             self.topic.posts            = result2.posts;
+             if (from == 0 && self.topic.posts.count) {
+                 ModelPost * firstPost = self.topic.posts[0];
+                 firstPost.is_first_post_in_topic = YES;
+             }
+             
+             _totalCountData = result2.total_post_num;
+             
+             _onSuccess(self.topic.posts);
+         } else {
+             _onFaild(error2);
+         }
+     } onPercent:^(float percent) {
+     }];
 }
 
 - (void)startPagingOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild
@@ -94,15 +125,6 @@
             _onFaild(error);
         }
     } onPercent:^(float percent) {
-    }];
-}
-
-- (void)reloadPagingOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild
-{
-    [self loadTopicForm:_startNum to:_lastNum onSuccess:^(NSArray *arrData) {
-        _onSuccess(arrData);
-    } onFaild:^(NSError *error) {
-        _onFaild(error);
     }];
 }
 
@@ -254,9 +276,15 @@
     }];
 }
 
--(void)loadTopicUnread:(int)posts_per_request completionHandler:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild {
-    [TapatalkAPI getThreadUnread:self.topic.topic_id returnHTML:YES postsPerRequest:posts_per_request completionHandler:^(ModelTopic *result, int position, NSError *error2) {
-        
+-(void)loadTopicUnread:(int)posts_per_request
+     completionHandler:(void (^)(NSArray *arrData))_onSuccess
+               onFaild:(void (^)(NSError *error))_onFaild
+{
+    [TapatalkAPI getThreadUnread:self.topic.topic_id
+                      returnHTML:YES
+                 postsPerRequest:posts_per_request
+               completionHandler:^(ModelTopic *result, int position, NSError *error2)
+    {
         if (!error2) {
             _startNum = position;
             _lastNum = position + result.posts.count;

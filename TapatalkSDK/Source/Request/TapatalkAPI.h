@@ -77,8 +77,8 @@
 
 #pragma mark - Subscribe
 
-+ (void)getSubscribeTopic:(int)_startNum
-                  lastNum:(int)_lastNum
++ (void)getSubscribeTopic:(NSInteger)_startNum
+                  lastNum:(NSInteger)_lastNum
         completionHandler:(void (^)(NSArray *arrTopic, NSInteger totalTopicNum, NSError *error))_completionHander;
 
 + (void)subscribeTopic:(NSString*)topicId

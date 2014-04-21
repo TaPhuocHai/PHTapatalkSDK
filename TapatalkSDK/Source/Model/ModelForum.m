@@ -29,11 +29,11 @@
      description:(NSString*)description
 {
     if (self = [super init]) {
-        self.forum_id       = forumId;
-        self.forum_name     = forumName;
-        self.description    = description;
-        self.logo_url       = logoUrl;
-        self.child          = [[NSMutableArray alloc] init];
+        _forum_id       = forumId;
+        _forum_name     = forumName;
+        _description    = description;
+        _logo_url       = logoUrl;
+        _child          = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -42,21 +42,21 @@
 
 - (void)parseDataFormDictionary:(NSDictionary*)dic
 {
-    self.forum_id         = [dic objectForKey:@"forum_id"];
-    self.forum_name       = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"forum_name"]]
+    _forum_id         = [dic objectForKey:@"forum_id"];
+    _forum_name       = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"forum_name"]]
                                                   encoding:NSUTF8StringEncoding];
-    self.description      = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"description"]]
+    _description      = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"description"]]
                                                   encoding:NSUTF8StringEncoding];
-    self.parent_id        = [dic objectForKey:@"parent_id"];
-    self.logo_url         = [dic objectForKey:@"logo_url"];
-    self.new_post         = [[dic objectForKey:@"new_post"] boolValue];
-    self.is_protected     = [[dic objectForKey:@"is_protected"] boolValue];
-    self.is_subscribed    = [[dic objectForKey:@"is_subscribed"] boolValue];
-    self.can_subscribe    = [[dic objectForKey:@"can_subscribe"] boolValue];
-    self.url              = [dic objectForKey:@"url"];
-    self.sub_only         = [[dic objectForKey:@"sub_only"] boolValue];
+    _parent_id        = [dic objectForKey:@"parent_id"];
+    _logo_url         = [dic objectForKey:@"logo_url"];
+    _new_post         = [[dic objectForKey:@"new_post"] boolValue];
+    _is_protected     = [[dic objectForKey:@"is_protected"] boolValue];
+    _is_subscribed    = [[dic objectForKey:@"is_subscribed"] boolValue];
+    _can_subscribe    = [[dic objectForKey:@"can_subscribe"] boolValue];
+    _url              = [dic objectForKey:@"url"];
+    _sub_only         = [[dic objectForKey:@"sub_only"] boolValue];
 
-    self.child            = [dic objectForKey:@"child"];
+    _child            = [dic objectForKey:@"child"];
 }
 
 #pragma mark - 

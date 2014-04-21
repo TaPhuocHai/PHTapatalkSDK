@@ -14,11 +14,11 @@
 #import "LNAccountManager.h"
 
 #import "LNBasePaging.h"
-#import "LNPagingForum.h"
-#import "LNPagingSearch.h"
-#import "LNPagingSubscribe.h"
-#import "LNPagingTopic.h"
-#import "LNPagingUnreadTopic.h"
+#import "LNForumPaging.h"
+#import "LNSearchPaging.h"
+#import "LNSubscribePaging.h"
+#import "LNTopicPaging.h"
+#import "LNUnreadTopic.h"
 
 #import "TapatalkAPI.h"
 

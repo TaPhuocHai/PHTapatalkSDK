@@ -8,6 +8,6 @@
 
 #import "LNBasePaging.h"
 
-@interface LNPagingSubscribe : LNBasePaging
+@interface LNSubscribePaging : LNBasePaging <LNBasePagingDelegate>
 
 @end

@@ -10,10 +10,9 @@
 
 @interface ModelPrefix : NSObject
 
-@property (nonatomic, strong) NSString * prefix_id;
-@property (nonatomic, strong) NSString * prefix_display_name;
+@property (nonatomic, readonly) NSString * prefix_id;
+@property (nonatomic, readonly) NSString * prefix_display_name;
 
 - (id)initWithDictionary:(NSDictionary*)dic;
-- (id)copyWithZone:(NSZone *)zone;
 
 @end

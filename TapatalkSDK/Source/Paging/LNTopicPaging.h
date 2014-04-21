@@ -10,13 +10,12 @@
 #import "ModelTopic.h"
 #import "ModelPost.h"
 
-@interface LNPagingTopic : LNBasePaging
+@interface LNTopicPaging : LNBasePaging <LNBasePagingDelegate>
 
-@property (nonatomic, strong) NSMutableArray *pageLoaded;
-@property (nonatomic, strong) ModelTopic     *topic;
+@property (nonatomic, readonly) ModelTopic     * topic;
 
 - (id)initTopic:(ModelTopic*)_topic;
-- (id)initTopic:(ModelTopic*)_topic paging:(int)count;
+- (id)initTopic:(ModelTopic*)_topic perPage:(NSInteger)perPage;
 
 - (BOOL)isPreviousPage;
 - (BOOL)isLoad:(int)page;

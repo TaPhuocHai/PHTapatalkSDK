@@ -13,22 +13,22 @@
 @interface ModelForum : NSObject
 
 // Các thuộc tính này có khi gọi getForum
-@property (nonatomic, strong) NSString * forum_id;
-@property (nonatomic, strong) NSString * forum_name;
-@property (nonatomic, strong) NSString * description;
-@property (nonatomic, strong) NSString * parent_id;
-@property (nonatomic, strong) NSString * logo_url;
-@property (nonatomic)         BOOL       new_post;
-@property (nonatomic)         BOOL       is_protected;
-@property (nonatomic)         BOOL       is_subscribed;
-@property (nonatomic)         BOOL       can_subscribe;
-@property (nonatomic, strong) NSString * url;
-@property (nonatomic)         BOOL       sub_only;
+@property (nonatomic, readonly) NSString * forum_id;
+@property (nonatomic, readonly) NSString * forum_name;
+@property (nonatomic, readonly) NSString * description;
+@property (nonatomic, readonly) NSString * parent_id;
+@property (nonatomic, readonly) NSString * logo_url;
+@property (nonatomic, readonly) BOOL       new_post;
+@property (nonatomic, readonly) BOOL       is_protected;
+@property (nonatomic, readonly) BOOL       is_subscribed;
+@property (nonatomic, readonly) BOOL       can_subscribe;
+@property (nonatomic, readonly) NSString * url;
+@property (nonatomic, readonly) BOOL       sub_only;
 
 @property (nonatomic, strong) NSMutableArray * child;
 
 // Các thuộc tính này chỉ có khi gọi getTopicWithMode function
-@property (nonatomic, strong) NSMutableArray * topics;
+@property (nonatomic, strong) NSArray  * topics;
 @property (nonatomic)         int        total_topic_num;
 @property (nonatomic)         BOOL       can_post;
 @property (nonatomic)         int        unread_sticky_cout;
@@ -45,6 +45,5 @@
      description:(NSString*)_description;
 
 - (ModelForum*)findSubForumWithId:(NSString*)subForumId;
-- (BOOL)isPageLoaded:(int)pageIndex;
 
 @end

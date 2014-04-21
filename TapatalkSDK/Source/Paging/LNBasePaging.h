@@ -21,7 +21,7 @@
 
 @property (nonatomic, readonly) NSInteger     perPage;            // Số lượng dữ liệu trong 1 trang
 @property (nonatomic, readonly) NSInteger     lastRequestPage;    // Trang cuối cùng gọi request
-@property (nonatomic, readonly) NSInteger     totalDataNumber;     // Số lượng data
+@property (nonatomic, readonly) NSInteger     totalDataNumber;    // Số lượng data
 @property (nonatomic, readonly) NSInteger     totalPage;          // Số trang
 
 @property (nonatomic, readonly) NSMutableDictionary  * dataOfPage;
@@ -30,8 +30,6 @@
 
 - (id)init;
 - (id)initWithPerPage:(NSInteger)numberOfPerPage;
-
-- (BOOL)isNextPage;
 
 - (void)startRequestOnComplete:(void (^)(NSArray *arrData))completeBlock
                      onFailure:(void (^)(NSError *error))failureBlock;

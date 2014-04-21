@@ -29,8 +29,8 @@
 }
 
 /* Cắt chuỗi */
-- (NSString*)getWordInFirstCharactor:(int)len {
-    
+- (NSString*)getWordInFirstCharactor:(int)len
+{    
     if (self.length <= len) {
         return self;
     }

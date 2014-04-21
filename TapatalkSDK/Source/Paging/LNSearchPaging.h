@@ -8,9 +8,9 @@
 
 #import "LNBasePaging.h"
 
-@interface LNPagingSearch : LNBasePaging
+@interface LNSearchPaging : LNBasePaging <LNBasePagingDelegate>
 
-@property (nonatomic, strong) NSString *searchString;
-@property (nonatomic, strong) NSString *searchId;
+@property (nonatomic, strong) NSString * searchString;
+@property (nonatomic, strong) NSString * searchId;
 
 @end
