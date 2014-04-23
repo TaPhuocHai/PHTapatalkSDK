@@ -31,7 +31,7 @@
 
 - (void)loadDataFrom:(NSInteger)from
                   to:(NSInteger)to
-          completion:(void (^)(NSArray * data, NSInteger totalDataNumber))completeBlock
+            complete:(void (^)(NSArray * data, NSInteger totalDataNumber))completeBlock
              failure:(void (^)(NSError * error))failureBlock
 {
     if (self.searchString.length == 0) {

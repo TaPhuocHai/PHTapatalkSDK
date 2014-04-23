@@ -10,6 +10,10 @@
 
 @implementation LNBasePaging
 
+@synthesize
+dataOfPage = _dataOfPage,
+lastRequestPage = _lastRequestPage;
+
 #define kPerPageDefault  10
 
 - (id)init
@@ -50,7 +54,7 @@
     _lastRequestPage = 1;
     [self.delegate loadDataFrom:0
                              to:self.perPage - 1
-                     completion:^(NSArray *data,NSInteger totalDataNumber)
+                       complete:^(NSArray *data,NSInteger totalDataNumber)
     {
         _dataOfPage[@(_lastRequestPage)] = data;
         _totalDataNumber = totalDataNumber;
@@ -64,9 +68,9 @@
                      onFailure:(void (^)(NSError *error))failureBlock
 {
     NSInteger nextPageToLoad = _lastRequestPage + 1;
-    [self.delegate loadDataFrom:nextPageToLoad * self.perPage
-                             to:((nextPageToLoad + 1) * self.perPage) - 1
-                     completion:^(NSArray *data, NSInteger totalDataNumber)
+    [self.delegate loadDataFrom:(nextPageToLoad - 1) * self.perPage
+                             to:(nextPageToLoad * self.perPage) - 1
+                       complete:^(NSArray *data, NSInteger totalDataNumber)
     {
         _lastRequestPage = nextPageToLoad;
         _dataOfPage[@(_lastRequestPage)] = data;

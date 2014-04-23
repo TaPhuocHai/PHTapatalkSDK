@@ -17,11 +17,15 @@
 - (id)initTopic:(ModelTopic*)_topic;
 - (id)initTopic:(ModelTopic*)_topic perPage:(NSInteger)perPage;
 
-- (BOOL)isPreviousPage;
-- (BOOL)isLoad:(int)page;
-- (BOOL)isNextPage:(int)page;
-- (BOOL)isPreviousPage:(int)page;
-- (void)loadPrevPageOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild;
-- (void)jumpToPage:(int)page onSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild;
+- (BOOL)pageIsLoaded:(int)page;
+
+- (BOOL)hadPrevPage;
+- (BOOL)hadNextPage;
+
+- (BOOL)pageIsNextPageInCurrentLoaded:(int)page;
+- (BOOL)pageIsPrevPageInCurrentLoaded:(int)page;
+
+- (void)loadPrevPageOnComplete:(void (^)(NSArray *arrData))completeBlock failure:(void (^)(NSError *error))failureBlock;
+- (void)jumpToPage:(NSInteger)page complete:(void (^)(NSArray *arrData))completeBlock failure:(void (^)(NSError *error))failureBlock;
 
 @end

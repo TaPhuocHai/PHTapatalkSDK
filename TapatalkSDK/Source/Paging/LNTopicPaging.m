@@ -14,7 +14,7 @@
 
 @interface LNTopicPaging ()
 
-- (void)loadTopicForm:(int)from to:(int)to onSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild;
+@property (nonatomic, readonly) NSArray * pageLoaded;
 
 @end
 
@@ -24,7 +24,6 @@
 {
     if(self = [super init]) {
         _topic = topic;
-        _pageLoaded = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -33,120 +32,85 @@
 {
     if (self = [super initWithPerPage:perPage]) {
         _topic = topic;
-        _pageLoaded = [[NSMutableArray alloc] init];
     }
     return self;
+}
+
+#pragma mark - Properties
+
+- (NSArray*)pageLoaded
+{
+    return self.dataOfPage.allKeys;
 }
 
 #pragma mark - LNBasePagingDelegate
 
 - (void)loadDataFrom:(NSInteger)from
                   to:(NSInteger)to
-          completion:(void (^)(NSArray * data, NSInteger totalDataNumber))completeBlock
+            complete:(void (^)(NSArray * data, NSInteger totalDataNumber))completeBlock
              failure:(void (^)(NSError * error))failureBlock
 {
-    [TapatalkAPI getThreadWithTopic:self.topic.topic_id
-                         returnHTML:YES
-                           startNum:from
-                            lastNum:to
-                  completionHandler:^(ModelTopic *result, NSError *error)
-     {
-         if (!error) {
-             self.perPage = 1;
-             _startNum = from;
-             _lastNum = to;
-             _currentPage = self.startNum / _countPaging + 1;
-             
-             [self.pageLoaded addObject:[NSNumber numberWithInt:self.currentPage]];
-             
-             self.topic.can_reply        = result2.can_reply;
-             self.topic.can_subscribe    = result2.can_subscribe;
-             self.topic.can_upload       = result2.can_upload;
-             self.topic.total_post_num   = result2.total_post_num;
-             self.topic.posts            = result2.posts;
-             if (from == 0 && self.topic.posts.count) {
-                 ModelPost * firstPost = self.topic.posts[0];
-                 firstPost.is_first_post_in_topic = YES;
-             }
-             
-             _totalCountData = result2.total_post_num;
-             
-             _onSuccess(self.topic.posts);
-         } else {
-             _onFaild(error2);
-         }
-     } onPercent:^(float percent) {
-     }];
-}
-
-- (void)startPagingOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild
-{
-    if ([LNAccountManager sharedInstance].isLoggedIn) {
-        [self loadTopicUnread:_countPaging completionHandler:^(NSArray *arrData) {
-            _onSuccess(arrData);
-        } onFaild:^(NSError *error) {
-            _onFaild(error);
+    if (from == 0) {
+        [self loadTopicUnread:self.perPage
+                     complete:^(NSArray *arrData, NSInteger position, NSInteger totalDataNumber)
+        {
+            if (completeBlock) completeBlock(arrData, totalDataNumber);
+            
+            // Tính lại lastRequsetPage thực sự
+            float tempRequsetPage = position /(float) self.perPage;
+            _lastRequestPage = (tempRequsetPage > (int)tempRequsetPage) ? tempRequsetPage + 1 : (int)tempRequsetPage;
+            // Set lại data thật sự
+            _dataOfPage[@(_lastRequestPage)] = arrData;
+            
+        } failure:^(NSError *error) {
+            // Try request againt
+            [self loadTopicForm:from
+                             to:to
+                       complete:^(NSArray *arrData, NSInteger totalDataNumber)
+             {
+                 if (completeBlock) completeBlock(arrData, totalDataNumber);
+             } failure:^(NSError *error) {
+                 if (failureBlock) failureBlock(error);
+             }];
         }];
     } else {
-        [self loadTopicForm:0 to:(_countPaging - 1) onSuccess:^(NSArray *arrData) {
-            _maxIndexPageLoaded = _currentPage;
-            _onSuccess(arrData);
-        } onFaild:^(NSError *error) {
-            _onFaild(error);
+        [self loadTopicForm:from
+                         to:to
+                   complete:^(NSArray *arrData, NSInteger totalDataNumber)
+        {
+            if (completeBlock) completeBlock(arrData, totalDataNumber);
+        } failure:^(NSError *error) {
+            if (failureBlock) failureBlock(error);
         }];
     }
-}
-
-- (void)loadNextPageOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild
-{    
-    [TapatalkAPI getThreadWithTopic:self.topic.topic_id returnHTML:YES startNum:(self.currentPage*_countPaging)
-                           lastNum:(((self.currentPage+1)*_countPaging)-1) completionHandler:^(ModelTopic *result, NSError *error) {
-                               
-        if (!error) {
-            _startNum = self.currentPage*_countPaging;
-            _lastNum = ((self.currentPage+1)*_countPaging)-1;
-            _currentPage = self.currentPage + 1;
-            _maxIndexPageLoaded = _currentPage;
-            
-            self.topic.can_reply = result.can_reply;
-            self.topic.can_subscribe = result.can_subscribe;
-            self.topic.can_upload = result.can_upload;
-            self.topic.total_post_num = result.total_post_num;
-            
-            _totalCountData = result.total_post_num;
-            
-            [self.pageLoaded addObject:[NSNumber numberWithInt:self.currentPage]];
-            for (ModelPost *post in result.posts) {
-                [self.topic.posts addObject:post];
-            }
-            
-            _onSuccess(result.posts);
-        } else {
-            _onFaild(error);
-        }
-    } onPercent:^(float percent) {
-    }];
 }
 
 #pragma mark - Các hàm riêng của LNPagingTopic
 
-- (BOOL)isPreviousPage
+- (BOOL)hadPrevPage
 {
-    for (NSNumber *number in self.pageLoaded)
-    {
-        if ([number intValue] == 1)
-        {
+    for (NSNumber *number in self.pageLoaded) {
+        if ([number intValue] == 1) {
             return NO;
         }
     }
     
-    if (self.currentPage > 1) {
+    if ([self minPageIndexLoaded] > 1) {
         return YES;
     }
     return NO;
 }
 
-- (BOOL)isLoad:(int)page {
+- (BOOL)hadNextPage
+{
+    if ([self maxPageIndexLoaded] < self.totalPage) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)pageIsLoaded:(int)page
+{
     if ([self.pageLoaded count] == 0) {
         return NO;
     }
@@ -159,181 +123,183 @@
     return NO;
 }
 
-- (BOOL)isNextPage:(int)page {
+- (BOOL)pageIsNextPageInCurrentLoaded:(int)page
+{
     if ([self.pageLoaded count] == 0) {
         return NO;
     }
-    if ([[self.pageLoaded objectAtIndex:(self.pageLoaded.count - 1)] intValue] == page - 1) {
+    
+    if ([self maxPageIndexLoaded] == page - 1) {
         return YES;
     }
     return NO;
 }
 
-- (BOOL)isPreviousPage:(int)page {
+- (BOOL)pageIsPrevPageInCurrentLoaded:(int)page
+{
     if ([self.pageLoaded count] == 0) {
         return NO;
     }
-    if ([[self.pageLoaded objectAtIndex:0] intValue] == page + 1) {
+    if ([self minPageIndexLoaded]  == page + 1) {
         return YES;
     }
     return NO;
 }
 
-- (void)loadPrevPageOnSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild {
-    if (_startNum < 0) {
-        _startNum = 0;
+- (void)loadPrevPageOnComplete:(void (^)(NSArray *arrData))completeBlock
+                       failure:(void (^)(NSError *error))failureBlock
+{
+    int minPageRequest = [self minPageIndexLoaded];
+    
+    int pageRequest = minPageRequest - 1;
+    if (pageRequest < 0) {
+        if (failureBlock) failureBlock([NSError errorWithDomain:@"local"
+                                                           code:1
+                                                       userInfo:@{@"error" : @"Page quá nhỏ"}]);
+        return;
     }
     
-    int startNeedLoad = (self.currentPage - 2)*_countPaging;
-    if (startNeedLoad < 0) {
-        startNeedLoad = 0;
-    }
-    
-    [TapatalkAPI getThreadWithTopic:self.topic.topic_id returnHTML:YES startNum:startNeedLoad lastNum:(startNeedLoad + _countPaging - 1) completionHandler:^(ModelTopic *result, NSError *error) {
+    [TapatalkAPI getThreadWithTopic:self.topic.topic_id
+                         returnHTML:YES
+                           startNum:(pageRequest - 1) * self.perPage
+                            lastNum:(pageRequest * self.perPage) - 1
+                  completionHandler:^(ModelTopic *result, NSError *error)
+    {
         if (!error) {
-            _startNum = startNeedLoad;
-            _lastNum = ((self.currentPage*kPagingTopicNumber)-1);
-            _currentPage = self.currentPage - 1;
-            
             self.topic.can_reply = result.can_reply;
-            self.topic.can_subscribe = result.can_subscribe;
             self.topic.can_upload = result.can_upload;
             self.topic.total_post_num = result.total_post_num;
+
+            _dataOfPage[@(pageRequest)] = result.posts;
             
-            _totalCountData = result.total_post_num;
-            
-            [self.pageLoaded insertObject:[NSNumber numberWithInt:self.currentPage] atIndex:0];
-            for (int i = [result.posts count] - 1 ; i >= 0 ; i --) {
-                ModelPost *post = [result.posts objectAtIndex:i];
-                [self.topic.posts insertObject:post atIndex:0];
-            }
-            
-            _onSuccess(result.posts);
+            if (completeBlock) completeBlock(result.posts);
         } else {
-            _onFaild(error);
+            if (failureBlock) failureBlock(error);
         }
     } onPercent:^(float percent) {
     }];
 }
 
-- (void)jumpToPage:(int)page onSuccess:(void (^)(NSArray *arrData))_onSuccess onFaild:(void (^)(NSError *error))_onFaild {
+- (void)jumpToPage:(NSInteger)page
+          complete:(void (^)(NSArray *arrData))completeBlock
+           failure:(void (^)(NSError *error))failureBlock
+{
     if (page < 0) {
-        _onFaild([NSError errorWithDomain:@"" code:1 userInfo:@{@"error" : @"Page quá nhỏ"}]);
+        if (failureBlock) failureBlock([NSError errorWithDomain:@"local"
+                                                           code:1
+                                                       userInfo:@{@"error" : @"Page quá nhỏ"}]);
         return;
     }
-    if ((page-1)*_countPaging > _totalCountData) {
-        _onFaild([NSError errorWithDomain:@"" code:1 userInfo:@{@"error" : @"Page quá lớn"}]);
+    if (page > self.totalPage) {
+        if (failureBlock) failureBlock([NSError errorWithDomain:@"local"
+                                                           code:1
+                                                       userInfo:@{@"error" : @"Page quá lớn"}]);
         return;
     }
-    
-    [self loadTopicForm:(page-1)*_countPaging to:(page*_countPaging-1) onSuccess:^(NSArray *arrData) {
-        _maxIndexPageLoaded = page;
-        _onSuccess(arrData);
-    } onFaild:^(NSError *error) {
-        _onFaild(error);
-    }];
+
+    [self loadTopicForm:(page - 1) * self.perPage
+                     to:(page * self.perPage) - 1
+               complete:^(NSArray *arrData, NSInteger totalDataNumber) {
+                   // Clear all old data
+                   [_dataOfPage removeAllObjects];
+                   
+                   _dataOfPage[@(page)] = arrData;
+                   if (completeBlock) completeBlock(arrData);
+               } failure:^(NSError *error) {
+                   if (failureBlock) failureBlock(error);
+               }];
+}
+
+#pragma mark - Private helper method
+
+// Trang lớn nhất đã load
+- (int)maxPageIndexLoaded
+{
+    int max = 0;
+    for (NSNumber * number in self.pageLoaded) {
+        if ([number intValue] > max) {
+            max = [number intValue];
+        }
+    }
+    return max;
+}
+
+// Load nhỏ nhất đã load
+- (int)minPageIndexLoaded
+{
+    int min = INT_MAX;
+    for (NSNumber * number in self.pageLoaded) {
+        if ([number intValue] < min) {
+            min = [number intValue];
+        }
+    }
+    return min;
 }
 
 #pragma mark - private method 
 
-- (void)loadTopicForm:(int)from
-                   to:(int)to
-            onSuccess:(void (^)(NSArray *arrData))_onSuccess
-              onFaild:(void (^)(NSError *error))_onFaild
+- (void)loadTopicForm:(NSInteger)from
+                   to:(NSInteger)to
+             complete:(void (^)(NSArray *arrData, NSInteger totalDataNumber))completeBlock
+              failure:(void (^)(NSError *error))failureBlock
 {
-    self.pageLoaded = [[NSMutableArray alloc] init];
-    
     [TapatalkAPI getThreadWithTopic:self.topic.topic_id
                          returnHTML:YES
                            startNum:from
                             lastNum:to
-                  completionHandler:^(ModelTopic *result2, NSError *error2)
+                  completionHandler:^(ModelTopic *result, NSError *error)
     {
-        if (!error2) {
-            _startNum = from;
-            _lastNum = to;
-            _currentPage = self.startNum / _countPaging + 1;        
+        if (!error) {
+            self.topic.can_reply        = result.can_reply;
+            self.topic.can_upload       = result.can_upload;
+            self.topic.total_post_num   = result.total_post_num;
             
-            [self.pageLoaded addObject:[NSNumber numberWithInt:self.currentPage]];
-            
-            self.topic.can_reply        = result2.can_reply;
-            self.topic.can_subscribe    = result2.can_subscribe;
-            self.topic.can_upload       = result2.can_upload;
-            self.topic.total_post_num   = result2.total_post_num;
-            self.topic.posts            = result2.posts;
             if (from == 0 && self.topic.posts.count) {
                 ModelPost * firstPost = self.topic.posts[0];
                 firstPost.is_first_post_in_topic = YES;
             }
-            
-            _totalCountData = result2.total_post_num;
-            
-            _onSuccess(self.topic.posts);
+            if(completeBlock) completeBlock(self.topic.posts ,result.total_post_num);
         } else {
-            _onFaild(error2);
+            if(failureBlock) failureBlock(error);
         }
     } onPercent:^(float percent) {
     }];
 }
 
--(void)loadTopicUnread:(int)posts_per_request
-     completionHandler:(void (^)(NSArray *arrData))_onSuccess
-               onFaild:(void (^)(NSError *error))_onFaild
+-(void)loadTopicUnread:(NSInteger)posts_per_request
+              complete:(void (^)(NSArray *arrData, NSInteger position, NSInteger totalDataNumber))completeBlock
+               failure:(void (^)(NSError *error))failureBlock
 {
     [TapatalkAPI getThreadUnread:self.topic.topic_id
                       returnHTML:YES
                  postsPerRequest:posts_per_request
-               completionHandler:^(ModelTopic *result, int position, NSError *error2)
+               completionHandler:^(ModelTopic *result, NSInteger position, NSError *error)
     {
-        if (!error2) {
-            _startNum = position;
-            _lastNum = position + result.posts.count;
-            
-            float tempTotal = position /(float) posts_per_request;
-            _currentPage = (tempTotal > (int)tempTotal) ? tempTotal + 1 : (int)tempTotal;
-            _maxIndexPageLoaded = _currentPage;
-            [self.pageLoaded addObject:[NSNumber numberWithInt:self.currentPage]];
-            
+        if (!error) {
             self.topic.can_reply = result.can_reply;
-            self.topic.can_subscribe = result.can_subscribe;
             self.topic.can_upload = result.can_upload;
             self.topic.total_post_num = result.total_post_num;
-            self.topic.posts = result.posts;
-            
-            _totalCountData = result.total_post_num;
-            
-            _onSuccess(self.topic.posts);
+
+            if(completeBlock) completeBlock(self.topic.posts, position,result.total_post_num);
         } else {
             // login and try again
-            [LNAccountManager autoLoginOnCompletionHander:^(ModelUser *result2, NSError *error3) {
-                if (error3) {
-                    [self loadTopicForm:0 to:(_countPaging - 1) onSuccess:^(NSArray *arrData) {
-                        _onSuccess(arrData);
-                    } onFaild:^(NSError *error) {
-                        _onFaild(error);
-                    }];
+            [LNAccountManager autoLoginOnCompletionHander:^(ModelUser *result2, NSError *error2) {
+                if (error2) {
+                    if (failureBlock) failureBlock (error);
                 } else {
-                    [TapatalkAPI getThreadUnread:self.topic.topic_id returnHTML:YES postsPerRequest:posts_per_request completionHandler:^(ModelTopic *result, int position, NSError *error4) {
-                        
-                        if (!error4) {
-                            _startNum = position/posts_per_request;
-                            _lastNum = position/posts_per_request + result.posts.count;
-                            _currentPage = position / posts_per_request;
-                            _maxIndexPageLoaded = _currentPage;
-                            
-                            [self.pageLoaded addObject:[NSNumber numberWithInt:self.currentPage]];
-                            
+                    [TapatalkAPI getThreadUnread:self.topic.topic_id
+                                      returnHTML:YES
+                                 postsPerRequest:posts_per_request
+                               completionHandler:^(ModelTopic *result,NSInteger position, NSError *error3)
+                    {
+                        if (!error3) {
                             self.topic.can_reply = result.can_reply;
-                            self.topic.can_subscribe = result.can_subscribe;
                             self.topic.can_upload = result.can_upload;
                             self.topic.total_post_num = result.total_post_num;
-                            self.topic.posts = result.posts;
                             
-                            _totalCountData = result.total_post_num;
-                            
-                            _onSuccess(self.topic.posts);
+                            if(completeBlock) completeBlock(self.topic.posts, position,result.total_post_num);
                         } else {
-                            _onFaild(error4);
+                            if (failureBlock) failureBlock (error);
                         }
                     }];
                 }
