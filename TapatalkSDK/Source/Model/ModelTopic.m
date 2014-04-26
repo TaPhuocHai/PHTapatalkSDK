@@ -19,6 +19,16 @@
 
 @implementation ModelTopic
 
+- (id)initWithId:(NSString*)topicId topicTitle:(NSString*)title forumId:(NSString*)forumId
+{
+    if (self = [super init]) {
+        _topic_id = topicId;
+        _topic_title = title;
+        _forum_id = forumId;
+    }
+    return self;
+}
+
 - (id)initWithDictionary:(NSDictionary*)dic
 {
     if (self = [super init]) {

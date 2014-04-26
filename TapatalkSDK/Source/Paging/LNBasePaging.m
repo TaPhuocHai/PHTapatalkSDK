@@ -11,7 +11,7 @@
 @implementation LNBasePaging
 
 @synthesize
-dataOfPage = _dataOfPage,
+data = _data,
 lastRequestPage = _lastRequestPage;
 
 #define kPerPageDefault  10
@@ -20,7 +20,7 @@ lastRequestPage = _lastRequestPage;
 {
     if (self = [super init]) {
         _perPage = kPerPageDefault;
-        _dataOfPage = [NSMutableDictionary dictionary];
+        _data = [NSMutableArray array];
     }
     return self;
 }
@@ -56,7 +56,7 @@ lastRequestPage = _lastRequestPage;
                              to:self.perPage - 1
                        complete:^(NSArray *data,NSInteger totalDataNumber)
     {
-        _dataOfPage[@(_lastRequestPage)] = data;
+        _data = [NSMutableArray arrayWithArray:data];
         _totalDataNumber = totalDataNumber;
         if (completeBlock) completeBlock(data);
     } failure:^(NSError *error) {
@@ -73,7 +73,7 @@ lastRequestPage = _lastRequestPage;
                        complete:^(NSArray *data, NSInteger totalDataNumber)
     {
         _lastRequestPage = nextPageToLoad;
-        _dataOfPage[@(_lastRequestPage)] = data;
+        [_data addObjectsFromArray:data];
         if (completeBlock) completeBlock(data);
     } failure:^(NSError *error) {
         if (failureBlock) failureBlock(error);
@@ -84,7 +84,7 @@ lastRequestPage = _lastRequestPage;
 
 - (void)dealloc
 {
-    _dataOfPage = nil;
+    _data = nil;
     _delegate = nil;
 }
 

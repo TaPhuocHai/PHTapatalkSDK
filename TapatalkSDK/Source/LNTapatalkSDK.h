@@ -11,6 +11,8 @@
 #import "ModelPost.h"
 #import "ModelForum.h"
 
+#import "LNRequest.h"
+
 #import "LNAccountManager.h"
 
 #import "LNBasePaging.h"
@@ -18,7 +20,7 @@
 #import "LNSearchPaging.h"
 #import "LNSubscribePaging.h"
 #import "LNTopicPaging.h"
-#import "LNUnreadTopic.h"
+#import "LNUnreadTopicPaging.h"
 
 #import "TapatalkAPI.h"
 

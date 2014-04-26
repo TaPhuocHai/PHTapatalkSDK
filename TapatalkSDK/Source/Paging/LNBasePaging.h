@@ -19,7 +19,7 @@
 @interface LNBasePaging : NSObject {
 @protected
     NSInteger             _lastRequestPage;
-    NSMutableDictionary * _dataOfPage;
+    NSMutableArray      * _data;
 }
 
 @property (nonatomic, readonly) NSInteger     perPage;            // Số lượng dữ liệu trong 1 trang
@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) NSInteger     totalDataNumber;    // Số lượng data
 @property (nonatomic, readonly) NSInteger     totalPage;          // Số trang
 
-@property (nonatomic, readonly) NSMutableDictionary  * dataOfPage;
+@property (nonatomic, readonly) NSMutableArray  * data;
 
 @property (nonatomic, assign) id<LNBasePagingDelegate> delegate;
 

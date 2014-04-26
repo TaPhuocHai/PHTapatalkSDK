@@ -12,7 +12,8 @@
 
 @interface LNTopicPaging : LNBasePaging <LNBasePagingDelegate>
 
-@property (nonatomic, readonly) ModelTopic     * topic;
+@property (nonatomic, readonly) ModelTopic           * topic;
+@property (nonatomic, readonly) NSMutableDictionary  * dataOfPage;
 
 - (id)initTopic:(ModelTopic*)_topic;
 - (id)initTopic:(ModelTopic*)_topic perPage:(NSInteger)perPage;
@@ -25,7 +26,10 @@
 - (BOOL)pageIsNextPageInCurrentLoaded:(int)page;
 - (BOOL)pageIsPrevPageInCurrentLoaded:(int)page;
 
-- (void)loadPrevPageOnComplete:(void (^)(NSArray *arrData))completeBlock failure:(void (^)(NSError *error))failureBlock;
-- (void)jumpToPage:(NSInteger)page complete:(void (^)(NSArray *arrData))completeBlock failure:(void (^)(NSError *error))failureBlock;
+- (void)loadPrevPageOnComplete:(void (^)(NSArray *arrData))completeBlock
+                       failure:(void (^)(NSError *error))failureBlock;
+- (void)jumpToPage:(NSInteger)page
+          complete:(void (^)(NSArray *arrData))completeBlock
+           failure:(void (^)(NSError *error))failureBlock;
 
 @end

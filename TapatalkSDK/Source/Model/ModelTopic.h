@@ -42,6 +42,7 @@
 @property (nonatomic, strong) ModelPost * content;
 
 - (id)initWithDictionary:(NSDictionary*)dic;
+- (id)initWithId:(NSString*)topicId topicTitle:(NSString*)title forumId:(NSString*)forumId;
 
 - (void)getContentOnComplete:(void (^)(void))completeBlock
                    onFailure:(void (^)(NSError * error))failureBlock;

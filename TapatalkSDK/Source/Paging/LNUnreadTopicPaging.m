@@ -9,6 +9,7 @@
 #import "LNUnreadTopicPaging.h"
 #import "TapatalkAPI.h"
 #import "ModelTopic.h"
+#import "LNAccountManager.h"
 
 @implementation LNUnreadTopicPaging
 

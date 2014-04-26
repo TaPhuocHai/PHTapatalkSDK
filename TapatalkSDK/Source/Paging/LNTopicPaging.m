@@ -24,6 +24,7 @@
 {
     if(self = [super init]) {
         _topic = topic;
+        self.delegate = self;
     }
     return self;
 }
@@ -32,6 +33,7 @@
 {
     if (self = [super initWithPerPage:perPage]) {
         _topic = topic;
+        self.delegate = self;
     }
     return self;
 }
@@ -54,13 +56,15 @@
         [self loadTopicUnread:self.perPage
                      complete:^(NSArray *arrData, NSInteger position, NSInteger totalDataNumber)
         {
+            // Set lại data thật sự
+            if (!_dataOfPage) _dataOfPage = [NSMutableDictionary dictionary];
+            _dataOfPage[@(_lastRequestPage)] = arrData;
+            
             if (completeBlock) completeBlock(arrData, totalDataNumber);
             
             // Tính lại lastRequsetPage thực sự
             float tempRequsetPage = position /(float) self.perPage;
             _lastRequestPage = (tempRequsetPage > (int)tempRequsetPage) ? tempRequsetPage + 1 : (int)tempRequsetPage;
-            // Set lại data thật sự
-            _dataOfPage[@(_lastRequestPage)] = arrData;
             
         } failure:^(NSError *error) {
             // Try request againt
@@ -68,6 +72,8 @@
                              to:to
                        complete:^(NSArray *arrData, NSInteger totalDataNumber)
              {
+                 _dataOfPage[@(1)] = arrData;
+                 
                  if (completeBlock) completeBlock(arrData, totalDataNumber);
              } failure:^(NSError *error) {
                  if (failureBlock) failureBlock(error);
@@ -78,6 +84,9 @@
                          to:to
                    complete:^(NSArray *arrData, NSInteger totalDataNumber)
         {
+            int pageRequet = from/self.perPage + 1;
+            _dataOfPage[@(pageRequet)] = arrData;
+
             if (completeBlock) completeBlock(arrData, totalDataNumber);
         } failure:^(NSError *error) {
             if (failureBlock) failureBlock(error);
@@ -170,6 +179,11 @@
             self.topic.can_upload = result.can_upload;
             self.topic.total_post_num = result.total_post_num;
 
+            for (int i = result.posts.count - 1; i >= 0; i--) {
+                ModelTopic * topic = result.posts[i];
+                [_data insertObject:topic atIndex:0];
+            }
+            
             _dataOfPage[@(pageRequest)] = result.posts;
             
             if (completeBlock) completeBlock(result.posts);
@@ -201,8 +215,8 @@
                      to:(page * self.perPage) - 1
                complete:^(NSArray *arrData, NSInteger totalDataNumber) {
                    // Clear all old data
+                   _data = [NSMutableArray array];
                    [_dataOfPage removeAllObjects];
-                   
                    _dataOfPage[@(page)] = arrData;
                    if (completeBlock) completeBlock(arrData);
                } failure:^(NSError *error) {
@@ -254,11 +268,11 @@
             self.topic.can_upload       = result.can_upload;
             self.topic.total_post_num   = result.total_post_num;
             
-            if (from == 0 && self.topic.posts.count) {
-                ModelPost * firstPost = self.topic.posts[0];
+            if (from == 0 && result.posts.count) {
+                ModelPost * firstPost = result.posts[0];
                 firstPost.is_first_post_in_topic = YES;
             }
-            if(completeBlock) completeBlock(self.topic.posts ,result.total_post_num);
+            if(completeBlock) completeBlock(result.posts ,result.total_post_num);
         } else {
             if(failureBlock) failureBlock(error);
         }
@@ -280,7 +294,7 @@
             self.topic.can_upload = result.can_upload;
             self.topic.total_post_num = result.total_post_num;
 
-            if(completeBlock) completeBlock(self.topic.posts, position,result.total_post_num);
+            if(completeBlock) completeBlock(result.posts, position,result.total_post_num);
         } else {
             // login and try again
             [LNAccountManager autoLoginOnCompletionHander:^(ModelUser *result2, NSError *error2) {
@@ -297,7 +311,7 @@
                             self.topic.can_upload = result.can_upload;
                             self.topic.total_post_num = result.total_post_num;
                             
-                            if(completeBlock) completeBlock(self.topic.posts, position,result.total_post_num);
+                            if(completeBlock) completeBlock(result.posts, position,result.total_post_num);
                         } else {
                             if (failureBlock) failureBlock (error);
                         }
