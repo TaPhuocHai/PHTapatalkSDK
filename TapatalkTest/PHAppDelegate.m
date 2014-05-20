@@ -19,6 +19,20 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     [LNTapatalkSDK didBecomeActive];
+    
+    // Get config
+    [TapatalkAPI getConfigCompletionHandler:^(NSDictionary *config, NSError *error) {
+    }];
+    
+    // Register new user
+    [TapatalkAPI registerWithEmail:@"hai.ta@webtretho.com"
+                          username:@"hai.ta"
+                          password:@"123456"
+                 completionHandler:^(BOOL success, NSString *message, NSError *error) {
+                     NSLog(@"register %@", success ? @"success" : @"failure");
+                     NSLog(@"message = %@", message);
+                     NSLog(@"error = %@", error);
+                 }];
 }
 
 @end

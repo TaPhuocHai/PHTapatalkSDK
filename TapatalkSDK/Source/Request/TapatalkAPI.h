@@ -17,11 +17,20 @@
 
 + (void)shareInstanceWithUrl:(NSString*)forumUrl;
 
+#pragma mark - 
+
++ (void)getConfigCompletionHandler:(void (^)(NSDictionary *config, NSError *error))_completionHander;
+
 #pragma mark - Login
 
 + (void)loginWithUsername:(NSData*)username
                  password:(NSData*)password
         completionHandler:(void (^)(ModelUser* result, NSError *error))_completionHander;
+
++ (void)registerWithEmail:(NSString*)email
+                 username:(NSString*)username
+                 password:(NSString*)password
+        completionHandler:(void (^)(BOOL success, NSString * message, NSError *error))_completionHander;
 
 #pragma mark - Forum
 

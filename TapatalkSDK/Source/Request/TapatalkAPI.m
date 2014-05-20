@@ -33,6 +33,37 @@ static NSURL    * _kNSURLServerTapatalkUpload;
     _kNSURLServerTapatalkUpload  = [NSURL URLWithString:[NSString stringWithFormat:@"%@/mobiquo/upload.php",_kForumUrl]];
 }
 
+#pragma mark - 
+
++ (void)getConfigCompletionHandler:(void (^)(NSDictionary *config, NSError *error))_completionHander
+{
+    LNRequestHelper *request = [[LNRequestHelper alloc] initWithURL:_kNSURLServerTapatalk];
+
+    [request requestWithMethod:@"get_config"
+                   prarameters:nil
+                       success:^(XMLRPCResponse *response, NSDictionary *result)
+     {
+         CXMLDocument *doc = [[CXMLDocument alloc] initWithData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]
+                                                       encoding:NSUTF8StringEncoding
+                                                        options:0
+                                                          error:nil];
+         NSArray * nodes = [doc nodesForXPath:@"//methodResponse/params/param/value/array/data/*"
+                                        error:nil];
+         NSDictionary * dic = [TapatalkHelper parseStructRespondToDictionary:nodes];
+         if ([dic[@"result"] boolValue]) {
+             if(_completionHander) _completionHander(dic,nil);
+         } else {
+             NSString *textError = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"result_text"]]
+                                                         encoding:NSUTF8StringEncoding];
+             if(_completionHander) _completionHander(nil,[NSError errorWithDomain:_kNSURLServerTapatalk.absoluteString
+                                                                             code:1
+                                                                         userInfo:@{@"error" : textError}]);
+         }
+     } fail:^(NSError *error, NSDictionary *result) {
+         if(_completionHander) _completionHander(nil, error);
+     }];
+}
+
 #pragma mark - Login
 
 + (void)loginWithUsername:(NSData*)username
@@ -49,6 +80,45 @@ static NSURL    * _kNSURLServerTapatalkUpload;
     } fail:^(NSError *error, NSDictionary *result) {
         if(_completionHander) _completionHander(nil,error);
     }];
+}
+
++ (void)registerWithEmail:(NSString*)email
+                 username:(NSString*)username
+                 password:(NSString*)password
+        completionHandler:(void (^)(BOOL success, NSString * message, NSError *error))_completionHander
+{
+//    // Convert string to base64 encoded
+//    NSData   * usernameData = [NSData dataFromBase64String:[[username dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString]];
+//    NSData   * passwordData = [NSData dataFromBase64String:[[password dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString]];
+//    NSData   * emailData    = [NSData dataFromBase64String:[[email dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString]];
+    NSData   * usernameData = [username dataUsingEncoding:NSUTF8StringEncoding];
+    NSData   * passwordData = [password dataUsingEncoding:NSUTF8StringEncoding];
+    NSData   * emailData    = [email dataUsingEncoding:NSUTF8StringEncoding];
+    
+    // Build params
+    NSArray *params = [NSArray arrayWithObjects:usernameData, passwordData , emailData, @"", @"", nil];
+    
+    // Request
+    LNRequestHelper *request = [[LNRequestHelper alloc] initWithURL:_kNSURLServerTapatalk];
+    [request requestWithMethod:@"register"
+                   prarameters:params
+                       success:^(XMLRPCResponse *response, NSDictionary *result)
+     {
+         CXMLDocument *doc = [[CXMLDocument alloc] initWithData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]
+                                                       encoding:NSUTF8StringEncoding
+                                                        options:0
+                                                          error:nil];
+         NSArray * nodes = [doc nodesForXPath:@"//methodResponse/params/param/value/array/data/*"
+                                        error:nil];
+         NSDictionary * dic = [TapatalkHelper parseStructRespondToDictionary:nodes];
+         if ([dic[@"result"] boolValue]) {
+             if(_completionHander) _completionHander(YES, nil,nil);
+         } else {
+             if(_completionHander) _completionHander(NO,dic[@"result_text"],nil);
+         }
+     } fail:^(NSError *error, NSDictionary *result) {
+         if(_completionHander) _completionHander(NO,nil,error);
+     }];
 }
 
 #pragma mark - Forum

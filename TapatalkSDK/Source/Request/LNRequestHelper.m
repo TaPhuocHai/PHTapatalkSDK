@@ -23,7 +23,7 @@
 - (void)requestWithMethod:(NSString*)method prarameters:(NSArray*)params success:(void (^)(XMLRPCResponse *response, NSDictionary *result))_onSuccess fail:(void (^)(NSError* error, NSDictionary *result))_onFail
 {
     _blockSuccess = _onSuccess;
-    _blockFaild = _onFail;
+    _blockFaild   = _onFail;
     
     XMLRPCConnectionManager *manager = [XMLRPCConnectionManager sharedManager];
     [self  setMethod:method withParameters:params];
