@@ -38,6 +38,8 @@
     return self;
 }
 
+#pragma mark - Coder
+
 #pragma mark - Private helper
 
 - (void)parseDataFormDictionary:(NSDictionary*)dic

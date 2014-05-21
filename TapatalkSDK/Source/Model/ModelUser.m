@@ -41,26 +41,28 @@
     self.icon_url          = [dic objectForKey:@"icon_url"];
 }
 
-- (id)initWithCoder:(NSCoder *)coder {
+- (id)initWithCoder:(NSCoder *)coder
+{
     if (self = [super init]) {
-        self.user_id = [coder decodeIntForKey:@"user_id"];
-        self.post_count = [coder decodeIntForKey:@"post_count"];
-        self.can_pm = [coder decodeBoolForKey:@"can_pm"];
-        self.can_moderate = [coder decodeBoolForKey:@"can_moderate"];
-        self.can_search = [coder decodeBoolForKey:@"can_search"];
-        self.can_send_pm = [coder decodeBoolForKey:@"can_send_pm"];
+        self.user_id           = [coder decodeIntForKey:@"user_id"];
+        self.post_count        = [coder decodeIntForKey:@"post_count"];
+        self.can_pm            = [coder decodeBoolForKey:@"can_pm"];
+        self.can_moderate      = [coder decodeBoolForKey:@"can_moderate"];
+        self.can_search        = [coder decodeBoolForKey:@"can_search"];
+        self.can_send_pm       = [coder decodeBoolForKey:@"can_send_pm"];
         self.can_upload_avatar = [coder decodeBoolForKey:@"can_upload_avatar"];
-        self.can_whosonline = [coder decodeBoolForKey:@"can_whosonline"];
-        self.max_attachment = [coder decodeIntForKey:@"max_attachment"];
-        self.max_jpg_size = [coder decodeIntForKey:@"max_jpg_size"];
-        self.max_png_size = [coder decodeIntForKey:@"max_png_size"];
-        self.username = [coder decodeObjectForKey:@"username"];
-        self.icon_url = [coder decodeObjectForKey:@"icon_url"];
+        self.can_whosonline    = [coder decodeBoolForKey:@"can_whosonline"];
+        self.max_attachment    = [coder decodeIntForKey:@"max_attachment"];
+        self.max_jpg_size      = [coder decodeIntForKey:@"max_jpg_size"];
+        self.max_png_size      = [coder decodeIntForKey:@"max_png_size"];
+        self.username          = [coder decodeObjectForKey:@"username"];
+        self.icon_url          = [coder decodeObjectForKey:@"icon_url"];
     }
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)coder {
+- (void)encodeWithCoder:(NSCoder *)coder
+{
     [coder encodeInt:self.user_id     forKey:@"user_id"];
     [coder encodeInt:self.post_count forKey:@"post_count"];
     [coder encodeBool:self.can_pm forKey:@"can_pm"];

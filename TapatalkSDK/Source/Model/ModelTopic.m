@@ -77,6 +77,18 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)coder
+{
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+}
+
 - (void)getContentOnComplete:(void (^)(void))completeBlock
                    onFailure:(void (^)(NSError * error))failureBlock
 {
@@ -96,20 +108,5 @@
      } onPercent:^(float percent) {
      }];
 }
-
-#pragma mark - Propreties
-
-//- (ModelPost*)content
-//{
-//    if (!_content) {
-//        if (self.posts.count) {
-//            ModelPost * firstPost = self.posts.firstObject;
-//            if (firstPost.po) {
-//                <#statements#>
-//            }
-//        }
-//    }
-//    return _content;
-//}
 
 @end
