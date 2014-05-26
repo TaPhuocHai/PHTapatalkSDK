@@ -97,11 +97,26 @@
     result = [self find:@"#cccccc" replace:@"" onText:result];
     
     if (content) {
+        NSString * quoteReplaceContent = @"<div style=\"padding:0 0 0 15; color:#777777;font-style:italic; font-size:16px;\">";
+        // xử lý quote
+        NSString * firstQuotePattern = @"\\[(quote|QUOTE)((\\w|\\&|;|\\s|=)+)\\]";
+        NSRegularExpression  * firstQuoteRegex = [NSRegularExpression regularExpressionWithPattern:firstQuotePattern options:0 error:NULL];
+        NSTextCheckingResult * firstQuoteMatch = [firstQuoteRegex firstMatchInString:result options:0 range:NSMakeRange(0, [result length])];
+        while (firstQuoteMatch.numberOfRanges) {
+            result = [result stringByReplacingCharactersInRange:firstQuoteMatch.range withString:quoteReplaceContent];
+            firstQuoteMatch = [firstQuoteRegex firstMatchInString:result options:0 range:NSMakeRange(0, [result length])];
+        }
+        // [quote]
+        NSString * lastQuotePattern = @"\\[/?(quote|QUOTE)\\]";
+        NSRegularExpression  * lastQuoteRegex = [NSRegularExpression regularExpressionWithPattern:lastQuotePattern options:0 error:NULL];
+        NSTextCheckingResult * lastQuoteMatch = [lastQuoteRegex firstMatchInString:result options:0 range:NSMakeRange(0, [result length])];
+        while (lastQuoteMatch.numberOfRanges) {
+            result = [result stringByReplacingCharactersInRange:lastQuoteMatch.range withString:@"</div>"];
+            lastQuoteMatch = [lastQuoteRegex firstMatchInString:result options:0 range:NSMakeRange(0, [result length])];
+        }
+        
         result = [self findAndReplaceHTMLKey:@"[IMG]" andKey:@"[/IMG]" onText:result];
         result = [self findAndReplaceHTMLKey:@"[img]" andKey:@"[/img]" onText:result];
-        
-        result = [self findAndReplaceHTMLKey:@"[QUOTE]" andKey:@"[/QUOTE]" onText:result];
-        result = [self findAndReplaceHTMLKey:@"[quote]" andKey:@"[/quote]" onText:result];
         
         result = [self findAndReplaceHTMLKey:@"[URL]" andKey:@"[/URL]" onText:result];
         result = [self findAndReplaceHTMLKey:@"[url]" andKey:@"[/url]" onText:result];
@@ -139,14 +154,13 @@
     result = [self find:@"something:" replace:@"" onText:result];
     result = [self find:@"[/QUOTE]" replace:@"" onText:result];
     
-    if (result == nil)
-    {
+    if (result == nil) {
         result = @"Dữ liệu lỗi";
     }
     NSString *text = [[NSString stringWithFormat:@"<div style=\"color:#000000;\" >"] stringByAppendingString:result];//font-style:Light//58595b
     
     text = [text stringByAppendingString:@"</div>"];
-//   NSLog(@"content = %@", text);
+   
     return text;
 }
 
@@ -175,10 +189,6 @@ static NSDictionary *_htmlDataKeyMiddle;
                         @"< href='", @"[url]",
                         @"'></a>", @"[/URL]",
                         @"'></a>", @"[/url]",
-                        [NSString stringWithFormat:@"<div style=\"padding:0 0 0 15; color:#777777;font-style:italic; font-size:16px;\">"], @"[QUOTE]",
-                        @"</div>", @"[/QUOTE]",
-                        [NSString stringWithFormat:@"<div style=\"padding:0 0 0 15; color:#777777;font-style:italic; font-size:16px;\">"], @"[quote]",
-                        @"</div>", @"[/quote]",
                      nil];
     }
     
