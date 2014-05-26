@@ -215,9 +215,12 @@
                      to:(page * self.perPage) - 1
                complete:^(NSArray *arrData, NSInteger totalDataNumber) {
                    // Clear all old data
-                   _data = [NSMutableArray array];
+                   _data = nil;
+                   _data = [NSMutableArray arrayWithArray:arrData];
+                   
                    [_dataOfPage removeAllObjects];
                    _dataOfPage[@(page)] = arrData;
+                   
                    if (completeBlock) completeBlock(arrData);
                } failure:^(NSError *error) {
                    if (failureBlock) failureBlock(error);
