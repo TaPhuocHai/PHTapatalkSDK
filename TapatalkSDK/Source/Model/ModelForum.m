@@ -40,6 +40,64 @@
 
 #pragma mark - Coder
 
+- (id)initWithCoder:(NSCoder *)coder
+{
+    if (self = [super init]) {
+        _forum_id              = [coder decodeObjectForKey:@"_forum_id"];
+        _forum_name            = [coder decodeObjectForKey:@"_forum_name"];
+        _description           = [coder decodeObjectForKey:@"_description"];
+        _parent_id             = [coder decodeObjectForKey:@"_parent_id"];
+        _logo_url              = [coder decodeObjectForKey:@"_logo_url"];
+        _new_post              = [coder decodeBoolForKey:@"_new_post"];
+        _is_protected          = [coder decodeBoolForKey:@"_is_protected"];
+        _is_subscribed         = [coder decodeBoolForKey:@"_is_subscribed"];
+        _can_subscribe         = [coder decodeBoolForKey:@"_can_subscribe"];
+        _url                   = [coder decodeObjectForKey:@"_url"];
+        _sub_only              = [coder decodeBoolForKey:@"_sub_only"];
+        
+        _child                 = [coder decodeObjectForKey:@"_child"];
+
+        _topics                = [coder decodeObjectForKey:@"_topics"];
+        _total_topic_num       = [coder decodeIntegerForKey:@"_total_topic_num"];
+        _can_post              = [coder decodeBoolForKey:@"_can_post"];
+        _unread_sticky_cout    = [coder decodeIntegerForKey:@"_unread_sticky_cout"];
+        _unread_announce_count = [coder decodeIntegerForKey:@"_unread_announce_count"];
+        _require_prefix        = [coder decodeBoolForKey:@"_require_prefix"];
+        _prefixes              = [coder decodeObjectForKey:@"_prefixes"];
+        _prefix_id             = [coder decodeObjectForKey:@"_prefix_id"];
+        _prefix_display_name   = [coder decodeObjectForKey:@"_prefix_display_name"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:_forum_id forKey:@"_forum_id"];
+    [coder encodeObject:_forum_name forKey:@"_forum_name"];
+    [coder encodeObject:_description forKey:@"_description"];
+    [coder encodeObject:_parent_id forKey:@"_parent_id"];
+    [coder encodeObject:_logo_url forKey:@"_logo_url"];
+    [coder encodeBool:_new_post forKey:@"_new_post"];
+    [coder encodeBool:_is_protected forKey:@"_is_protected"];
+    [coder encodeBool:_is_subscribed forKey:@"_is_subscribed"];
+    [coder encodeBool:_can_subscribe forKey:@"_can_subscribe"];
+    [coder encodeObject:_url forKey:@"_url"];
+    [coder encodeBool:_sub_only forKey:@"_sub_only"];
+    
+    [coder encodeObject:_child forKey:@"_child"];
+    
+    [coder encodeObject:_topics forKey:@"_topics"];
+    [coder encodeInteger:_total_topic_num forKey:@"_total_topic_num"];
+    [coder encodeBool:_can_post forKey:@"_can_post"];
+    [coder encodeInteger:_unread_sticky_cout forKey:@"_unread_sticky_cout"];
+    [coder encodeInteger:_unread_announce_count forKey:@"_unread_announce_count"];
+    [coder encodeBool:_require_prefix forKey:@"_require_prefix"];
+    [coder encodeObject:_prefixes forKey:@"_prefixes"];
+    [coder encodeObject:_prefix_id forKey:@"_prefix_id"];
+    [coder encodeObject:_prefix_display_name forKey:@"_prefix_display_name"];
+}
+
+
 #pragma mark - Private helper
 
 - (void)parseDataFormDictionary:(NSDictionary*)dic
