@@ -54,7 +54,7 @@
         _icon_url          = [dic objectForKey:@"icon_url"];
         _last_reply_time   = [dic objectForKey:@"last_reply_time"];
         _reply_number      = [[dic objectForKey:@"reply_number"] intValue];
-        _new_post          = [[dic objectForKey:@"new_post"] intValue];
+        _new_post          = [[dic objectForKey:@"new_post"] boolValue];
         _view_number       = [[dic objectForKey:@"view_number"] intValue];
         _short_content     = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"short_content"]]
                                                        encoding:NSUTF8StringEncoding];
@@ -121,9 +121,9 @@
     [coder encodeBool:_is_subscribed forKey:@"_is_subscribed"];
     [coder encodeBool:_is_closed forKey:@"_is_closed"];
     [coder encodeObject:_icon_url forKey:@"_icon_url"];
-    [coder encodeObject:_last_reply_user forKey:@"_last_reply_user"];
+    [coder encodeObject:_last_reply_time forKey:@"last_reply_time"];
     [coder encodeInteger:_reply_number forKey:@"_reply_number"];
-    [coder encodeInteger:_new_post forKey:@"_new_post"];
+    [coder encodeBool:_new_post forKey:@"_new_post"];
     [coder encodeInteger:_view_number forKey:@"_view_number"];
     [coder encodeObject:_short_content forKey:@"_short_content"];
     [coder encodeInteger:_is_approved forKey:@"_is_approved"];
