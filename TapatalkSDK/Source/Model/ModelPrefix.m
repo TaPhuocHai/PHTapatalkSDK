@@ -23,4 +23,19 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)coder
+{
+    if (self = [super init]) {
+        _prefix_id = [coder decodeObjectForKey:@"_prefix_id"];
+        _prefix_display_name = [coder decodeObjectForKey:@"_prefix_display_name"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:_prefix_id forKey:@"_prefix_id"];
+    [coder encodeObject:_prefix_display_name forKey:@"_prefix_display_name"];
+}
+
 @end
