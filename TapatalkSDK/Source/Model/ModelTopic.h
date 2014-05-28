@@ -10,6 +10,37 @@
 #import "ModelPost.h"
 
 @interface ModelTopic : NSObject
+{
+    NSString * _topic_id;
+    NSString * _topic_title;
+    NSString * _forum_id;
+    NSString * _prefix;
+    NSString * _topic_author_id;
+    NSString * _topic_author_name;
+    BOOL       _can_subscribe;
+    BOOL       _is_subscribed;
+    BOOL       _is_closed;
+    NSString * _icon_url;
+    NSString * _last_reply_time;
+    int        _reply_number;
+    BOOL       _new_post;
+    int        _view_number;
+    NSString * _short_content;
+    int        _is_approved;
+    int        _attachment;
+    NSString * _last_reply_user;
+    int        _timestamp;
+    NSArray *  _posts;
+    
+    // Các dữ liệu dưới đây chỉ có được khi gọi hàm getThreadWithReturnHTML
+    BOOL              _can_reply;
+    BOOL              _can_upload;
+    int               _position;
+    int               _total_post_num;
+    
+    BOOL                _is_sticky;
+    ModelPost * _content;
+}
 
 @property (nonatomic, readonly) NSString * topic_id;
 @property (nonatomic, readonly) NSString * topic_title;

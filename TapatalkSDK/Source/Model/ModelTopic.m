@@ -19,6 +19,15 @@
 
 @implementation ModelTopic
 
+@synthesize topic_id = _topic_id,
+topic_title = _topic_title,
+topic_author_name = _topic_author_name,
+icon_url = _icon_url,
+view_number = _view_number,
+short_content = _short_content,
+reply_number = _reply_number,
+timestamp = _timestamp;
+
 - (id)initWithId:(NSString*)topicId topicTitle:(NSString*)title forumId:(NSString*)forumId
 {
     if (self = [super init]) {
