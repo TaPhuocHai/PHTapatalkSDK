@@ -97,16 +97,16 @@
     result = [self find:@"#cccccc" replace:@"" onText:result];
     
     if (content) {
-        NSString * quoteReplaceContent = @"<div style=\"padding:0 0 0 15; color:#777777;font-style:italic; font-size:16px;\">";
+        NSString * quoteReplaceContent = @"<div style=\"padding:0 0 0 0; color:#777777;font-style:italic; font-size:16px;\">";
         // xử lý quote
-        NSString * firstQuotePattern = @"\\[(quote|QUOTE)((\\w|\\&|;|\\s|=)+)\\]";
+        NSString * firstQuotePattern = @"\\[(quote|QUOTE)((\\w|\\&|\\;|\\s|\\=|\\.)+)\\]";
         NSRegularExpression  * firstQuoteRegex = [NSRegularExpression regularExpressionWithPattern:firstQuotePattern options:0 error:NULL];
         NSTextCheckingResult * firstQuoteMatch = [firstQuoteRegex firstMatchInString:result options:0 range:NSMakeRange(0, [result length])];
         while (firstQuoteMatch.numberOfRanges) {
             result = [result stringByReplacingCharactersInRange:firstQuoteMatch.range withString:quoteReplaceContent];
             firstQuoteMatch = [firstQuoteRegex firstMatchInString:result options:0 range:NSMakeRange(0, [result length])];
         }
-        // [quote]
+        // kết thúc quote
         NSString * lastQuotePattern = @"\\[/?(quote|QUOTE)\\]";
         NSRegularExpression  * lastQuoteRegex = [NSRegularExpression regularExpressionWithPattern:lastQuotePattern options:0 error:NULL];
         NSTextCheckingResult * lastQuoteMatch = [lastQuoteRegex firstMatchInString:result options:0 range:NSMakeRange(0, [result length])];
@@ -160,7 +160,7 @@
     NSString *text = [[NSString stringWithFormat:@"<div style=\"color:#000000;\" >"] stringByAppendingString:result];//font-style:Light//58595b
     
     text = [text stringByAppendingString:@"</div>"];
-   
+    
     return text;
 }
 
