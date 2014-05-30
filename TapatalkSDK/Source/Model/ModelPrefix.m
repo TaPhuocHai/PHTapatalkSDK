@@ -38,4 +38,11 @@
     [coder encodeObject:_prefix_display_name forKey:@"_prefix_display_name"];
 }
 
+- (void)dealloc
+{
+    NSLog(@"dealloc ModelPrefix");
+    _prefix_id = nil;
+    _prefix_display_name = nil;
+}
+
 @end

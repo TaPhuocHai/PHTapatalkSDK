@@ -78,4 +78,12 @@
     [coder encodeObject:self.icon_url forKey:@"icon_url"];
 }
 
+- (void)dealloc
+{
+    NSLog(@"dealloc ModelUser");
+    result_text = nil;
+    username = nil;
+    icon_url = nil;
+}
+
 @end

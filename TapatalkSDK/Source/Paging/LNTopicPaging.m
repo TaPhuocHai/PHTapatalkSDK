@@ -56,15 +56,15 @@
         [self loadTopicUnread:self.perPage
                      complete:^(NSArray *arrData, NSInteger position, NSInteger totalDataNumber)
         {
+            // Tính lại lastRequsetPage thực sự
+            float tempRequsetPage = position /(float) self.perPage;
+            _lastRequestPage = (tempRequsetPage > (int)tempRequsetPage) ? tempRequsetPage + 1 : (int)tempRequsetPage;
+            
             // Set lại data thật sự
             if (!_dataOfPage) _dataOfPage = [NSMutableDictionary dictionary];
             _dataOfPage[@(_lastRequestPage)] = arrData;
             
             if (completeBlock) completeBlock(arrData, totalDataNumber);
-            
-            // Tính lại lastRequsetPage thực sự
-            float tempRequsetPage = position /(float) self.perPage;
-            _lastRequestPage = (tempRequsetPage > (int)tempRequsetPage) ? tempRequsetPage + 1 : (int)tempRequsetPage;
             
         } failure:^(NSError *error) {
             // Try request againt
@@ -324,5 +324,13 @@
         }
     }];
 }
+
+- (void)dealloc
+{
+    NSLog(@"dealloc LNSearchPaging");
+    _topic = nil;
+    _dataOfPage = nil;
+}
+
 
 @end

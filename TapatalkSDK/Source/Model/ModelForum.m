@@ -134,4 +134,22 @@
     return nil;
 }
 
+#pragma mark - dealloc
+
+- (void)dealloc
+{
+    NSLog(@"dealloc ModelForum");
+    _forum_id = nil;
+    _forum_name = nil;
+    _description = nil;
+    _parent_id = nil;
+    _logo_url = nil;
+    _url = nil;
+    _child = nil;
+    _topics = nil;
+    _prefix_display_name = nil;
+    _prefix_id = nil;
+    _prefixes = nil;
+}
+
 @end

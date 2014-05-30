@@ -85,7 +85,7 @@ lastRequestPage = _lastRequestPage;
 - (void)dealloc
 {
     _data = nil;
-    _delegate = nil;
+    _delegate = nil;    
 }
 
 @end

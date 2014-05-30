@@ -59,4 +59,10 @@
     }];
 }
 
+- (void)dealloc
+{
+    NSLog(@"dealloc LNForumPaging");
+    _forum = nil;
+}
+
 @end

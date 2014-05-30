@@ -56,4 +56,11 @@
     }];
 }
 
+- (void)dealloc
+{
+    NSLog(@"dealloc LNSearchPaging");
+    _searchId = nil;
+    _searchString = nil;
+}
+
 @end

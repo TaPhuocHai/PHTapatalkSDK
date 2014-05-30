@@ -74,4 +74,15 @@
     [coder encodeObject:_topic_id forKey:@"_topic_id"];
 }
 
+- (void)dealloc
+{
+    _icon_url = nil;
+    _post_author_name = nil;
+    _post_content = nil;
+    _post_id = nil;
+    _post_time = nil;
+    _post_title = nil;
+    _topic_id = nil;
+}
+
 @end

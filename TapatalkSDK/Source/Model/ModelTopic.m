@@ -167,4 +167,21 @@ timestamp = _timestamp;
      }];
 }
 
+- (void)dealloc
+{
+    NSLog(@"dealloc ModelTopic");
+    _topic_id = nil;
+    _topic_title = nil;
+    _forum_id = nil;
+    _prefix = nil;
+    _topic_author_id  = nil;
+    _topic_author_name = nil;
+    _icon_url = nil;
+    _last_reply_time = nil;
+    _short_content = nil;
+    _last_reply_user = nil;
+    _posts = nil;
+    _content = nil;
+}
+
 @end
