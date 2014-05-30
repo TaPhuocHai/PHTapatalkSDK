@@ -75,6 +75,9 @@
 - (id)initWithDictionary:(NSDictionary*)dic;
 - (id)initWithId:(NSString*)topicId topicTitle:(NSString*)title forumId:(NSString*)forumId;
 
+- (id)initWithCoder:(NSCoder *)coder;
+- (void)encodeWithCoder:(NSCoder *)coder;
+
 - (void)getContentOnComplete:(void (^)(void))completeBlock
                    onFailure:(void (^)(NSError * error))failureBlock;
 
