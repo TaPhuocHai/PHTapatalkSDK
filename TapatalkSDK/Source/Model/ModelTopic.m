@@ -169,7 +169,6 @@ timestamp = _timestamp;
 
 - (void)dealloc
 {
-    NSLog(@"dealloc ModelTopic");
     _topic_id = nil;
     _topic_title = nil;
     _forum_id = nil;

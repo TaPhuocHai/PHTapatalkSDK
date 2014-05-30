@@ -138,7 +138,6 @@
 
 - (void)dealloc
 {
-    NSLog(@"dealloc ModelForum");
     _forum_id = nil;
     _forum_name = nil;
     _description = nil;
