@@ -94,7 +94,7 @@
     NSString *result = content;
     
     result = [self find:@"color" replace:@"something" onText:result];
-    result = [self find:@"#cccccc" replace:@"" onText:result];    
+    result = [self find:@"#cccccc" replace:@"" onText:result];
     
     if (content) {
         NSString * quoteReplaceContent = @"<div style=\"padding:0 0 0 0; color:#777777;font-style:italic; font-size:16px;\">";
