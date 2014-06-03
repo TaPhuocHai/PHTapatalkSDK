@@ -171,12 +171,17 @@ static NSURL    * _kNSURLServerTapatalkUpload;
                 if (!requestForum) {
                     requestForum = [[ModelForum alloc] initWithId:_forum_id name:nil logoUrl:nil description:nil];
                 }
-                // Return complete
-                if(_completionHandler) _completionHandler(requestForum);
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    // Return complete
+                    if(_completionHandler) _completionHandler(requestForum);
+                }];
             } else {
                 requestForum = [[ModelForum alloc] initWithId:_forum_id name:@"FORUM" logoUrl:nil description:nil];
                 requestForum.child = result;
-                if(_completionHandler) _completionHandler(requestForum);
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    // Return complete
+                    if(_completionHandler) _completionHandler(requestForum);
+                }];
             }
         });
         //[self printForum:result];
