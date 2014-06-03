@@ -61,6 +61,7 @@
             _lastRequestPage = (tempRequsetPage > (int)tempRequsetPage) ? tempRequsetPage + 1 : (int)tempRequsetPage;
             
             // Set lại data thật sự
+            NSLog(@"Load page %d", _lastRequestPage);
             if (!_dataOfPage) _dataOfPage = [NSMutableDictionary dictionary];
             _dataOfPage[@(_lastRequestPage)] = arrData;
             
@@ -72,6 +73,8 @@
                              to:to
                        complete:^(NSArray *arrData, NSInteger totalDataNumber)
              {
+                 NSLog(@"Load page %d", _lastRequestPage);
+                 _lastRequestPage = 1;
                  _dataOfPage[@(1)] = arrData;
                  
                  if (completeBlock) completeBlock(arrData, totalDataNumber);
@@ -85,7 +88,9 @@
                    complete:^(NSArray *arrData, NSInteger totalDataNumber)
         {
             int pageRequet = from/self.perPage + 1;
+            _lastRequestPage = pageRequet;
             _dataOfPage[@(pageRequet)] = arrData;
+            NSLog(@"Load page %d", pageRequet);
 
             if (completeBlock) completeBlock(arrData, totalDataNumber);
         } failure:^(NSError *error) {
@@ -184,6 +189,8 @@
                 [_data insertObject:topic atIndex:0];
             }
             
+            _lastRequestPage = pageRequest;
+            NSLog(@"Load page %d", _lastRequestPage);
             _dataOfPage[@(pageRequest)] = result.posts;
             
             if (completeBlock) completeBlock(result.posts);
@@ -218,6 +225,8 @@
                    _data = nil;
                    _data = [NSMutableArray arrayWithArray:arrData];
                    
+                   _lastRequestPage = page;
+                   NSLog(@"Jump : Load page %d", _lastRequestPage);
                    [_dataOfPage removeAllObjects];
                    _dataOfPage[@(page)] = arrData;
                    

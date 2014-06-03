@@ -6,13 +6,14 @@
 //  Copyright (c) 2014 Phuoc Hai. All rights reserved.
 //
 #import "LNTapatalkSDK.h"
+#import "PHLogTime.h"
 
 @implementation LNTapatalkSDK
 
-static ModelForum * _form;
+static ModelForum * _forum;
 + (ModelForum*)rootForum
 {
-    return _form;
+    return _forum;
 }
 
 + (void)startWithFormUrl:(NSString*)forumUrl
@@ -32,10 +33,11 @@ static ModelForum * _form;
         }
     }];
     
+    
     // Get all forum
     [TapatalkAPI getForum:nil returnDescription:YES completionHandler:^(ModelForum *result) {
-        _form = nil;
-        _form = result;
+        _forum = nil;
+        _forum = result;
         [[NSNotificationCenter defaultCenter] postNotificationName:kNSTapatalkDidLoadRootForum object:@(YES)];
     } failureHandler:^(NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:kNSTapatalkDidLoadRootForum object:@(NO)];

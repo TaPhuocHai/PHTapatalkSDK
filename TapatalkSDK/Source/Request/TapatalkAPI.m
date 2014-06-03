@@ -11,6 +11,7 @@
 #import "LNRequestHelper.h"
 #import "TapatalkHelper.h"
 #import "LNTapatalkSDK.h"
+#import "PHLogTime.h"
 
 #import "NSData+Base64.h"
 #import <CommonCrypto/CommonDigest.h>
@@ -127,22 +128,24 @@ static NSURL    * _kNSURLServerTapatalkUpload;
 + (void)getForum:(NSString*)_forum_id returnDescription:(BOOL)returnDescription completionHandler:(void (^)(ModelForum *result))_completionHandler failureHandler:(void (^)(NSError *error))_failureHandler
 {
     // login befor get data
-    [LNAccountManager autoLoginOnCompletionHander:^(ModelUser *result, NSError *error)
+    NSMutableArray *params = [[NSMutableArray alloc] init];
+    if (_forum_id) {
+        [params addObject:[NSNumber numberWithBool:returnDescription]];
+        [params addObject:_forum_id];
+    }
+    
+    LNRequest *request = [[LNRequest alloc] initWithURL:_kNSURLServerTapatalk];
+    [request requestWithMethod:@"get_forum" prarameters:params onReceiveResponse:^(XMLRPCResponse *response)
     {
-        NSMutableArray *params = [[NSMutableArray alloc] init];
-        if (_forum_id) {
-            [params addObject:[NSNumber numberWithBool:returnDescription]];
-            [params addObject:_forum_id];
-        }
-        
-        LNRequest *request = [[LNRequest alloc] initWithURL:_kNSURLServerTapatalk];
-        [request requestWithMethod:@"get_forum" prarameters:params onReceiveResponse:^(XMLRPCResponse *response)
-        {
-            CXMLDocument *doc = [[CXMLDocument alloc] initWithData:[[response body]
-                                                                    dataUsingEncoding:NSUTF8StringEncoding]
-                                                          encoding:NSUTF8StringEncoding
-                                                           options:0
-                                                             error:nil];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND,
+                                                 (unsigned long)NULL), ^(void) {
+            
+            [PHLogTime startListenWithKey:@"Get_Config_Progress"];
+            CXMLDocument * doc = [[CXMLDocument alloc] initWithData:[[response body]
+                                                                     dataUsingEncoding:NSUTF8StringEncoding]
+                                                           encoding:NSUTF8StringEncoding
+                                                            options:0
+                                                              error:nil];
             
             // Parse XML
             NSArray * nodes = [doc nodesForXPath:@"//methodResponse/params/param/value/array/data/*"
@@ -156,6 +159,8 @@ static NSURL    * _kNSURLServerTapatalkUpload;
                 [result addObject:forum];
             }
             
+            [PHLogTime endListenWithKey:@"Get_Config_Progress"];
+
             ModelForum * requestForum;
             if (_forum_id) {
                 // Get sub-forum from _form (big forum)
@@ -166,7 +171,6 @@ static NSURL    * _kNSURLServerTapatalkUpload;
                 if (!requestForum) {
                     requestForum = [[ModelForum alloc] initWithId:_forum_id name:nil logoUrl:nil description:nil];
                 }
-                
                 // Return complete
                 if(_completionHandler) _completionHandler(requestForum);
             } else {
@@ -174,11 +178,12 @@ static NSURL    * _kNSURLServerTapatalkUpload;
                 requestForum.child = result;
                 if(_completionHandler) _completionHandler(requestForum);
             }
-            //[self printForum:result];
-        }onPercent:^(float percent) {
-        }fail:^(NSError *error){
-            if(_failureHandler) _failureHandler(error);
-        }];
+        });        
+        //[self printForum:result];
+        
+    }onPercent:^(float percent) {
+    }fail:^(NSError *error){
+        if(_failureHandler) _failureHandler(error);
     }];
 }
 

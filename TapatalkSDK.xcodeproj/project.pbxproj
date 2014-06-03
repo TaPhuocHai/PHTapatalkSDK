@@ -22,6 +22,8 @@
 		4807122D188B77640039E219 /* LNRequest.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A96989188A49A8003A0C2F /* LNRequest.h */; };
 		4807122E188B77640039E219 /* LNRequestHelper.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9698B188A49A8003A0C2F /* LNRequestHelper.h */; };
 		4807122F188B77640039E219 /* TapatalkHelper.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9698F188A49A8003A0C2F /* TapatalkHelper.h */; };
+		48100F28193D7D72004E1125 /* PHLogTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 48100F27193D7D72004E1125 /* PHLogTime.m */; };
+		48100F29193D7D72004E1125 /* PHLogTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 48100F27193D7D72004E1125 /* PHLogTime.m */; };
 		481AE42318F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41718F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m */; };
 		481AE42418F7E11F0008EC87 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41918F7E11F0008EC87 /* FMDatabase.m */; };
 		481AE42518F7E11F0008EC87 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 481AE41B18F7E11F0008EC87 /* FMDatabaseAdditions.m */; };
@@ -187,6 +189,8 @@
 		4806694518FD17EC00D607FC /* LNTopicPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNTopicPaging.m; sourceTree = "<group>"; };
 		4806694618FD17EC00D607FC /* LNUnreadTopicPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNUnreadTopicPaging.h; sourceTree = "<group>"; };
 		4806694718FD17EC00D607FC /* LNUnreadTopicPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNUnreadTopicPaging.m; sourceTree = "<group>"; };
+		48100F26193D7D72004E1125 /* PHLogTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLogTime.h; sourceTree = "<group>"; };
+		48100F27193D7D72004E1125 /* PHLogTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLogTime.m; sourceTree = "<group>"; };
 		481AE41618F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
 		481AE41718F7E11F0008EC87 /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
 		481AE41818F7E11F0008EC87 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -625,6 +629,8 @@
 		48A96987188A49A8003A0C2F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				48100F26193D7D72004E1125 /* PHLogTime.h */,
+				48100F27193D7D72004E1125 /* PHLogTime.m */,
 				48A96995188A49C1003A0C2F /* LNAccountManager.h */,
 				48A96996188A49C1003A0C2F /* LNAccountManager.m */,
 				4890576818F7E7C10015B871 /* LNCacheManager.h */,
@@ -841,6 +847,7 @@
 				4875575518FBC0BD00CCA438 /* LNTapatalkSDK.m in Sources */,
 				481AE42718F7E11F0008EC87 /* FMDatabaseQueue.m in Sources */,
 				481AE42418F7E11F0008EC87 /* FMDatabase.m in Sources */,
+				48100F28193D7D72004E1125 /* PHLogTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +908,7 @@
 				48EA725D18FBC5CE007C32EC /* ModelPrefix.m in Sources */,
 				4806694918FD17EC00D607FC /* LNBasePaging.m in Sources */,
 				48EA725E18FBC5CE007C32EC /* ModelTopic.m in Sources */,
+				48100F29193D7D72004E1125 /* PHLogTime.m in Sources */,
 				48EA725F18FBC5CE007C32EC /* ModelUser.m in Sources */,
 				4806694D18FD17EC00D607FC /* LNSearchPaging.m in Sources */,
 				48EA726818FBC5CE007C32EC /* LNTapatalkSDK.m in Sources */,
