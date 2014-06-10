@@ -84,6 +84,7 @@ lastRequestPage = _lastRequestPage;
 
 - (void)dealloc
 {
+    NSLog(@"dealloc LNBasePaging");
     _data = nil;
     _delegate = nil;    
 }

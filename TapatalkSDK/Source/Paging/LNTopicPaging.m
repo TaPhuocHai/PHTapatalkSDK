@@ -336,9 +336,10 @@
 
 - (void)dealloc
 {
-    NSLog(@"dealloc LNSearchPaging");
+    NSLog(@"dealloc LNTopicPaging");
     _topic = nil;
     _dataOfPage = nil;
+    self.delegate = nil;
 }
 
 
