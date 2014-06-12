@@ -8,6 +8,13 @@
 
 #import "LNBasePaging.h"
 
+@interface LNBasePaging ()
+
+@property(nonatomic, copy) void (^_pCompletionBlock)(NSArray *arrData);
+@property(nonatomic, copy) void (^_pErrorBlock)(NSError *error);
+
+@end
+
 @implementation LNBasePaging
 
 @synthesize
@@ -47,6 +54,9 @@ lastRequestPage = _lastRequestPage;
 - (void)startRequestOnComplete:(void (^)(NSArray *arrData))completeBlock
                      onFailure:(void (^)(NSError *error))failureBlock
 {
+    self._pCompletionBlock = completeBlock;
+    self._pErrorBlock = failureBlock;
+    
     if (!self.delegate) {
         if (failureBlock) failureBlock([NSError errorWithDomain:@"local" code:1 userInfo:@{@"error" : @"delegate is nil"}]);
     }
@@ -58,15 +68,20 @@ lastRequestPage = _lastRequestPage;
     {
         _data = [NSMutableArray arrayWithArray:data];
         _totalDataNumber = totalDataNumber;
-        if (completeBlock) completeBlock(data);
+        if (self._pCompletionBlock)  self._pCompletionBlock(data);
+        [self cleaUp];
     } failure:^(NSError *error) {
-        if (failureBlock) failureBlock(error);
+        if (self._pErrorBlock) self._pErrorBlock(error);
+        [self cleaUp];
     }];
 }
 
 - (void)loadNextPageOnComplete:(void (^)(NSArray *arrData))completeBlock
                      onFailure:(void (^)(NSError *error))failureBlock
 {
+    self._pCompletionBlock = completeBlock;
+    self._pErrorBlock = failureBlock;
+    
     NSInteger nextPageToLoad = _lastRequestPage + 1;
     [self.delegate loadDataFrom:(nextPageToLoad - 1) * self.perPage
                              to:(nextPageToLoad * self.perPage) - 1
@@ -74,10 +89,18 @@ lastRequestPage = _lastRequestPage;
     {
         _lastRequestPage = nextPageToLoad;
         [_data addObjectsFromArray:data];
-        if (completeBlock) completeBlock(data);
+        if (self._pCompletionBlock) self._pCompletionBlock(data);
+        [self cleaUp];
     } failure:^(NSError *error) {
-        if (failureBlock) failureBlock(error);
+        if (self._pErrorBlock) self._pErrorBlock(error);
+        [self cleaUp];
     }];
+}
+
+- (void)cleaUp
+{
+    self._pCompletionBlock = nil;
+    self._pErrorBlock = nil;
 }
 
 #pragma mark - Clean up 
@@ -85,6 +108,8 @@ lastRequestPage = _lastRequestPage;
 - (void)dealloc
 {
     NSLog(@"dealloc LNBasePaging");
+    [self cleaUp];
+    
     _data = nil;
     _delegate = nil;    
 }

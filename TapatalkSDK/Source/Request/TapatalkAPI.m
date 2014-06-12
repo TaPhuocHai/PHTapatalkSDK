@@ -335,7 +335,8 @@ static NSURL    * _kNSURLServerTapatalkUpload;
                  onPercent:(void (^)(float percent))_percent
 {
     if (topic_id == nil || [topic_id isEqualToString:@""]) {
-        if(_completionHander) _completionHander(nil,[NSError errorWithDomain:_kForumUrl code:1 userInfo:@{@"error" : @"Topic Id không được rỗng"}]);
+        if(_completionHander) _completionHander(nil,[NSError errorWithDomain:_kForumUrl code:1
+                                                                            userInfo:@{@"error" : @"Topic Id không được rỗng"}]);
         return;
     }
     
@@ -345,13 +346,13 @@ static NSURL    * _kNSURLServerTapatalkUpload;
     [params addObject:@(_lastNum)];
     [params addObject:@(return_html)];
     
-    LNRequest *request = [[LNRequest alloc] initWithURL:_kNSURLServerTapatalk];
+    __block LNRequest *request = [[LNRequest alloc] initWithURL:_kNSURLServerTapatalk];
     [request requestWithMethod:@"get_thread" prarameters:params onReceiveResponse:^(XMLRPCResponse *response) {
         
         CXMLDocument *doc = [[CXMLDocument alloc] initWithData:[[response body] dataUsingEncoding:NSUTF8StringEncoding] encoding:NSUTF8StringEncoding options:0 error:nil];
         
-        NSArray *nodes    = [doc nodesForXPath:@"//methodResponse/params/param/value/struct/*" error:nil];
-        NSDictionary *dic = [TapatalkHelper parseStructRespondToDictionary:nodes];
+        NSArray      * nodes    = [doc nodesForXPath:@"//methodResponse/params/param/value/struct/*" error:nil];
+        NSDictionary * dic = [TapatalkHelper parseStructRespondToDictionary:nodes];
         
         if (![dic objectForKey:@"result_text"]) {
             // fill dữ liệu
@@ -360,9 +361,9 @@ static NSURL    * _kNSURLServerTapatalkUpload;
         } else {
             NSString *textError = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"result_text"]]
                                                         encoding:NSUTF8StringEncoding];
-            if(_completionHander) _completionHander(nil,[NSError errorWithDomain:_kForumUrl code:1 userInfo:@{@"error" : textError}]);
+            if(_completionHander) _completionHander(nil,[NSError errorWithDomain:_kForumUrl code:1 userInfo:@{@"error" : textError}])
+                ;
         }
-        
     }onPercent:^(float percent) {
         if(_percent) _percent(percent);
     }fail:^(NSError *error){

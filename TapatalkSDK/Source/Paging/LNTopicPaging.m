@@ -16,6 +16,9 @@
 
 @property (nonatomic, readonly) NSArray * pageLoaded;
 
+@property(nonatomic, copy) void (^_completionBlock)(NSArray * data, NSInteger totalDataNumber);
+@property(nonatomic, copy) void (^_errorBlock)(NSError *error);
+
 @end
 
 @implementation LNTopicPaging
@@ -52,6 +55,26 @@
             complete:(void (^)(NSArray * data, NSInteger totalDataNumber))completeBlock
              failure:(void (^)(NSError * error))failureBlock
 {
+    self._completionBlock = completeBlock;
+    self._errorBlock = failureBlock;
+    
+    __block typeof(self) wself = self;
+    [self loadTopicForm:from
+                     to:to
+               complete:^(NSArray *arrData, NSInteger totalDataNumber)
+     {
+         int pageRequet = from/wself.perPage + 1;
+         _lastRequestPage = pageRequet;
+         _dataOfPage[@(pageRequet)] = arrData;
+         NSLog(@"Load page %d", pageRequet);
+         
+         if (wself._completionBlock) wself._completionBlock(arrData, totalDataNumber);
+         [self cleanUp];
+     } failure:^(NSError *error) {
+         if (wself._errorBlock) wself._errorBlock(error);
+         [self cleanUp];
+     }];    
+    /*
     if (from == 0) {
         [self loadTopicUnread:self.perPage
                      complete:^(NSArray *arrData, NSInteger position, NSInteger totalDataNumber)
@@ -97,6 +120,7 @@
             if (failureBlock) failureBlock(error);
         }];
     }
+     */
 }
 
 #pragma mark - Các hàm riêng của LNPagingTopic
@@ -269,16 +293,18 @@
              complete:(void (^)(NSArray *arrData, NSInteger totalDataNumber))completeBlock
               failure:(void (^)(NSError *error))failureBlock
 {
-    [TapatalkAPI getThreadWithTopic:self.topic.topic_id
+    __block typeof(self) wself = self;
+
+    [TapatalkAPI getThreadWithTopic:wself.topic.topic_id
                          returnHTML:YES
                            startNum:from
                             lastNum:to
                   completionHandler:^(ModelTopic *result, NSError *error)
     {
         if (!error) {
-            self.topic.can_reply        = result.can_reply;
-            self.topic.can_upload       = result.can_upload;
-            self.topic.total_post_num   = result.total_post_num;
+            wself.topic.can_reply        = result.can_reply;
+            wself.topic.can_upload       = result.can_upload;
+            wself.topic.total_post_num   = result.total_post_num;
             
             if (from == 0 && result.posts.count) {
                 ModelPost * firstPost = result.posts[0];
@@ -334,12 +360,21 @@
     }];
 }
 
+#pragma mark - 
+
+- (void)cleanUp
+{
+    self._completionBlock = nil;
+    self._errorBlock = nil;
+}
+
 - (void)dealloc
 {
     NSLog(@"dealloc LNTopicPaging");
+    
+    self.delegate = nil;
     _topic = nil;
     _dataOfPage = nil;
-    self.delegate = nil;
 }
 
 

@@ -8,10 +8,7 @@
 #import "TouchXML.h"
 #import "XMLRPC.h"
 
-@interface LNRequest : XMLRPCRequest <XMLRPCConnectionDelegate> {
-  void (^_blockResponse)(XMLRPCResponse *response);
-  void (^_blockError)(NSError *error);
-  void (^_blockPercent)(float percent);
+@interface LNRequest : XMLRPCRequest <XMLRPCConnectionDelegate> {  
 }
 
 - (void)requestWithMethod:(NSString*)method prarameters:(NSArray*)params onReceiveResponse:(void (^)(XMLRPCResponse *))response onPercent:(void (^)(float percent))percent fail:(void (^)(NSError*))error;

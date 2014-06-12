@@ -14,6 +14,14 @@
 #import "NSData+Base64.h"
 #import <CommonCrypto/CommonDigest.h>
 
+@interface LNRequest ()
+
+@property (nonatomic, copy) void (^_blockResponse)(XMLRPCResponse *response);
+@property (nonatomic, copy) void (^_blockError)(NSError *error);
+@property (nonatomic, copy) void (^_blockPercent)(float percent);
+
+@end
+
 @implementation LNRequest
 
 static NSMutableArray *identifierConnection;
@@ -46,32 +54,47 @@ static NSMutableArray *identifierConnection;
         onReceiveResponse:(void (^)(XMLRPCResponse *))response
                 onPercent:(void (^)(float percent))percent fail:(void (^)(NSError*))error {
     
-    _blockResponse = response;
-    _blockError = error;
-    _blockPercent = percent;
+    self._blockResponse = response;
+    self._blockError = error;
+    self._blockPercent = percent;
     
     XMLRPCConnectionManager *manager = [XMLRPCConnectionManager sharedManager];
     [self  setMethod:method withParameters:params];
     
     NSString *identifier = [manager spawnConnectionWithXMLRPCRequest:self delegate: self];
+    
     [[LNRequest shareConnection] addObject:identifier];
 }
 
 #pragma mark - XMLRPCConnectionDelegate
 
 - (void)request: (XMLRPCRequest *)request didReceiveResponse: (XMLRPCResponse *)response {
-    if(_blockResponse) _blockResponse(response);
+    if(self._blockResponse) self._blockResponse(response);
+    [self cleanUp];
 }
 
 - (void)request: (XMLRPCRequest *)request didSendBodyData: (float)percent {
-    if(_blockPercent) _blockPercent(percent);
+    if(self._blockPercent) self._blockPercent(percent);
 }
 - (void)request: (XMLRPCRequest *)request didFailWithError: (NSError *)error{
-    if(_blockError) _blockError(error);
+    if(self._blockError) self._blockError(error);
+    [self cleanUp];
 }
 
 - (BOOL)request: (XMLRPCRequest *)request canAuthenticateAgainstProtectionSpace: (NSURLProtectionSpace *)protectionSpace { return YES; }
 - (void)request: (XMLRPCRequest *)request didReceiveAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge {}
 - (void)request: (XMLRPCRequest *)request didCancelAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge {}
+
+- (void)cleanUp
+{
+    self._blockResponse = nil;
+    self._blockPercent = nil;
+    self._blockError  = nil;
+}
+
+- (void)dealloc
+{
+    [self cleanUp];
+}
 
 @end

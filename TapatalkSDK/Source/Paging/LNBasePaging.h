@@ -29,7 +29,7 @@
 
 @property (nonatomic, readonly) NSMutableArray  * data;
 
-@property (nonatomic, weak)    id<LNBasePagingDelegate> delegate;
+@property (nonatomic, weak) id<LNBasePagingDelegate> delegate;
 
 - (id)init;
 - (id)initWithPerPage:(NSInteger)numberOfPerPage;
