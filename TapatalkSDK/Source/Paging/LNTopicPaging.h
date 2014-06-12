@@ -23,6 +23,9 @@
 - (BOOL)hadPrevPage;
 - (BOOL)hadNextPage;
 
+- (int)maxPageIndexLoaded;
+- (int)minPageIndexLoaded;
+
 - (BOOL)pageIsNextPageInCurrentLoaded:(int)page;
 - (BOOL)pageIsPrevPageInCurrentLoaded:(int)page;
 

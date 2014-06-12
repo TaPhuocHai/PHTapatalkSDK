@@ -58,15 +58,22 @@
     self._completionBlock = completeBlock;
     self._errorBlock = failureBlock;
     
+    if (!_dataOfPage) _dataOfPage = [NSMutableDictionary dictionary];
+    
     __block typeof(self) wself = self;
     [self loadTopicForm:from
                      to:to
                complete:^(NSArray *arrData, NSInteger totalDataNumber)
      {
-         int pageRequet = from/wself.perPage + 1;
-         _lastRequestPage = pageRequet;
-         _dataOfPage[@(pageRequet)] = arrData;
-         NSLog(@"Load page %d", pageRequet);
+         if (from == 0) {
+             _lastRequestPage = 1;
+             _dataOfPage[@(1)] = arrData;
+         } else {
+             int pageRequet = from/wself.perPage + 1;
+             _lastRequestPage = pageRequet;
+             _dataOfPage[@(pageRequet)] = arrData;
+             NSLog(@"Load page %d", pageRequet);
+         }
          
          if (wself._completionBlock) wself._completionBlock(arrData, totalDataNumber);
          [self cleanUp];
