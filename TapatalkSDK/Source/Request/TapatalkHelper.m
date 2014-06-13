@@ -157,7 +157,7 @@
     if (result == nil) {
         result = @"Dữ liệu lỗi";
     }
-    NSString *text = [[NSString stringWithFormat:@"<div style=\"color:#000000;\" >"] stringByAppendingString:result];//font-style:Light//58595b
+    NSString *text = [[NSString stringWithFormat:@"<div>"] stringByAppendingString:result];//font-style:Light//58595b
     
     text = [text stringByAppendingString:@"</div>"];
     
