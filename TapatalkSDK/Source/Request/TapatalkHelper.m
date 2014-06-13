@@ -97,7 +97,7 @@
     result = [self find:@"#cccccc" replace:@"" onText:result];
     
     if (content) {
-        NSString * quoteReplaceContent = @"<div style=\"padding:0 0 0 0;color:#777777; \">";
+        NSString * quoteReplaceContent = @"<div style=\"padding:0 0 0 0;color:#777777; font-style:italic; font-size:16px; \">";
         // xử lý quote
         NSString * firstQuotePattern = @"\\[(quote|QUOTE)((\\w|\\&|\\;|\\s|\\=|\\.|\\-|\")+)\\]";
         NSRegularExpression  * firstQuoteRegex = [NSRegularExpression regularExpressionWithPattern:firstQuotePattern options:0 error:NULL];
