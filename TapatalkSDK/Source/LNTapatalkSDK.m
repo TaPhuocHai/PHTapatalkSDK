@@ -33,7 +33,6 @@ static ModelForum * _forum;
         }
     }];
     
-    
     // Get all forum
     [TapatalkAPI getForum:nil returnDescription:YES completionHandler:^(ModelForum *result) {
         _forum = nil;
