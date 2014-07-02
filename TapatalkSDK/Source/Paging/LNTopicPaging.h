@@ -10,7 +10,10 @@
 #import "ModelTopic.h"
 #import "ModelPost.h"
 
-@interface LNTopicPaging : LNBasePaging <LNBasePagingDelegate>
+@interface LNTopicPaging : LNBasePaging <LNBasePagingDelegate> {
+    ModelTopic  * _topic;
+    NSMutableDictionary  * _dataOfPage;
+}
 
 @property (nonatomic, readonly) ModelTopic           * topic;
 @property (nonatomic, readonly) NSMutableDictionary  * dataOfPage;

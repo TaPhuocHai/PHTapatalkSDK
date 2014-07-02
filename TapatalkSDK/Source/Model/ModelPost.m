@@ -16,6 +16,20 @@
 
 @implementation ModelPost
 
+@synthesize allow_smilies = _allow_smilies,
+attachment_authority = _attachment_authority,
+icon_url = _icon_url,
+is_approved = _is_approved,
+post_author_id = _post_author_id,
+post_author_name = _post_author_name,
+post_content = _post_content,
+post_count = _post_count,
+post_id = _post_id,
+post_time = _post_time,
+post_title = _post_title,
+topic_id = _topic_id,
+date = _date;
+
 - (id)initWithDictionary:(NSDictionary*)dic
 {
     //NSLog(@"init Model Post - dic = %@", dic);

@@ -23,6 +23,9 @@
 
 @implementation LNTopicPaging
 
+@synthesize topic = _topic,
+dataOfPage = _dataOfPage;
+
 - (id)initTopic:(ModelTopic*)topic
 {
     if(self = [super init]) {
