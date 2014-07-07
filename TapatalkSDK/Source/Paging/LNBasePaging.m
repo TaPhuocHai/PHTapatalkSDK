@@ -19,7 +19,8 @@
 
 @synthesize
 data = _data,
-lastRequestPage = _lastRequestPage;
+lastRequestPage = _lastRequestPage,
+totalDataNumber = _totalDataNumber;
 
 #define kPerPageDefault  10
 

@@ -20,6 +20,7 @@
 @protected
     NSInteger             _lastRequestPage;
     NSMutableArray      * _data;
+    NSInteger             _totalDataNumber;
 }
 
 @property (nonatomic, readonly) NSInteger     perPage;            // Số lượng dữ liệu trong 1 trang
