@@ -183,8 +183,8 @@ static NSURL    * _kNSURLServerTapatalkUpload;
                     if(_completionHandler) _completionHandler(requestForum);
                 }];
             }
+            //[self printForum:requestForum.child];
         });
-        //[self printForum:result];
         
     }onPercent:^(float percent) {
     }fail:^(NSError *error){

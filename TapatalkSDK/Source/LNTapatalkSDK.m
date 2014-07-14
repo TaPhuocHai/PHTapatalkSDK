@@ -24,15 +24,23 @@ static ModelForum * _forum;
 
 + (void)didBecomeActive
 {
-    // Auto login to expire cookie
-    [LNAccountManager autoLoginOnCompletionHander:^(ModelUser *result, NSError *error) {
-        if (error) {
-            NSLog(@"auto login failure : %@", error);
-        } else {
-            NSLog(@"auto login success");
-        }
-    }];
-    
+    if([LNAccountManager sharedInstance].isLoggedIn) {
+        // Auto login to expire cookie
+        [LNAccountManager autoLoginOnCompletionHander:^(ModelUser *result, NSError *error) {
+            if (error) {
+                NSLog(@"auto login failure : %@", error);
+            } else {
+                NSLog(@"auto login success");
+            }
+            [self getAllForum];
+        }];
+    } else {
+        [self getAllForum];
+    }
+}
+
++ (void)getAllForum
+{
     // Get all forum
     [TapatalkAPI getForum:nil returnDescription:YES completionHandler:^(ModelForum *result) {
         _forum = nil;
