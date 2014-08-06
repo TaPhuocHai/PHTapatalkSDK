@@ -72,8 +72,8 @@
         // For get_thread
         if ([memberName isEqualToString:@"posts"])
         {            
-            NSArray *arrChildNodes = [valueNode nodesForXPath:@"./data/*" error:nil];
-            NSMutableArray *childForm = [[NSMutableArray alloc] init];
+            NSArray * arrChildNodes = [valueNode nodesForXPath:@"./data/*" error:nil];
+            NSMutableArray * childForm = [[NSMutableArray alloc] init];
             for (CXMLElement *childNode in arrChildNodes) {
                 NSArray *arrValueNode = [childNode  nodesForXPath:@"./struct/*" error:nil];
                 NSDictionary *dicForum = [TapatalkHelper parseStructRespondToDictionary:arrValueNode];

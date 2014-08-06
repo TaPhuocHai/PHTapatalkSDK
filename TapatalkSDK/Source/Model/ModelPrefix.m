@@ -13,6 +13,8 @@
 
 @implementation ModelPrefix
 
+@synthesize prefix_id = _prefix_id, prefix_display_name = _prefix_display_name;
+
 - (id)initWithDictionary:(NSDictionary*)dic
 {
     if (self = [super init]) {

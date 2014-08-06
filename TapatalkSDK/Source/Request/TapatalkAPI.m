@@ -677,7 +677,7 @@ static NSURL    * _kNSURLServerTapatalkUpload;
             NSLog(@"--- %@ - %@",childForm.forum_id, childForm.forum_name);
         }
         if (childArr) {
-            //[self printForum:childArr];
+            [self printForum:childArr];
         }
     }
 }

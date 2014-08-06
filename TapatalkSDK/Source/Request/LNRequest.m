@@ -5,6 +5,7 @@
 //  Created by TAPHUOCHAI on 11/1/12.
 //  Copyright (c) 2012 Project Lana. All rights reserved.
 //
+#import <UIKit/UIKit.h>
 
 #import "LNRequest.h"
 
@@ -64,6 +65,8 @@ static NSMutableArray *identifierConnection;
     NSString *identifier = [manager spawnConnectionWithXMLRPCRequest:self delegate: self];
     
     [[LNRequest shareConnection] addObject:identifier];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
 #pragma mark - XMLRPCConnectionDelegate
@@ -71,6 +74,8 @@ static NSMutableArray *identifierConnection;
 - (void)request: (XMLRPCRequest *)request didReceiveResponse: (XMLRPCResponse *)response {
     if(self._blockResponse) self._blockResponse(response);
     [self cleanUp];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 - (void)request: (XMLRPCRequest *)request didSendBodyData: (float)percent {
@@ -79,6 +84,8 @@ static NSMutableArray *identifierConnection;
 - (void)request: (XMLRPCRequest *)request didFailWithError: (NSError *)error{
     if(self._blockError) self._blockError(error);
     [self cleanUp];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 - (BOOL)request: (XMLRPCRequest *)request canAuthenticateAgainstProtectionSpace: (NSURLProtectionSpace *)protectionSpace { return YES; }

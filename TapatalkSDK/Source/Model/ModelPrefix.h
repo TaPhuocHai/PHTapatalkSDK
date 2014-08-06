@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ModelPrefix : NSObject
+@interface ModelPrefix : NSObject {
+    NSString * _prefix_id;
+    NSString * _prefix_display_name;
+}
 
 @property (nonatomic, readonly) NSString * prefix_id;
 @property (nonatomic, readonly) NSString * prefix_display_name;

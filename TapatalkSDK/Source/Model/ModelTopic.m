@@ -45,7 +45,8 @@ timestamp = _timestamp;
         _topic_title       = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"topic_title"]]
                                                        encoding:NSUTF8StringEncoding];
         _forum_id          = [dic objectForKey:@"forum_id"];
-        _prefix            = [dic objectForKey:@"prefix"];
+        _prefix            = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"prefix"]]
+                                                   encoding:NSUTF8StringEncoding];
         _topic_author_id   = [dic objectForKey:@"topic_author_id"];
         _topic_author_name = [[NSString alloc] initWithData:[NSData dataFromBase64String:[dic objectForKey:@"topic_author_name"]]
                                                        encoding:NSUTF8StringEncoding];
