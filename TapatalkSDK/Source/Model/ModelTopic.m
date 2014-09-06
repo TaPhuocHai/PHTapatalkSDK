@@ -13,7 +13,7 @@
 #import "LNTapatalkSDK.h"
 #import "TapatalkAPI.h"
 
-#import "NSData+Base64.h"
+#import "XML+NSData+Base64.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "NSString+LNTapatalkHelper.h"
 

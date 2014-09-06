@@ -1,5 +1,5 @@
 #import "XMLRPCEventBasedParserDelegate.h"
-#import "NSData+Base64.h"
+#import "XML+NSData+Base64.h"
 
 @interface XMLRPCEventBasedParserDelegate (XMLRPCEventBasedParserDelegatePrivate)
 

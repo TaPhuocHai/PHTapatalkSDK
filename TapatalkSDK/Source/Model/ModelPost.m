@@ -10,7 +10,7 @@
 
 #import "LNRequestHelper.h"
 
-#import "NSData+Base64.h"
+#import "XML+NSData+Base64.h"
 #import <CommonCrypto/CommonDigest.h>
 
 

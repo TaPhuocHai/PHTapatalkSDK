@@ -1,6 +1,6 @@
 #import "XMLRPCDefaultEncoder.h"
 #import "NSStringAdditions.h"
-#import "NSData+Base64.h"
+#import "XML+NSData+Base64.h"
 
 @interface XMLRPCDefaultEncoder (XMLRPCEncoderPrivate)
 

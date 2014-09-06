@@ -8,7 +8,7 @@
 
 #import "ModelUser.h"
 
-#import "NSData+Base64.h"
+#import "XML+NSData+Base64.h"
 
 @implementation ModelUser
 

@@ -13,7 +13,7 @@
 #import "LNTapatalkSDK.h"
 #import "PHLogTime.h"
 
-#import "NSData+Base64.h"
+#import "XML+NSData+Base64.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation TapatalkAPI

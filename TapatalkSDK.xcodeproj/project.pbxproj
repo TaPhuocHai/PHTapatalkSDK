@@ -45,7 +45,7 @@
 		48200DA5188A5958007F11DD /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96946188A4617003A0C2F /* CXMLNode_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48200DA6188A5958007F11DD /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96948188A4617003A0C2F /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48200DA7188A5958007F11DD /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9694B188A4617003A0C2F /* CTidy.m */; };
-		48200DA8188A5958007F11DD /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96950188A4617003A0C2F /* NSData+Base64.m */; };
+		48200DA8188A5958007F11DD /* XML+NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96950188A4617003A0C2F /* XML+NSData+Base64.m */; };
 		48200DA9188A5958007F11DD /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96952188A4617003A0C2F /* NSStringAdditions.m */; };
 		48200DAA188A5958007F11DD /* XMLRPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96959188A4617003A0C2F /* XMLRPCConnection.m */; };
 		48200DAB188A5958007F11DD /* XMLRPCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9695B188A4617003A0C2F /* XMLRPCConnectionManager.m */; };
@@ -116,7 +116,7 @@
 		48EA724818FBC5CE007C32EC /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96946188A4617003A0C2F /* CXMLNode_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48EA724918FBC5CE007C32EC /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96948188A4617003A0C2F /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48EA724A18FBC5CE007C32EC /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9694B188A4617003A0C2F /* CTidy.m */; };
-		48EA724B18FBC5CE007C32EC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96950188A4617003A0C2F /* NSData+Base64.m */; };
+		48EA724B18FBC5CE007C32EC /* XML+NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96950188A4617003A0C2F /* XML+NSData+Base64.m */; };
 		48EA724C18FBC5CE007C32EC /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96952188A4617003A0C2F /* NSStringAdditions.m */; };
 		48EA724D18FBC5CE007C32EC /* XMLRPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96959188A4617003A0C2F /* XMLRPCConnection.m */; };
 		48EA724E18FBC5CE007C32EC /* XMLRPCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9695B188A4617003A0C2F /* XMLRPCConnectionManager.m */; };
@@ -260,8 +260,8 @@
 		48A9694A188A4617003A0C2F /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
 		48A9694B188A4617003A0C2F /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		48A9694C188A4617003A0C2F /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
-		48A9694F188A4617003A0C2F /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		48A96950188A4617003A0C2F /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		48A9694F188A4617003A0C2F /* XML+NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XML+NSData+Base64.h"; sourceTree = "<group>"; };
+		48A96950188A4617003A0C2F /* XML+NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XML+NSData+Base64.m"; sourceTree = "<group>"; };
 		48A96951188A4617003A0C2F /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
 		48A96952188A4617003A0C2F /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
 		48A96954188A4617003A0C2F /* XMLRPCConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCConnectionDelegate.h; sourceTree = "<group>"; };
@@ -602,8 +602,8 @@
 		48A9694E188A4617003A0C2F /* Additions */ = {
 			isa = PBXGroup;
 			children = (
-				48A9694F188A4617003A0C2F /* NSData+Base64.h */,
-				48A96950188A4617003A0C2F /* NSData+Base64.m */,
+				48A9694F188A4617003A0C2F /* XML+NSData+Base64.h */,
+				48A96950188A4617003A0C2F /* XML+NSData+Base64.m */,
 				48A96951188A4617003A0C2F /* NSStringAdditions.h */,
 				48A96952188A4617003A0C2F /* NSStringAdditions.m */,
 			);
@@ -817,7 +817,7 @@
 				48200DA5188A5958007F11DD /* CXMLNode_PrivateExtensions.m in Sources */,
 				48200DA6188A5958007F11DD /* CXMLNode_XPathExtensions.m in Sources */,
 				48200DA7188A5958007F11DD /* CTidy.m in Sources */,
-				48200DA8188A5958007F11DD /* NSData+Base64.m in Sources */,
+				48200DA8188A5958007F11DD /* XML+NSData+Base64.m in Sources */,
 				48200DA9188A5958007F11DD /* NSStringAdditions.m in Sources */,
 				4890576A18F7E7C10015B871 /* LNCacheManager.m in Sources */,
 				48200DAA188A5958007F11DD /* XMLRPCConnection.m in Sources */,
@@ -885,7 +885,7 @@
 				48EA724818FBC5CE007C32EC /* CXMLNode_PrivateExtensions.m in Sources */,
 				48EA724918FBC5CE007C32EC /* CXMLNode_XPathExtensions.m in Sources */,
 				48EA724A18FBC5CE007C32EC /* CTidy.m in Sources */,
-				48EA724B18FBC5CE007C32EC /* NSData+Base64.m in Sources */,
+				48EA724B18FBC5CE007C32EC /* XML+NSData+Base64.m in Sources */,
 				48EA724C18FBC5CE007C32EC /* NSStringAdditions.m in Sources */,
 				48EA724D18FBC5CE007C32EC /* XMLRPCConnection.m in Sources */,
 				48EA724E18FBC5CE007C32EC /* XMLRPCConnectionManager.m in Sources */,
