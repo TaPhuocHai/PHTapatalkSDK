@@ -42,7 +42,6 @@
 
 - (void)dealloc
 {
-    NSLog(@"dealloc ModelPrefix");
     _prefix_id = nil;
     _prefix_display_name = nil;
 }
