@@ -218,13 +218,13 @@ dataOfPage = _dataOfPage;
             self.topic.can_upload = result.can_upload;
             self.topic.total_post_num = result.total_post_num;
 
-            for (int i = result.posts.count - 1; i >= 0; i--) {
+            for (int i = (int)result.posts.count - 1; i >= 0; i--) {
                 ModelTopic * topic = result.posts[i];
                 [_data insertObject:topic atIndex:0];
             }
             
             _lastRequestPage = pageRequest;
-            NSLog(@"Load page %d", _lastRequestPage);
+            NSLog(@"Load page %d", (int)_lastRequestPage);
             _dataOfPage[@(pageRequest)] = result.posts;
             
             if (completeBlock) completeBlock(result.posts);
@@ -260,7 +260,7 @@ dataOfPage = _dataOfPage;
                    _data = [NSMutableArray arrayWithArray:arrData];
                    
                    _lastRequestPage = page;
-                   NSLog(@"Jump : Load page %d", _lastRequestPage);
+                   NSLog(@"Jump : Load page %d", (int)_lastRequestPage);
                    [_dataOfPage removeAllObjects];
                    _dataOfPage[@(page)] = arrData;
                    
