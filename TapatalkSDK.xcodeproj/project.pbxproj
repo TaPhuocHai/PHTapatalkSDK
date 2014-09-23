@@ -77,7 +77,6 @@
 		4852E901188A616300C87592 /* ModelUser.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A968FD188A45A4003A0C2F /* ModelUser.h */; };
 		4852E908188A616300C87592 /* LNTapatalkSDK.h in Copy Files (16 items) */ = {isa = PBXBuildFile; fileRef = 48A9699D188A4F06003A0C2F /* LNTapatalkSDK.h */; };
 		4875575518FBC0BD00CCA438 /* LNTapatalkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875575418FBC0BD00CCA438 /* LNTapatalkSDK.m */; };
-		4890576A18F7E7C10015B871 /* LNCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4890576918F7E7C10015B871 /* LNCacheManager.m */; };
 		48A9689A188A43C2003A0C2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A96899188A43C2003A0C2F /* Foundation.framework */; };
 		48A9689C188A43C2003A0C2F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9689B188A43C2003A0C2F /* CoreGraphics.framework */; };
 		48A9689E188A43C2003A0C2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9689D188A43C2003A0C2F /* UIKit.framework */; };
@@ -127,7 +126,6 @@
 		48EA725318FBC5CE007C32EC /* XMLRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96965188A4617003A0C2F /* XMLRPCResponse.m */; };
 		48EA725418FBC5CE007C32EC /* NSString+LNTapatalkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9699B188A4B8A003A0C2F /* NSString+LNTapatalkHelper.m */; };
 		48EA725518FBC5CE007C32EC /* LNAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A96996188A49C1003A0C2F /* LNAccountManager.m */; };
-		48EA725618FBC5CE007C32EC /* LNCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4890576918F7E7C10015B871 /* LNCacheManager.m */; };
 		48EA725718FBC5CE007C32EC /* LNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9698A188A49A8003A0C2F /* LNRequest.m */; };
 		48EA725818FBC5CE007C32EC /* LNRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9698C188A49A8003A0C2F /* LNRequestHelper.m */; };
 		48EA725918FBC5CE007C32EC /* TapatalkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A9698E188A49A8003A0C2F /* TapatalkAPI.m */; };
@@ -209,8 +207,6 @@
 		48200D7D188A5870007F11DD /* libTapatalkSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libTapatalkSDK-Prefix.pch"; sourceTree = "<group>"; };
 		48200D7E188A5870007F11DD /* libTapatalkSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libTapatalkSDK.h; sourceTree = "<group>"; };
 		4875575418FBC0BD00CCA438 /* LNTapatalkSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNTapatalkSDK.m; sourceTree = "<group>"; };
-		4890576818F7E7C10015B871 /* LNCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNCacheManager.h; sourceTree = "<group>"; };
-		4890576918F7E7C10015B871 /* LNCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNCacheManager.m; sourceTree = "<group>"; };
 		48A96896188A43C2003A0C2F /* TapatalkSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapatalkSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A96899188A43C2003A0C2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		48A9689B188A43C2003A0C2F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -633,8 +629,6 @@
 				48100F27193D7D72004E1125 /* PHLogTime.m */,
 				48A96995188A49C1003A0C2F /* LNAccountManager.h */,
 				48A96996188A49C1003A0C2F /* LNAccountManager.m */,
-				4890576818F7E7C10015B871 /* LNCacheManager.h */,
-				4890576918F7E7C10015B871 /* LNCacheManager.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -750,7 +744,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PH;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Phuoc Hai";
 			};
 			buildConfigurationList = 48A96891188A43C2003A0C2F /* Build configuration list for PBXProject "TapatalkSDK" */;
@@ -819,7 +813,6 @@
 				48200DA7188A5958007F11DD /* CTidy.m in Sources */,
 				48200DA8188A5958007F11DD /* XML+NSData+Base64.m in Sources */,
 				48200DA9188A5958007F11DD /* NSStringAdditions.m in Sources */,
-				4890576A18F7E7C10015B871 /* LNCacheManager.m in Sources */,
 				48200DAA188A5958007F11DD /* XMLRPCConnection.m in Sources */,
 				48200DAB188A5958007F11DD /* XMLRPCConnectionManager.m in Sources */,
 				48200DAC188A5958007F11DD /* XMLRPCDefaultEncoder.m in Sources */,
@@ -897,7 +890,6 @@
 				48EA725318FBC5CE007C32EC /* XMLRPCResponse.m in Sources */,
 				48EA725418FBC5CE007C32EC /* NSString+LNTapatalkHelper.m in Sources */,
 				48EA725518FBC5CE007C32EC /* LNAccountManager.m in Sources */,
-				48EA725618FBC5CE007C32EC /* LNCacheManager.m in Sources */,
 				48EA725718FBC5CE007C32EC /* LNRequest.m in Sources */,
 				48EA725818FBC5CE007C32EC /* LNRequestHelper.m in Sources */,
 				48EA725918FBC5CE007C32EC /* TapatalkAPI.m in Sources */,
@@ -960,10 +952,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					armv7s,
-				);
 				DSTROOT = /tmp/libTapatalkSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libTapatalkSDK/libTapatalkSDK-Prefix.pch";
@@ -977,7 +965,7 @@
 				PRODUCT_NAME = TapatalkSDK;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -985,10 +973,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					armv7s,
-				);
 				DSTROOT = /tmp/libTapatalkSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libTapatalkSDK/libTapatalkSDK-Prefix.pch";
@@ -998,7 +982,7 @@
 				PRODUCT_NAME = TapatalkSDK;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
@@ -1006,7 +990,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1039,6 +1022,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1046,7 +1030,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1073,6 +1056,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -1080,21 +1064,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv7,
-					armv7s,
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TapatalkSDK/TapatalkSDK-Prefix.pch";
 				INFOPLIST_FILE = "TapatalkSDK/TapatalkSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1103,10 +1083,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					armv7,
-					armv7s,
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1116,7 +1092,7 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1125,7 +1101,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1149,7 +1124,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

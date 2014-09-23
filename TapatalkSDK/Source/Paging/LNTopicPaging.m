@@ -72,7 +72,7 @@ dataOfPage = _dataOfPage;
              _lastRequestPage = 1;
              _dataOfPage[@(1)] = arrData;
          } else {
-             int pageRequet = from/wself.perPage + 1;
+             int pageRequet = (int)from/wself.perPage + 1;
              _lastRequestPage = pageRequet;
              _dataOfPage[@(pageRequet)] = arrData;
              NSLog(@"Load page %d", pageRequet);

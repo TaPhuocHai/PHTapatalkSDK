@@ -57,13 +57,13 @@ date = _date;
 {
     if (self = [super init]) {
         _allow_smilies        = [coder decodeBoolForKey:@"_allow_smilies"];
-        _attachment_authority = [coder decodeIntegerForKey:@"_attachment_authority"];
+        _attachment_authority = (int)[coder decodeIntegerForKey:@"_attachment_authority"];
         _icon_url             = [coder decodeObjectForKey:@"_icon_url"];
         _is_approved          = [coder decodeBoolForKey:@"_is_approved"];
-        _post_author_id       = [coder decodeIntegerForKey:@"_post_author_id"];
+        _post_author_id       = (int)[coder decodeIntegerForKey:@"_post_author_id"];
         _post_author_name     = [coder decodeObjectForKey:@"_post_author_name"];
         _post_content         = [coder decodeObjectForKey:@"_post_content"];
-        _post_count           = [coder decodeIntegerForKey:@"_post_count"];
+        _post_count           = (int)[coder decodeIntegerForKey:@"_post_count"];
         _post_id              = [coder decodeObjectForKey:@"_post_id"];
         _post_time            = [coder decodeObjectForKey:@"_post_time"];
         _post_title           = [coder decodeObjectForKey:@"_post_title"];

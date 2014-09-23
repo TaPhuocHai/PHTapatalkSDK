@@ -15,6 +15,17 @@
 
 @implementation ModelForum
 
+@synthesize description = _description,
+forum_id = _forum_id,
+forum_name = _forum_name,
+parent_id = _parent_id,
+logo_url = _logo_url,
+new_post = _new_post,
+is_protected = _is_protected,
+is_subscribed = _is_subscribed,
+can_subscribe = _can_subscribe,
+sub_only = _sub_only;
+
 - (id)initWithDictionary:(NSDictionary*)dic
 {
     if(self = [super init]) {
@@ -58,10 +69,10 @@
         _child                 = [coder decodeObjectForKey:@"_child"];
 
         _topics                = [coder decodeObjectForKey:@"_topics"];
-        _total_topic_num       = [coder decodeIntegerForKey:@"_total_topic_num"];
+        _total_topic_num       = (int)[coder decodeIntegerForKey:@"_total_topic_num"];
         _can_post              = [coder decodeBoolForKey:@"_can_post"];
-        _unread_sticky_cout    = [coder decodeIntegerForKey:@"_unread_sticky_cout"];
-        _unread_announce_count = [coder decodeIntegerForKey:@"_unread_announce_count"];
+        _unread_sticky_cout    = (int)[coder decodeIntegerForKey:@"_unread_sticky_cout"];
+        _unread_announce_count = (int)[coder decodeIntegerForKey:@"_unread_announce_count"];
         _require_prefix        = [coder decodeBoolForKey:@"_require_prefix"];
         _prefixes              = [coder decodeObjectForKey:@"_prefixes"];
         _prefix_id             = [coder decodeObjectForKey:@"_prefix_id"];

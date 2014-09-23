@@ -101,20 +101,20 @@ timestamp = _timestamp;
         _is_closed         = [coder decodeBoolForKey:@"_is_closed"];
         _icon_url          = [coder decodeObjectForKey:@"_icon_url"];
         _last_reply_time   = [coder decodeObjectForKey:@"_last_reply_time"];
-        _reply_number      = [coder decodeIntegerForKey:@"_reply_number"];
+        _reply_number      = (int)[coder decodeIntegerForKey:@"_reply_number"];
         _new_post          = [coder decodeBoolForKey:@"_new_post"];
-        _view_number       = [coder decodeIntegerForKey:@"_view_number"];
+        _view_number       = (int)[coder decodeIntegerForKey:@"_view_number"];
         _short_content     = [coder decodeObjectForKey:@"_short_content"];
-        _is_approved       = [coder decodeIntegerForKey:@"_is_approved"];
-        _attachment        = [coder decodeIntegerForKey:@"_attachment"];
+        _is_approved       = (int)[coder decodeIntegerForKey:@"_is_approved"];
+        _attachment        = (int)[coder decodeIntegerForKey:@"_attachment"];
         _last_reply_user   = [coder decodeObjectForKey:@"_last_reply_user"];
-        _timestamp         = [coder decodeIntegerForKey:@"_timestamp"];
+        _timestamp         = (int)[coder decodeIntegerForKey:@"_timestamp"];
         _posts             = [coder decodeObjectForKey:@"_posts"];
 
         _can_reply         = [coder decodeBoolForKey:@"_can_reply"];
         _can_upload        = [coder decodeBoolForKey:@"_can_upload"];
-        _position          = [coder decodeIntegerForKey:@"_position"];
-        _total_post_num    = [coder decodeIntegerForKey:@"_total_post_num"];
+        _position          = (int)[coder decodeIntegerForKey:@"_position"];
+        _total_post_num    = (int)[coder decodeIntegerForKey:@"_total_post_num"];
     }
     return self;
 }
