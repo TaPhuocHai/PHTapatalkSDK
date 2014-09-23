@@ -961,8 +961,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = (
+					"$(ARCHS_STANDARD)",
 					armv7s,
-					armv7,
 				);
 				DSTROOT = /tmp/libTapatalkSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -977,7 +977,7 @@
 				PRODUCT_NAME = TapatalkSDK;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -986,8 +986,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = (
+					"$(ARCHS_STANDARD)",
 					armv7s,
-					armv7,
 				);
 				DSTROOT = /tmp/libTapatalkSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -998,7 +998,7 @@
 				PRODUCT_NAME = TapatalkSDK;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SDKROOT)/usr/include/libxml2\"";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
