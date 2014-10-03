@@ -39,10 +39,12 @@ static ModelUser *_user;
 - (void)storeUserAccountAndLogin:(ModelUser*)user
 {
     _user = user;
-    NSUserDefaults * prefs = [NSUserDefaults standardUserDefaults];
-    NSData * data = [NSKeyedArchiver archivedDataWithRootObject:user];
-    [prefs setObject:data forKey:kLNStoreLoginUser];
-    [prefs synchronize];
+    if (user.user_id) {
+        NSUserDefaults * prefs = [NSUserDefaults standardUserDefaults];
+        NSData * data = [NSKeyedArchiver archivedDataWithRootObject:user];
+        [prefs setObject:data forKey:kLNStoreLoginUser];
+        [prefs synchronize];
+    }
 }
 
 - (ModelUser*)loggedInUser
@@ -66,12 +68,14 @@ static ModelUser *_user;
         NSData * username = [pref objectForKey:kLNAcountLoginUsername];
         NSData * password = [pref objectForKey:kLNAcountLoginPassword];
         
-        [self loginAndStoreUserWithUsername:username
-                                   password:password completionHandler:^(ModelUser *result, NSError *error) {
-                                       if (_completionHander) {
-                                           _completionHander ([LNAccountManager sharedInstance].loggedInUser, nil);
-                                       }
-                                   }];
+        if (username && password) {
+            [self loginAndStoreUserWithUsername:username
+                                       password:password completionHandler:^(ModelUser *result, NSError *error) {
+                                           if (_completionHander) {
+                                               _completionHander ([LNAccountManager sharedInstance].loggedInUser, nil);
+                                           }
+                                       }];
+        }
     } else {
         if(_completionHander) {
             _completionHander (nil, [NSError errorWithDomain:@"" code:1 userInfo:@{@"message" : @"unknow"}]);
