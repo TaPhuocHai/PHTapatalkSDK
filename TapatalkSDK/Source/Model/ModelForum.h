@@ -10,7 +10,20 @@
 
 #import "ModelTopic.h"
 
-@interface ModelForum : NSObject
+@interface ModelForum : NSObject {
+    NSString * _forum_id;
+    NSString * _forum_name;
+    NSString * _description;
+    NSString * _parent_id;
+    NSString * _logo_url;
+    BOOL       _new_post;
+    BOOL       _is_protected;
+    BOOL       _is_subscribed;
+    BOOL       _can_subscribe;
+    NSString * _url;
+    BOOL       _sub_only;
+    NSMutableArray * _child;
+}
 
 // Các thuộc tính này có khi gọi getForum
 @property (nonatomic, readonly) NSString * forum_id;

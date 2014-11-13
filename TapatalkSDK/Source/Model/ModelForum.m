@@ -24,7 +24,8 @@ new_post = _new_post,
 is_protected = _is_protected,
 is_subscribed = _is_subscribed,
 can_subscribe = _can_subscribe,
-sub_only = _sub_only;
+sub_only = _sub_only,
+child = _child;
 
 - (id)initWithDictionary:(NSDictionary*)dic
 {
