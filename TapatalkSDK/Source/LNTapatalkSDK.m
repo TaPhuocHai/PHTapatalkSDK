@@ -32,8 +32,9 @@ static ModelForum * _forum;
             } else {
                 NSLog(@"auto login success");
             }
-            [self getAllForum];
+            
         }];
+        [self getAllForum];
     } else {
         [self getAllForum];
     }
