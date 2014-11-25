@@ -26,8 +26,8 @@
 -(ModelUser*)loggedInUser;
 
 + (void)autoLoginOnCompletionHander:(void (^)(ModelUser* result, NSError *error))_completionHander;
-+ (void)loginAndStoreUserWithUsername:(NSData*)username
-                             password:(NSData*)password
++ (void)loginAndStoreUserWithUsername:(NSString*)username
+                             password:(NSString*)password
                     completionHandler:(void (^)(ModelUser* result, NSError *error))_completionHander;
 
 @end

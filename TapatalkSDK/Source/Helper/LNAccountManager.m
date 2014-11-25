@@ -10,6 +10,9 @@
 #import "ModelUser.h"
 #import "TapatalkAPI.h"
 
+#import "XML+NSData+Base64.h"
+#import <CommonCrypto/CommonDigest.h>
+
 #define kLNAcountLoginUsername @"LN_LOGIN_USERNAME"
 #define kLNAcountLoginPassword @"LN_LOGIN_PASSWORD"
 
@@ -83,17 +86,34 @@ static ModelUser *_user;
     }
 }
 
-+ (void)loginAndStoreUserWithUsername:(NSData*)username
-                             password:(NSData*)password
++ (void)loginAndStoreUserWithUsername:(NSString*)username
+                             password:(NSString*)password
                     completionHandler:(void (^)(ModelUser* result, NSError *error))_completionHander
 {
-    [TapatalkAPI loginWithUsername:username
-                          password:password
+    // MD5 password string
+    const char *ptr = [password UTF8String];
+    unsigned char md5Buffer[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(ptr, (int)strlen(ptr), md5Buffer);
+    NSMutableString *md5pwd = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [md5pwd appendFormat:@"%02x",md5Buffer[i]];
+    
+    // Convert string to base64 encoded
+    NSData *usernameData = [username dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *strUsername = [usernameData base64EncodedString];
+    NSData *passwordData = [md5pwd dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *strPassword = [passwordData base64EncodedString];
+    
+    NSData *usernameEncode = [NSData dataFromBase64String:strUsername];
+    NSData *passwordEncode = [NSData dataFromBase64String:strPassword];
+    
+    [TapatalkAPI loginWithUsername:usernameEncode
+                          password:passwordEncode
                  completionHandler:^(ModelUser *result, NSError *error) {
                      if (result) {
                          NSUserDefaults * pref = [NSUserDefaults standardUserDefaults];
-                         [pref setObject:username forKey:kLNAcountLoginUsername];
-                         [pref setObject:password forKey:kLNAcountLoginPassword];
+                         [pref setObject:usernameEncode forKey:kLNAcountLoginUsername];
+                         [pref setObject:passwordEncode forKey:kLNAcountLoginPassword];
                          [pref synchronize];
                          
                          [[LNAccountManager sharedInstance] storeUserAccountAndLogin:result];
