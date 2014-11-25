@@ -68,8 +68,8 @@ static ModelUser *_user;
 {
     if ([LNAccountManager sharedInstance].isLoggedIn) {
         NSUserDefaults * pref = [NSUserDefaults standardUserDefaults];
-        NSData * username = [pref objectForKey:kLNAcountLoginUsername];
-        NSData * password = [pref objectForKey:kLNAcountLoginPassword];
+        NSString * username = [pref objectForKey:kLNAcountLoginUsername];
+        NSString * password = [pref objectForKey:kLNAcountLoginPassword];
         
         if (username && password) {
             [self loginAndStoreUserWithUsername:username
@@ -112,8 +112,8 @@ static ModelUser *_user;
                  completionHandler:^(ModelUser *result, NSError *error) {
                      if (result) {
                          NSUserDefaults * pref = [NSUserDefaults standardUserDefaults];
-                         [pref setObject:usernameEncode forKey:kLNAcountLoginUsername];
-                         [pref setObject:passwordEncode forKey:kLNAcountLoginPassword];
+                         [pref setObject:username forKey:kLNAcountLoginUsername];
+                         [pref setObject:password forKey:kLNAcountLoginPassword];
                          [pref synchronize];
                          
                          [[LNAccountManager sharedInstance] storeUserAccountAndLogin:result];
