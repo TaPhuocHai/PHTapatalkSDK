@@ -28,7 +28,7 @@ Tapatalk API : <https://tapatalk.com/api.php>
 
 ### Get forum
 
-After call [LNTapatalkSDK didBecomeActive] success. You can get forum structer through 
+After call [LNTapatalkSDK didBecomeActive] success. You can get forum structure:
 			
 			[ModelForum rootForum]
 			
@@ -38,7 +38,7 @@ To login and manager logged User, using **LNAccountManager**
 
 ### Get Topic
 
-Using **LNForumPaging** for get topics in forum and **LNTopicPaging** for get get posts in topic.
+Using **LNForumPaging** for get topics in a forum and **LNTopicPaging** for get get posts in a topic.
 
 ### TapatalkAPI
 
