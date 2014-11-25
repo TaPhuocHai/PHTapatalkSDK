@@ -19,6 +19,8 @@ Tapatalk API : <https://tapatalk.com/api.php>
 * (BOOL)application:(UIApp* lication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
            
             [LNTapatalkSDK startWithFormUrl:@"http://domain.com/forum"];
+            
+  Connect with tapatalk will like this : <http://domain.com/forum/mobiquo/mobiquo.php>          
 
 * (void)applicationDidBecomeActive:(UIApplication *)application
 
