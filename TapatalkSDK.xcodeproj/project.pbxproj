@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48665C5E19D515E400CCB1CC /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 48665BEE19D515E400CCB1CC /* FMDatabase+InMemoryOnDiskIO.m */; };
-		48665C5F19D515E400CCB1CC /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 48665BF019D515E400CCB1CC /* FMDatabase.m */; };
-		48665C6019D515E400CCB1CC /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48665BF219D515E400CCB1CC /* FMDatabaseAdditions.m */; };
-		48665C6119D515E400CCB1CC /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 48665BF419D515E400CCB1CC /* FMDatabasePool.m */; };
-		48665C6219D515E400CCB1CC /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 48665BF619D515E400CCB1CC /* FMDatabaseQueue.m */; };
-		48665C6319D515E400CCB1CC /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 48665BF919D515E400CCB1CC /* FMResultSet.m */; };
 		48665C6419D515E400CCB1CC /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48665BFD19D515E400CCB1CC /* CXMLDocument_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48665C6519D515E400CCB1CC /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48665BFF19D515E400CCB1CC /* CXMLNode_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48665C6619D515E400CCB1CC /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 48665C0119D515E400CCB1CC /* CXHTMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -108,19 +102,6 @@
 		48665BD319D515AB00CCB1CC /* libTapatalkSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTapatalkSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		48665BDE19D515AB00CCB1CC /* TapatalkSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapatalkSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48665BE119D515AB00CCB1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48665BED19D515E400CCB1CC /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
-		48665BEE19D515E400CCB1CC /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
-		48665BEF19D515E400CCB1CC /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		48665BF019D515E400CCB1CC /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		48665BF119D515E400CCB1CC /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		48665BF219D515E400CCB1CC /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		48665BF319D515E400CCB1CC /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		48665BF419D515E400CCB1CC /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		48665BF519D515E400CCB1CC /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		48665BF619D515E400CCB1CC /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		48665BF719D515E400CCB1CC /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
-		48665BF819D515E400CCB1CC /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		48665BF919D515E400CCB1CC /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		48665BFC19D515E400CCB1CC /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
 		48665BFD19D515E400CCB1CC /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
 		48665BFE19D515E400CCB1CC /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
@@ -285,39 +266,10 @@
 		48665BEA19D515E400CCB1CC /* External */ = {
 			isa = PBXGroup;
 			children = (
-				48665BEB19D515E400CCB1CC /* FMDB */,
 				48665BFA19D515E400CCB1CC /* TouchXML */,
 				48665C1819D515E400CCB1CC /* XMLRPC */,
 			);
 			path = External;
-			sourceTree = "<group>";
-		};
-		48665BEB19D515E400CCB1CC /* FMDB */ = {
-			isa = PBXGroup;
-			children = (
-				48665BEC19D515E400CCB1CC /* extra */,
-				48665BEF19D515E400CCB1CC /* FMDatabase.h */,
-				48665BF019D515E400CCB1CC /* FMDatabase.m */,
-				48665BF119D515E400CCB1CC /* FMDatabaseAdditions.h */,
-				48665BF219D515E400CCB1CC /* FMDatabaseAdditions.m */,
-				48665BF319D515E400CCB1CC /* FMDatabasePool.h */,
-				48665BF419D515E400CCB1CC /* FMDatabasePool.m */,
-				48665BF519D515E400CCB1CC /* FMDatabaseQueue.h */,
-				48665BF619D515E400CCB1CC /* FMDatabaseQueue.m */,
-				48665BF719D515E400CCB1CC /* FMDB.h */,
-				48665BF819D515E400CCB1CC /* FMResultSet.h */,
-				48665BF919D515E400CCB1CC /* FMResultSet.m */,
-			);
-			path = FMDB;
-			sourceTree = "<group>";
-		};
-		48665BEC19D515E400CCB1CC /* extra */ = {
-			isa = PBXGroup;
-			children = (
-				48665BED19D515E400CCB1CC /* FMDatabase+InMemoryOnDiskIO.h */,
-				48665BEE19D515E400CCB1CC /* FMDatabase+InMemoryOnDiskIO.m */,
-			);
-			path = extra;
 			sourceTree = "<group>";
 		};
 		48665BFA19D515E400CCB1CC /* TouchXML */ = {
@@ -611,7 +563,6 @@
 				48665C7319D515E400CCB1CC /* XMLRPCConnection.m in Sources */,
 				48665C7E19D515E400CCB1CC /* ModelForum.m in Sources */,
 				48665C8819D515E400CCB1CC /* LNUnreadTopicPaging.m in Sources */,
-				48665C5F19D515E400CCB1CC /* FMDatabase.m in Sources */,
 				48665C7F19D515E400CCB1CC /* ModelPost.m in Sources */,
 				48665C8619D515E400CCB1CC /* LNSubscribePaging.m in Sources */,
 				48665C6419D515E400CCB1CC /* CXMLDocument_CreationExtensions.m in Sources */,
@@ -620,7 +571,6 @@
 				48665C8A19D515E400CCB1CC /* LNRequestHelper.m in Sources */,
 				48665C6E19D515E400CCB1CC /* CXMLNode_PrivateExtensions.m in Sources */,
 				48665C8519D515E400CCB1CC /* LNSearchPaging.m in Sources */,
-				48665C6319D515E400CCB1CC /* FMResultSet.m in Sources */,
 				48665C6C19D515E400CCB1CC /* CXMLNamespaceNode.m in Sources */,
 				48665C8019D515E400CCB1CC /* ModelPrefix.m in Sources */,
 				48665C7219D515E400CCB1CC /* XML+NSData+Base64.m in Sources */,
@@ -630,7 +580,6 @@
 				48665C8119D515E400CCB1CC /* ModelTopic.m in Sources */,
 				48665C8719D515E400CCB1CC /* LNTopicPaging.m in Sources */,
 				48665C8319D515E400CCB1CC /* LNBasePaging.m in Sources */,
-				48665C6119D515E400CCB1CC /* FMDatabasePool.m in Sources */,
 				48665C8419D515E400CCB1CC /* LNForumPaging.m in Sources */,
 				48665C7719D515E400CCB1CC /* XMLRPCEventBasedParserDelegate.m in Sources */,
 				48665C6519D515E400CCB1CC /* CXMLNode_CreationExtensions.m in Sources */,
@@ -644,10 +593,7 @@
 				48665C6719D515E400CCB1CC /* CXMLDocument.m in Sources */,
 				48665C8919D515E400CCB1CC /* LNRequest.m in Sources */,
 				48665C8B19D515E400CCB1CC /* TapatalkAPI.m in Sources */,
-				48665C5E19D515E400CCB1CC /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
-				48665C6019D515E400CCB1CC /* FMDatabaseAdditions.m in Sources */,
 				48665C6919D515E400CCB1CC /* CXMLElement.m in Sources */,
-				48665C6219D515E400CCB1CC /* FMDatabaseQueue.m in Sources */,
 				48665C7A19D515E400CCB1CC /* NSString+LNTapatalkHelper.m in Sources */,
 				48665C7419D515E400CCB1CC /* XMLRPCConnectionManager.m in Sources */,
 				48665C7B19D515E400CCB1CC /* LNAccountManager.m in Sources */,
